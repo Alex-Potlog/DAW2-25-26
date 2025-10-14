@@ -77,4 +77,4 @@ Este es un repositorio educativo para fines de trabajo del curso.
 
 ---
 
-*DAW2 - Desarrollo de Aplicaciones Web, Curso 2024-2025*
+*DAW2 - Desarrollo de Aplicaciones Web, Curso 2025-2026*
