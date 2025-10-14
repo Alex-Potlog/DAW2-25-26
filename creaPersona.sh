@@ -1,3 +1,6 @@
+# Usa este script para añadir a alguien al proyecto, para usarlo
+# pon ./creaPesona.sh nombre-persona
+# y luego haz git add . && git commit -m Añadir persona encapsulado en  "
 mkdir $1
 cd $1
 mkdir M6
