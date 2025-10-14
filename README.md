@@ -1,6 +1,6 @@
 # DAW2 - Desarrollo de Aplicaciones Web 2
 
-Repositorio para las actividades, ejercicios y documentación del segundo año de Desarrollo de Aplicaciones Web.
+Repositorio para las actividades, ejercicios y documentación del segundo año de Desarrollo de Aplicaciones Web de Thos i Codina.
 
 ## 📁 Estructura del Repositorio
 
@@ -9,12 +9,12 @@ Este repositorio está organizado por estudiante, con cada estudiante teniendo s
 ```
 DAW2/
 ├── [Nombre Estudiante]/
-│   ├── AEA01/          # Actividades de Entorno Web
-│   ├── M6/             # Módulo 6
-│   ├── M8/             # Módulo 8
-│   ├── M9/             # Módulo 9
-│   ├── PHP/            # Ejercicios y proyectos PHP
-│   └── Python/         # Ejercicios y proyectos Python
+│   ├── M6/             # Javascript - Alfredo Ballestero
+│   ├── M7/             # PHP - Teresa Gistall
+│   ├── M8/             # Git y esas cosas - Jordi Llorente
+│   ├── M9/             # Interfaces - Alfredo Ballestero
+│   ├── M9/             # Python - Miquel Crespo
+│   └── M12/            # Projecte final de curs - Miquel Crespo i Jordi Llorente
 ├── creaPersona.sh      # Script para añadir nuevos estudiantes
 └── README.md
 ```
@@ -22,33 +22,23 @@ DAW2/
 ## 👥 Estudiantes
 
 - Alex
-- ErJaLo
-- Gouthar
+- ErJaLo (Jan)
+- Gouthar (John)
 - Mar
 - Marta
 - Nico
 - Oscar
 - Roger
 - Xavi
-- saturnoV18
+- saturnoV18 (Adrian)
 
-## 📚 Contenido del Curso
-
-### Módulos
-- **M6**: Desarrollo del lado del servidor
+## 📚 Módulos
+- **M6**: Desarrollo parte del cliente
+- **M7**: Programacion con PHP, Usualmente no explica nada mas que lo que pone en w3schools
 - **M8**: Despliegue de aplicaciones
 - **M9**: Diseño y desarrollo de interfaces
-
-### Lenguajes de Programación
-- **PHP**: Scripting del lado del servidor y desarrollo web
-- **Python**: Programación general y scripting
-
-### Actividades
-- **AEA01**: Ejercicios de entorno web incluyendo:
-  - Sintaxis básica de PHP y variables
-  - Estructuras de control y arrays
-  - Funciones y procesamiento de formularios
-  - Validación y sanitización de datos
+- **MOPT**: Programacion con Python
+- **M12**: Proyecto final de curso
 
 ## 🛠️ Añadir un Nuevo Estudiante
 
@@ -66,17 +56,6 @@ git add .
 git commit -m "Añadir [nombre-estudiante] al repositorio"
 ```
 
-## 📋 Ejercicios Comunes
-
-Los estudiantes han completado varios ejercicios de PHP que cubren:
-
-1. **Operaciones Básicas**: Cálculos de IVA, manejo de fecha/hora
-2. **Manipulación de Strings**: Generación de contraseñas, validación de DNI
-3. **Arrays**: Arrays asociativos, funciones de ordenación
-4. **Estructuras de Control**: Operadores condicionales, sentencias switch
-5. **Funciones**: Implementaciones de calculadora, operaciones matemáticas
-6. **Formularios**: Procesamiento de datos, validación y sanitización
-
 ## 🤝 Contribuir
 
 Cada estudiante debe:
@@ -84,12 +63,13 @@ Cada estudiante debe:
 - Mantener su código organizado por módulo/lenguaje
 - Incluir mensajes de commit significativos
 - Evitar modificar los directorios de otros estudiantes
+- Antes de hacer un commit, asegurarse de tener la ultima version (fetch y pull) para no entorpecer a los demás
 
 ## 📝 Notas
 
 - Los archivos `archivo.txt` vacíos sirven como placeholders para mantener la estructura de directorios en Git
 - Seguir las pautas del curso para convenciones de nomenclatura y estructura del código
-- Asegurar que todos los envíos de formularios incluyan validación y sanitización adecuada de datos
+- Se puede realizar consultas al codigo de los demas, para esto es este proyecto en git, pero evitemos hacer cambios aun si son minusculos
 
 ## 📄 Licencia
 
