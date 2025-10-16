@@ -52,6 +52,14 @@ nav a:hover {
   display: flex;
 }
 
+.feature-card {
+  border: 1px solid black;
+}
+
+.feature-card:nth-child(1) {
+  grid: 2/1/3/2;
+}
+
 .header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -140,6 +148,7 @@ nav a:hover {
           flex: 1 1 50%;
 }
 
-.hero-content h1 {
+.gothic_font {
   font-family: "Century Gothic", sans-serif;
+  color: #9a9b9c;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,17 @@
+{
+  "name": "sass-project",
+  "version": "1.0.0",
+  "description": "A project using Sass for styling.",
+  "main": "src/sass/main.scss",
+  "scripts": {
+    "build": "sass src/sass/main.scss dist/css/style.css",
+    "watch": "sass --watch src/sass/main.scss:dist/css/style.css"
+  },
+  "dependencies": {
+    "sass": "^1.32.0",
+    "bootstrap": "^5.1.0"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
