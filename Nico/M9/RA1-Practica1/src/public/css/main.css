@@ -30,6 +30,10 @@ ol {
   margin: 0;
 }
 
+.orange {
+  color: var(--orange);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -37,29 +41,49 @@ ol {
           box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
-h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-h2 {
-  font-size: 2rem;
-  line-height: 1.3;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
-h3 {
-  font-size: 1.75rem;
-  line-height: 1.4;
+p {
+  margin: 0;
 }
 
-.orange {
-  color: orange;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "CenturyGothic";
+  src: url("../../public/fonts/CenturyGothic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 .button {
   background-color: #007bff;
   color: white;
