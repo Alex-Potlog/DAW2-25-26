@@ -1,0 +1,10 @@
+// This file is intentionally left blank.
+@use '../abstracts/variables' as *;
+
+body {
+    background-color: $backgroundColor;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}

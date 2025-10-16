@@ -1,0 +1,32 @@
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    font:
+        400 12px "Arial MT",
+        sans-serif;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+.container {
+    width: 90%;
+}
+
+#header-nav {
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 50px;
+    display: flex;
+}

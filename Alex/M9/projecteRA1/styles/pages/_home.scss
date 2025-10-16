@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as *;
+#hero-image {
+    width: 628px;
+}
+
+.hero {
+    grid-area: 1 / 1 / 2 / 4;
+    background-color: $card-backgound;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 315px;
+}
+
+.hero-img {
+    flex: 1 1 50%;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-content {
+    flex: 1 1 50%;
+}
+
+.gothic_font {
+    font-family: $century-font;
+    color: #9a9b9c;
+}

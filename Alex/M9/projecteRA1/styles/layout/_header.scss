@@ -1,0 +1,27 @@
+// This file contains styles for the header section of the layout.
+.header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: left;
+    padding: 0px;
+    padding: 34px;
+}
+
+.header ul li {
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
