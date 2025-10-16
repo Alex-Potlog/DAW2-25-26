@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as *;
+
+.card_disseny h2,
+.card_solucions h2,
+.card_testimonis h2 {
+    color: $gris3;
+    font-size: $font-titul
+}

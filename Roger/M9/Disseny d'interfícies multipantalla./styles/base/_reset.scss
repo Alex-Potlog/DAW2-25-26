@@ -1,0 +1,135 @@
+@use "../abstracts/variables" as *;
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: $font-size-base;
+}
+
+body {
+    margin: auto;
+    max-width: 1240px;
+    font-family: $font-primary;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $background-color;
+}
+
+/* Enllaços */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-secundary;
+    }
+}
+
+/* Llistes */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Imatges */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Formularis */
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    background: $color-primary;
+}
+
+button {
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+input,
+textarea {
+    &::placeholder {
+        color: $text-color;
+    }
+
+    &:focus {
+        outline: 2px solid $color-secundary;
+    }
+}
+
+/* Capçaleres */
+h3,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: $font-size-intermig;
+    line-height: 1.2;
+    margin-bottom: $spacing-sm;
+    color: $text-color;
+}
+
+h1 {
+    font-size: $font-titul3;
+    color: $titul2-color;
+}
+
+.textspan {
+    color: $taronja
+}
+
+h2 {
+    font-size: $font-titul;
+    color: $taronja
+}
+
+h4 {
+    font-size: $font-titul-card;
+    color: $dark;
+}
+
+/* Text i paràgrafs */
+p {
+    color: $text-color;
+    margin-bottom: $spacing-sm;
+    line-height: 1.4;
+}
+
+/* Taules */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Elements interactius */
+:focus-visible {
+    outline: 2px solid $color-secundary;
+    outline-offset: 2px;
+}
+
+/* Selecció de text */
+::selection {
+    background-color: $color-secundary;
+    color: $color-primary;
+}

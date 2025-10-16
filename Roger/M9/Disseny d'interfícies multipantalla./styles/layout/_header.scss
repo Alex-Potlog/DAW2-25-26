@@ -1,0 +1,48 @@
+@use "../abstracts/variables" as *;
+
+header {
+    display: flex;
+    justify-content: space-between; //Per posar un espai entre el logo i elements del menu
+    align-items: center;
+    padding: 20px;
+    background-color: $background-color;
+    border-bottom: 2px solid #e0e0e0;
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative; // Per a la línia inferior
+
+            // Estat hover
+            &:hover {
+                color: $taronja;
+            }
+
+            &.active {
+                color: $taronja;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #ff6600;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+.general {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); // per mes personalització de tamany
+    grid-row: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.banner {
+    grid-area: 1 / 1 / 5 / 8;
+    border: 1px black;
+}
+
+.text_banner {
+    grid-area: 1 / 8 / 5 / 13;
+    border: 1px black;
+
+}
+
+// Secció de Cards
+.card_disseny {
+    grid-area: 5 / 1 / 9 / 5;
+    border: 1px black;
+
+}
+
+.card_solucions {
+    grid-area: 5 / 5 / 9 / 9;
+    border: 1px black;
+
+}
+
+.card_testimonis {
+    grid-area: 5 / 9 / 9 / 13;
+    border: 1px black;
+
+}
+
+// Secció de Contingut
+.text {
+    grid-area: 9 / 1 / 13 / 8;
+    border: 1px black;
+
+}
+
+.subscripcio {
+    grid-area: 9 / 8 / 13 / 13;
+    border: 1px black;
+
+}
+
+// Mida Mitjana (Tablet)
+@media (max-width: 768px) {
+    .general {
+        gap: 15px;
+    }
+
+    .banner {
+        grid-area: 1 / 1 / 4 / 13;
+    }
+
+    .text_banner {
+        grid-area: 4 / 1 / 7 / 13;
+    }
+
+    .card_disseny {
+        grid-area: 7 / 1 / 10 / 7;
+    }
+
+    .card_solucions {
+        grid-area: 7 / 7 / 10 / 13;
+    }
+
+    .card_testimonis {
+        grid-area: 10 / 1 / 13 / 13;
+    }
+
+    .text {
+        grid-area: 13 / 1 / 16 / 13;
+    }
+
+    .subscripcio {
+        grid-area: 16 / 1 / 19 / 13;
+    }
+}
+
+// Mida Petita (Mòbil)
+@media (max-width: 480px) {
+    .general {
+        gap: 10px;
+    }
+
+    .banner {
+        grid-area: 1 / 1 / 4 / 13;
+    }
+
+    .text_banner {
+        grid-area: 4 / 1 / 7 / 13;
+    }
+
+    .card_disseny {
+        grid-area: 7 / 1 / 10 / 13;
+    }
+
+    .card_solucions {
+        grid-area: 10 / 1 / 13 / 13;
+    }
+
+    .card_testimonis {
+        grid-area: 13 / 1 / 16 / 13;
+    }
+
+    .text {
+        grid-area: 16 / 1 / 19 / 13;
+    }
+
+    .subscripcio {
+        grid-area: 19 / 1 / 22 / 13;
+    }
+}
