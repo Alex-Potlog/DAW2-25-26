@@ -59,3 +59,12 @@ llista1=["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
 llista2=inversa(llista1)
 print(llista1)
 print(llista2)'''
+llista1 = ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
+def revertir_llista(llista):
+    llista2 = []
+    for n in llista[-1::-1]:
+        llista2.append(n)
+    return llista2
+
+print(llista1)
+print(revertir_llista(llista1))

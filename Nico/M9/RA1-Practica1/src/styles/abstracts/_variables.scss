@@ -1,0 +1,179 @@
+// ==========================================
+// INFOTECH - Variables SCSS
+// ==========================================
+
+// Colores Principales
+// ------------------------------------------
+$primary-orange: #f39c12;
+$primary-orange-hover: #e67e22;
+$dark-gray: #2c3e50;
+$medium-gray: #7f8c8d;
+$light-gray: #ecf0f1;
+$white: #ffffff;
+$black: #000000;
+
+// Colores de Texto
+// ------------------------------------------
+$text-primary: #2c3e50;
+$text-secondary: #7f8c8d;
+$text-light: #bdc3c7;
+$text-white: #ffffff;
+
+// Colores de Fondo
+// ------------------------------------------
+$bg-primary: #ffffff;
+$bg-secondary: #ecf0f1;
+$bg-dark: #34495e;
+$bg-darker: #2c3e50;
+$bg-section: #f8f9fa;
+
+// Colores de Enlaces
+// ------------------------------------------
+$link-color: #f39c12;
+$link-hover: #e67e22;
+
+// Colores de Botones
+// ------------------------------------------
+$btn-primary-bg: #f39c12;
+$btn-primary-text: #ffffff;
+$btn-primary-hover: #e67e22;
+$btn-secondary-bg: #ecf0f1;
+$btn-secondary-text: #2c3e50;
+$btn-read-more: #c0392b;
+
+// Tipografía
+// ------------------------------------------
+$font-family-primary: 'Arial', 'Helvetica', sans-serif;
+$font-family-secondary: 'Georgia', serif;
+
+$font-size-base: 14px;
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$font-size-xlarge: 24px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-base: 1.6;
+$line-height-heading: 1.2;
+
+// Encabezados
+// ------------------------------------------
+$h1-font-size: 36px;
+$h2-font-size: 28px;
+$h3-font-size: 22px;
+$h4-font-size: 18px;
+$h5-font-size: 16px;
+$h6-font-size: 14px;
+
+// Espaciado
+// ------------------------------------------
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 30px;
+$spacing-xxl: 40px;
+
+$padding-section: 50px;
+$margin-section: 50px;
+
+// Bordes y Radios
+// ------------------------------------------
+$border-radius-sm: 3px;
+$border-radius-md: 5px;
+$border-radius-lg: 10px;
+$border-radius-round: 50%;
+
+$border-width: 1px;
+$border-color: #dcdcdc;
+$border-style: solid;
+
+// Sombras
+// ------------------------------------------
+$box-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.2);
+$box-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+// Navegación
+// ------------------------------------------
+$nav-height: 80px;
+$nav-bg: #ffffff;
+$nav-link-color: #2c3e50;
+$nav-link-hover: #f39c12;
+$nav-active-bg: #f39c12;
+$nav-active-color: #ffffff;
+
+// Footer
+// ------------------------------------------
+$footer-bg: #2c3e50;
+$footer-text: #ecf0f1;
+$footer-link: #f39c12;
+$footer-padding: 30px;
+
+// Contenedores
+// ------------------------------------------
+$container-max-width: 1200px;
+$container-padding: 20px;
+
+// Grid
+// ------------------------------------------
+$grid-columns: 12;
+$grid-gutter: 20px;
+
+// Breakpoints
+// ------------------------------------------
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+
+// Transiciones
+// ------------------------------------------
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Z-index
+// ------------------------------------------
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// Cards y Boxes
+// ------------------------------------------
+$card-bg: #ffffff;
+$card-border: #e0e0e0;
+$card-padding: 20px;
+$card-border-radius: $border-radius-md;
+$card-shadow: $box-shadow-sm;
+
+// Formularios
+// ------------------------------------------
+$input-bg: #ffffff;
+$input-border: #dcdcdc;
+$input-border-focus: #f39c12;
+$input-padding: 10px 15px;
+$input-border-radius: $border-radius-sm;
+$input-font-size: $font-size-base;
+
+// Iconos y Logos
+// ------------------------------------------
+$logo-circle-color: #f39c12;
+$icon-color: #f39c12;
+$icon-size: 24px;
+
+// Social Media
+// ------------------------------------------
+$social-twitter: #1da1f2;
+$social-facebook: #4267b2;
+$social-linkedin: #0077b5;

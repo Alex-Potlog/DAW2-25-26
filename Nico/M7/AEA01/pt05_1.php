@@ -23,24 +23,21 @@ Utilitza funcions de cadenes per recuperar el nom exacte de la imatge
 Utilitza echo "<img src='https://www.portalmochis.net/humor/ilusiones/angelesdemonios.jpg'>"; per mostrar cada imatge dins de la cel·la.*/
     $paginaImatges = "http://www.portalmochis.net/humor/ilusiones/";
     $contingut = file_get_contents($paginaImatges);
-    preg_match_all('/<img src="(.*?)"/', $contingut, $matches);
-    $imatges = $matches[1];
+    preg_match_all('/<a href="([^"]+\.(jpg|jpeg|png|gif))"/i', $contingut, $imatges);
     echo "<table border='1'>";
-    $columna = 0;
-    foreach ($imatges as $imatge) {
-        if ($columna % 2 == 0) {
+    $paginaBase = "http://www.portalmochis.net";
+    foreach ($imatges[1] as $index => $imatge) {
+        if ($index % 2 == 0) { //Columnes de 2
             echo "<tr>";
         }
-        echo "<td><img src='" . $paginaImatges . $imatge . "'></td>";
-        if ($columna % 2 == 1) {
+        echo "<td><img src='" . $paginaBase . $imatge . "'></td>";
+        if ($index % 2 == 1) { //Tanca la fila després de 2 columnes
             echo "</tr>";
         }
-        $columna++;
     }
-    if ($columna % 2 != 0) {
-        echo "<td></td></tr>";
-    }
+
     echo "</table>";
+
 
 
 
