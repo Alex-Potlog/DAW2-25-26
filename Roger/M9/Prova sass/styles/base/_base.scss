@@ -1,0 +1,12 @@
+@use "../abstracts/variables" as *; //Per importar variables
+//crear variable
+
+body {
+    $backgroundColor : red;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}

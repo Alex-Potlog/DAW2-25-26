@@ -1,0 +1,31 @@
+//Exemple de grid de quadricula
+.container {
+    grid-template-columns: 40px 10% auto;
+    grid-template-rows: auto 30px 50% 1fr; //1fr es dividir l'espai restant per a que ocupi lo doble 2fr 
+
+}
+
+.primer {
+    grid-area: header;
+}
+
+.segon {
+    grid-area: sidebar;
+}
+
+.tercer {
+    grid-area: content;
+}
+
+.container2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 3fr;
+    grid-column-gap: 10px; //espai entre columnes
+    grid-row-gap: 20px; //espai entre files
+    //gap: 15px; //espai entre files i columnes
+
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "sidebar content";
+}

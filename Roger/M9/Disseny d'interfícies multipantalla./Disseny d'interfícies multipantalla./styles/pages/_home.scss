@@ -1,0 +1,64 @@
+@use "../abstracts/variables" as *;
+
+
+
+.banerimg {
+    width: 638px;
+}
+
+
+.banner {
+    width: 100%;
+    height: 315px;
+    overflow: hidden;
+    margin-bottom: $spacing-lg;
+}
+
+
+
+.text_banner {
+    height: 315px;
+    background-color: $color-primary;
+    padding: $spacing-md;
+    border-radius: 10px;
+    margin-bottom: $spacing-md;
+    display: flex;
+    flex-direction: column;
+}
+
+.text_banner h1 {
+    font-family: $font-primary;
+    font-size: $font-titul3;
+    color: $titul2-color;
+    line-height: 1;
+}
+
+.text_banner h3 {
+    font-size: $font-size-intermig;
+    color: $gris2;
+
+}
+
+.text_banner hr {
+    width: 100%;
+}
+
+.text_banner p {
+    font-family: $font-primary;
+    color: $text-color;
+    font-size: $font-size-base;
+    margin: 0 0 $spacing-md 0;
+    line-height: 1.6;
+}
+
+.text_banner .btn {
+    background-color: $grisboto;
+    color: $gris6;
+    border: none;
+    padding: $spacing-xs $spacing-md;
+    border-radius: 34px;
+    font-size: $font-size-base;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end;
+}

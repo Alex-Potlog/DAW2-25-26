@@ -1,0 +1,306 @@
+/*# sourceMappingURL=main.css.map */
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.parent>div {
+    /* Es fa aixo per a que  tots els div que hereden de parent tinguin les mateixes caracteristiques com el color de fons*/
+    background-color: #ffd8a8;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.div1 {
+    background-color: #ffa94d;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.div4 {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.div5 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.div6 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+
+
+.contingut {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.contingut>div {
+    background-color: #ffd8a8;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.div11 {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.div12 {
+    grid-area: 1 / 3 / 3 / 4;
+}
+
+.div13 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div14 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+
+.contingut2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.contingut2>div {
+    background-color: #ffd8a8;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.div21 {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.div22 {
+    grid-area: 1 / 3 / 2 / 5;
+}
+
+.div23 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div24 {
+    grid-area: 2 / 2 / 3 / 5;
+}
+
+.div25 {
+    grid-area: 3 / 1 / 4 / 5;
+}
+
+
+
+
+.contingut3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 6px;
+    grid-template-areas:
+        ". superior superior . ."
+        "esquerra centre centre . ."
+        "esquerra centre centre . ."
+        "inferior inferior inferior . .";
+}
+
+.contingut3>div {
+    background-color: #ffd8a8;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.div31 {
+    grid-area: superior;
+}
+
+.div32 {
+    grid-area: esquerra;
+}
+
+.div33 {
+    grid-area: centre;
+}
+
+.div34 {
+    grid-area: inferior;
+}
+
+
+
+
+
+.contingut4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.contingut4>div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.div41 {
+    background-color: #ffa94d;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.div42 {
+    background-color: #ffa94d;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div43 {
+    background-color: aliceblue;
+    grid-area: 1 / 2 / 3 / 4;
+}
+
+
+
+
+
+
+
+.contingut5 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.contingut5>div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.div51 {
+    background-color: #ffd8a8;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.div52 {
+    background-color: #ffd8a8;
+    grid-area: 1 / 3 / 2 / 5;
+}
+
+.div53 {
+    background-color: #ffd8a8;
+    grid-area: 2 / 1 / 4 / 3;
+}
+
+.div54 {
+    background-color: #ffd8a8;
+    grid-area: 2 / 3 / 4 / 5;
+}
+
+.div55 {
+    background-color: antiquewhite;
+    grid-area: 2 / 3 / 3 / 5;
+}
+
+.div56 {
+    background-color: azure;
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+.div57 {
+    background-color: aquamarine;
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+
+.contingut6 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.contingut6>div {
+    background-color: #ffd8a8;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.div61 {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.div62 {
+    grid-area: 1 / 3 / 3 / 4;
+}
+
+.div63 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div64 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.div65 {
+    grid-area: 1 / 4 / 3 / 5;
+}
+
+.div66 {
+    display: none;
+}
+
+
+@media screen and (max-width: 800px) {
+    .div61 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .div62 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .div63 {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+    .div64 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .div65 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .div66 {
+        display: block;
+        grid-area: 3 / 1 / 4 / 2;
+    }
+}

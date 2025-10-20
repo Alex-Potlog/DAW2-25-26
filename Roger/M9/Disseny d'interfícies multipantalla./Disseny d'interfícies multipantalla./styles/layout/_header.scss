@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as *;
+
+header {
+    display: flex;
+    justify-content: space-between; //Per posar un espai entre el logo i elements del menu
+    align-items: center;
+    padding: 20px;
+    background-color: $background-color;
+    margin-bottom: 41px;
+    margin-top: $spacing-md;
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .imgLogo {
+        width: 290px;
+        height: 35px;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        a {
+            text-decoration: none;
+            color: $negre2;
+            font-size: $font-size-base;
+            transition: color 0.3s ease;
+            position: relative; // Per a la línia inferior
+
+            // Estat hover
+            &:hover {
+                color: $taronja;
+            }
+
+            &.active {
+                background-color: $taronja;
+                color: $color-primary;
+                padding: $spacing-md;
+
+            }
+        }
+    }
+}

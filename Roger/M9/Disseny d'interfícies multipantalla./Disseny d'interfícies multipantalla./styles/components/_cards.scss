@@ -1,0 +1,102 @@
+@use "../abstracts/variables" as *;
+
+.card_disseny,
+.card_solucions,
+.card_testimonis {
+    background-color: $gris5;
+    padding: 0px;
+    border: 1px solid $color-primary;
+    box-shadow: 0 2px 8px rgba($dark, 0.08);
+    margin-top: 24px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+
+    h2 {
+        padding: 10px;
+        padding-bottom: 0px;
+        font-family: $font-primary;
+        font-size: $font-titul;
+        color: $gris3;
+        margin: 0 0 $spacing-md 0;
+        font-weight: normal;
+    }
+}
+
+.card-content {
+    background-color: $color-primary;
+    padding: $spacing-md;
+    box-shadow: 0 2px 8px rgba($dark, 0.08);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: $spacing-md;
+    height: 100%;
+}
+
+.card-img img {
+    padding: 0px;
+    margin: 0px;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+.card-content-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+
+
+}
+
+.card-content h4 {
+    font-family: $font-primary;
+    font-size: $font-titul-card;
+    font-weight: bold;
+    color: $titul2-color;
+    margin: 0 0 $spacing-sm 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.card-content p {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    color: $text-color;
+    margin: 0 0 $spacing-sm 0;
+    line-height: 1.5;
+    flex-grow: 1;
+
+    span {
+        color: $dark;
+        text-decoration: underline;
+    }
+}
+
+.card-content .btn,
+.btn {
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    color: $taronja;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: bold;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0px;
+
+    &:hover {
+        color: $dark;
+    }
+
+    &:active {
+        color: $taronja;
+        opacity: 0.8;
+    }
+}

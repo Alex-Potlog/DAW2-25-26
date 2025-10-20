@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as *;
+
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: $background-color;
+    color: #fff;
+    border-top: 1px solid $gris2;
+    margin-top: 40px;
+
+    .navigation_footer {
+        grid-area: 1 / 1 / 2 / 7;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: $font-size-base;
+
+        a {
+            text-decoration: none;
+            color: $gris4;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $dark;
+            }
+        }
+
+        span {
+            color: #666;
+        }
+    }
+
+    .copyright {
+        grid-area: 1 / 7 / 2 / 13;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: $font-size-base;
+        color: $gris4;
+
+        span {
+            color: $taronja;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+
+.subscripcio form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+    max-width: 400px;
+
+    input[type="email"] {
+        flex: 1;
+        padding: $spacing-xs $spacing-lg;
+        border: 1px solid $gris2;
+        font-size: $font-size-base;
+        background-color: $color-primary;
+
+        &:focus {
+            outline: none;
+            border-color: $taronja;
+            box-shadow: 0 0 0 2px rgba($taronja, 0.2);
+        }
+
+        &::placeholder {
+            color: $gris3;
+        }
+    }
+
+    .btn {
+        background-color: $grisboto;
+        color: $gris6;
+        border: none;
+        padding: $spacing-xs $spacing-lg;
+        border-radius: 34px;
+        font-size: $font-size-base;
+        cursor: pointer;
+        font-weight: $font-size-base;
+        align-self: flex-start;
+    }
+}
+
+
+.subscripcio {
+    h3 {
+        font-size: $font-size-base;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 29px;
+        margin-top: $spacing-sm;
+        justify-content: left;
+        align-items: center;
+
+        img {
+            display: block; // Evita espais addicionals
+        }
+    }
+}
+
+.text {
+    font-size: $font-size-base;
+}
