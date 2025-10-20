@@ -46,29 +46,45 @@ window.onload = function () {
     tbodyRows.forEach(row => {
         const quantityInput = row.querySelector('.quantity');
         const importCell = row.querySelector('.import');
-        const price = parseFloat(row.children[4].textContent);
+        const price = Number.parseFloat(row.children[4].textContent);
 
         quantityInput.addEventListener('input', () => {
-            const quantity = parseInt(quantityInput.value);
+            const quantity = Number.parseInt(quantityInput.value);
             importCell.textContent = `${(price * quantity).toFixed(2)} €`;
 
         });
     });
-    let preuTotal = 0;
-    const importCells = tbody.querySelectorAll('.import');
-    importCells.forEach(cell => {
-        const importValue = parseFloat(cell.textContent);
-        preuTotal += importValue;
+    //afegir import total 
+    const totalRow = document.createElement('tr');
+    totalRow.innerHTML = `
+        <td colspan="5" style="text-align:right;font-weight:bold;">Total:</td>
+        <td id="total-amount" style="font-weight:bold;">0.00 €</td>
+        <td></td>
+    `;
+    tbody.appendChild(totalRow);
+
+    const totalAmount = document.getElementById('total-amount');
+
+    function updateTotal() {
+        let total = 0;
+        const importCells = tbody.querySelectorAll('.import');
+        importCells.forEach(cell => {
+            const importValue = Number.parseFloat(cell.textContent);
+            total += importValue;
+        });
+        totalAmount.textContent = `${total.toFixed(2)} €`;
+    }
+
+    // Actualitzar el total inicialment
+    updateTotal();
+
+    // Actualitzar el total quan canvia la quantitat
+    const quantityInputs = tbody.querySelectorAll('.quantity');
+    quantityInputs.forEach(input => {
+        input.addEventListener('input', updateTotal);
     });
-    const tfoot = document.createElement("tfoot");
-    table.appendChild(tfoot);
-    tfoot.insertAdjacentHTML('beforeend', `
-        <tr>
-            <td colspan="5" style="text-align:right;font-weight:bold;">Total:</td>
-            <td id="totalPrice">${preuTotal}€</td>
-            <td></td>
-        </tr>
-    `);
+
+
 
 
     // Afegir funcionalitat de eliminar fila
@@ -79,7 +95,14 @@ window.onload = function () {
             tr.remove()
         })
     })
+    // afegir funcionalitat de buidar carret 
+    const clearCartButton = document.createElement('button');
+    clearCartButton.textContent = 'Buidar Carretó';
+    document.body.appendChild(clearCartButton);
 
+    clearCartButton.addEventListener('click', () => {
+        tbody.innerHTML = '<tr><td colspan="7">No hi ha productes al carretó</td></tr>';
+    });
 
 
 
