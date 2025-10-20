@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari</title>
+    <style>
+        select {
+            vertical-align: middle;
+            height: 80px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: serif;
+        }
+
+        input[type="text"] {
+            width: 300px;
+        }
+
+        input[type="text"][name="motor"],
+        input[type="text"][name="cilindrada"] {
+            width: 100px;
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formulari i resposta</h1><br>
+
+    <form action="procExer2.php" method="post">
+        <label for="model">Model: </label><input type="text" name="model" required><br>
+        <label for="marca">Marca: <input type="text" name="marca" required></label><br>
+        <label for="motor">Motor: <input type="text" name="motor" required></label>
+        <label for="cilindrada">Cilindrada: <input type="text" name="cilindrada" required></label><br>
+
+        <label for="energia">Energia: </label>
+        <input type="radio" id="gasoil" name="energia" value="Gasolina" required>
+        <label for="gasoil">Gasolina</label>
+        <input type="radio" id="diesel" name="energia" value="diesel" required>
+        <label for="diesel">Diesel</label>
+        <input type="radio" id="hibrid" name="energia" value="hibrid" required>
+        <label for="diesel">Híbrid</label>
+        <input type="radio" id="electric" name="energia" value="electric" required>
+        <label for="diesel">Elèctric</label><br>
+
+        <label for="opcions">Opcions:</label>
+        <select id="opcions" name="pack" size="4" required>
+            <option value="packSport">Pack Sport</option>
+            <option value="milloraSeguretat">Millora seguretat</option>
+            <option value="climatitzador">Climatitzador</option>
+            <option value="ordinadorBord">Ordinador a bord</option>
+        </select>
+
+        <br><br><button type="submit">Enviar</button><button type="reset">Inicialitza</button>
+    </form>
+</body>
+
+</html>
