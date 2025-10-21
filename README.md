@@ -16,6 +16,7 @@ DAW2/
 │   ├── M9/             # Python - Miquel Crespo
 │   └── M12/            # Projecte final de curs - Miquel Crespo i Jordi Llorente
 ├── creaPersona.sh      # Script para añadir nuevos estudiantes
+├── asignExamen.sh      # Script para crear estructura de examen
 └── README.md
 ```
 
@@ -40,7 +41,9 @@ DAW2/
 - **MOPT**: Programacion con Python
 - **M12**: Proyecto final de curso
 
-## 🛠️ Añadir un Nuevo Estudiante
+## 🛠️ Scripts Disponibles
+
+### Añadir un Nuevo Estudiante
 
 Para añadir un nuevo estudiante a la estructura del proyecto, utiliza el script proporcionado:
 
@@ -54,6 +57,25 @@ Luego confirma los cambios:
 ```bash
 git add .
 git commit -m "Añadir [nombre-estudiante] al repositorio"
+```
+
+### Crear Estructura de Examen
+
+Para crear una carpeta de examen con su estructura correspondiente:
+
+```bash
+./asignExamen.sh [nombre-examen]
+```
+
+Este script:
+- Crea un directorio `Examen-[nombre-examen]`
+- Genera dos subdirectorios: `apuntes` y `ejercicios`
+- Añade archivos placeholder `archivo.txt` en cada subdirectorio
+
+**Ejemplo de uso:**
+```bash
+./asignExamen.sh M7-PHP
+# Creará: Examen-M7-PHP/apuntes/ y Examen-M7-PHP/ejercicios/
 ```
 
 ## 🤝 Contribuir
