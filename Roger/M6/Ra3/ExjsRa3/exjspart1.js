@@ -31,6 +31,40 @@ const library = [
 { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of TheHunger Games', libraryID: 3245}
 ];
 
+
 function ordenar2(array){
-    
+    return array.sort((a, b) => a.libraryID - b.libraryID);// faig axi el sort per poder ordenar des del primer element fins a l'ultim en funcio de library
 }
+
+console.log(ordenar2(library));
+
+//22. Genera 6 números aleatoris enters entre 0 i 10 i desa'ls en un array
+
+const arr=[];
+for(let i=0;i<6;i++){
+    arr[i]=Math.floor(Math.random() * 10) + 1;
+}
+console.log(arr);
+
+//23. Troba els valors màxim i mínim de l'array del punt anterior
+console.log(Math.max(...arr));
+
+//24. Crea un script que retorni un array d'enters entre 1 i 10 aleatoris sense que es repeteixi cap número.
+// Mostra el nombre d'iteracions que es realitzen
+
+function numeros_no_repetits(){
+    const arrfinal=[];
+    while(arrfinal.length <10){
+        const num = Math.floor(Math.random()*10)+1;
+        if (!(arrfinal.includes(num))){
+            arrfinal.push(num);
+        }
+    }
+    return arrfinal
+
+}
+
+const arrfinal=numeros_no_repetits()
+console.log(arrfinal);
+
+//

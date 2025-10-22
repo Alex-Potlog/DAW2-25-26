@@ -12,6 +12,7 @@
     height: 315px;
     overflow: hidden;
     margin-bottom: $spacing-lg;
+    margin-right: 0px;
 }
 
 
@@ -22,6 +23,7 @@
     padding: $spacing-md;
     border-radius: 10px;
     margin-bottom: $spacing-md;
+    margin-left: 0px;
     display: flex;
     flex-direction: column;
 }
