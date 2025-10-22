@@ -151,4 +151,26 @@ nav a:hover {
 .gothic_font {
   font-family: "Century Gothic", sans-serif;
   color: #9a9b9c;
+}
+
+.features {
+  grid-area: 2/1/3/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  row-gap: 24px;
+}
+
+.feature-card:first-child {
+  grid-area: 2/1/3/2;
+}
+
+.feature-card:nth-child(2) {
+  grid-area: 2/2/3/3;
+}
+
+.feature-card:nth-child(3) {
+  grid-area: 2/3/3/4;
 }/*# sourceMappingURL=main.css.map */
