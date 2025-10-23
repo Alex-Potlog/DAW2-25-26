@@ -1,15 +1,23 @@
-// This file contains styles for the header section of the layout.
+@use "../abstracts/variables" as *;
+
 .header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: left;
     padding: 0px;
     padding: 34px;
+    height: 24px;
+    font-family: $arial-font;
+}
+
+.header button {
+    background-color: #f0a54f;
+    height: 24px;
 }
 
 .header ul li {
     margin-right: 20px;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .navbar {
