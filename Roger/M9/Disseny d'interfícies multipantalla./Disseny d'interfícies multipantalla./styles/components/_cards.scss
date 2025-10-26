@@ -15,7 +15,7 @@
     h2 {
         padding: 10px;
         padding-bottom: 0px;
-        font-family: $font-primary;
+        font-family: $font-secundary;
         font-size: $font-titul;
         color: $gris3;
         margin: 0 0 $spacing-md 0;
@@ -91,13 +91,4 @@
     text-decoration: none;
     display: inline-block;
     margin-top: 0px;
-
-    &:hover {
-        color: $dark;
-    }
-
-    &:active {
-        color: $taronja;
-        opacity: 0.8;
-    }
 }

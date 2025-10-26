@@ -1,7 +1,120 @@
 @use "../abstracts/variables" as *;
 
+@use "../abstracts/variables" as *;
 
-.canvi_color {
-    background-color: $dark;
-    margin: 0px;
+// Mode fosc per a tota la pàgina
+.dark-mode {
+    background-color: $dark-bg;
+    color: $dark-text;
+
+    // Body
+    body {
+        background-color: $dark-bg;
+        color: $dark-text;
+    }
+
+    // Header (ja definit a _header.scss)
+
+    // Cards
+    .card_disseny,
+    .card_solucions,
+    .card_testimonis {
+        background-color: $dark-card-bg;
+        border-color: $dark-border;
+
+        h2 {
+            color: $dark-text;
+        }
+    }
+
+    .card-content {
+        background-color: $dark-card-bg;
+
+        h4 {
+            color: $dark-text;
+        }
+
+        p {
+            color: $dark-text;
+
+            span {
+                color: $color-secundary;
+            }
+        }
+    }
+
+    .text_banner {
+        background-color: $dark-card-bg;
+
+        h1 {
+            color: $dark-text;
+        }
+
+        h3 {
+            color: $gris2;
+        }
+
+        p {
+            color: $dark-text;
+        }
+    }
+
+    .text {
+        h2 {
+            color: $dark-text;
+        }
+
+        p {
+            color: $dark-text;
+        }
+    }
+
+    .subscripcio {
+
+        h2,
+        h3 {
+            color: $dark-text;
+        }
+
+        form input[type="email"] {
+            background-color: $dark-card-bg;
+            border-color: $dark-border;
+            color: $dark-text;
+
+            &::placeholder {
+                color: $gris3;
+            }
+        }
+    }
+
+    .footer {
+        background-color: $dark-bg;
+        border-top-color: $dark-border;
+
+        .navigation_footer a {
+            color: $dark-text;
+
+            &:hover {
+                color: $color-secundary;
+            }
+        }
+
+        .copyright {
+            color: $dark-text;
+        }
+    }
+
+    .btn {
+        background-color: $dark-card-bg;
+        color: $dark-text;
+        border: 1px solid $dark-border;
+    }
+
+    hr {
+        border-color: $dark-border;
+    }
+}
+
+.dark-mode .canvi_color {
+    background-color: $dark-card-bg;
 }

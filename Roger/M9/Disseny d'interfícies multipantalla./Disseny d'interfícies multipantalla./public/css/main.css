@@ -154,6 +154,10 @@ table {
   color: white;
 }
 
+@font-face {
+  font-family: "Century Gothic", "sans-serif";
+  src: url(public/fonts/century-gothic-regular.ttf) format("truetype");
+}
 .card_disseny,
 .card_solucions,
 .card_testimonis {
@@ -172,7 +176,7 @@ table {
 .card_testimonis h2 {
   padding: 10px;
   padding-bottom: 0px;
-  font-family: "ArialMT", sans-serif;
+  font-family: "Century Gothic";
   font-size: 20px;
   color: #7e7e7e;
   margin: 0 0 15px 0;
@@ -264,15 +268,6 @@ table {
   display: inline-block;
   margin-top: 0px;
 }
-.card-content .btn:hover,
-.btn:hover {
-  color: #000000;
-}
-.card-content .btn:active,
-.btn:active {
-  color: #ec8a1b;
-  opacity: 0.8;
-}
 
 .subscripcio form {
   display: -webkit-box;
@@ -332,6 +327,9 @@ table {
 .subscripcio {
   margin-left: 20px;
 }
+.subscripcio h2 {
+  font-family: "Century Gothic";
+}
 .subscripcio h3 {
   font-size: 12px;
 }
@@ -354,6 +352,9 @@ table {
 
 .text {
   font-size: 12px;
+}
+.text h2 {
+  font-family: "Century Gothic";
 }
 
 .footer {
@@ -426,6 +427,54 @@ header {
   margin-bottom: 41px;
   margin-top: 15px;
 }
+header .theme-toggle {
+  background: none;
+  border: 2px solid #ec8a1b;
+  color: #ec8a1b;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+  font-family: "ArialMT", sans-serif;
+}
+header .theme-toggle:hover {
+  background-color: #ec8a1b;
+  color: white;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.dark-mode header .theme-toggle {
+  border-color: #f3b167;
+  color: #f3b167;
+}
+.dark-mode header .theme-toggle:hover {
+  background-color: #f3b167;
+  color: #000000;
+}
+.dark-mode header .theme-toggle.dark-mode-active {
+  background-color: #f3b167;
+  color: #000000;
+}
+header .theme-toggle {
+  background-color: #e5e5e5;
+}
+.dark-mode header {
+  background-color: #1a1a1a;
+}
+.dark-mode header .navigation a {
+  color: #e0e0e0;
+}
+.dark-mode header .navigation a:hover {
+  color: #f3b167;
+}
+.dark-mode header .navigation a.active {
+  background-color: #f3b167;
+  color: #000000;
+}
 header .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -433,6 +482,7 @@ header .logo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 15px;
 }
 header .imgLogo {
   width: 290px;
@@ -447,10 +497,16 @@ header .navigation {
           align-items: center;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  header .navigation {
+    display: none;
+  }
+}
 header .navigation a {
   text-decoration: none;
   color: #666565;
   font-size: 12px;
+  font-family: "ArialMT", sans-serif;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
   position: relative;
@@ -461,7 +517,168 @@ header .navigation a:hover {
 header .navigation a.active {
   background-color: #ec8a1b;
   color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 23px;
+  padding-right: 23px;
+}
+header .hamburger {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  gap: 4px;
+  z-index: 1001;
+}
+@media (max-width: 768px) {
+  header .hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+header .hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #666565;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+header .hamburger.active span:nth-child(1) {
+  display: none;
+}
+header .hamburger.active span:nth-child(2) {
+  display: none;
+}
+header .hamburger.active span:nth-child(3) {
+  display: none;
+}
+.dark-mode header .hamburger span {
+  background-color: #e0e0e0;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  -webkit-transition: right 0.3s ease;
+  transition: right 0.3s ease;
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+}
+.mobile-menu.active {
+  right: 0;
+}
+.dark-mode .mobile-menu {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.dark-mode .mobile-menu .mobile-menu-content {
+  background-color: #2d2d2d;
+}
+.dark-mode .mobile-menu .mobile-menu-content .close-menu {
+  color: #e0e0e0;
+}
+.dark-mode .mobile-menu .mobile-menu-content .close-menu:hover {
+  color: #f3b167;
+}
+.dark-mode .mobile-menu .mobile-menu-content a {
+  color: #e0e0e0;
+  border-bottom-color: #404040;
+}
+.dark-mode .mobile-menu .mobile-menu-content a:hover, .dark-mode .mobile-menu .mobile-menu-content a.active {
+  background-color: #f3b167;
+  color: #000000;
+}
+.dark-mode .mobile-menu .mobile-menu-content .theme-toggle-mobile {
+  border-color: #f3b167;
+  color: #f3b167;
+  background-color: transparent;
+}
+.dark-mode .mobile-menu .mobile-menu-content .theme-toggle-mobile:hover {
+  background-color: #f3b167;
+  color: #000000;
+}
+.dark-mode .mobile-menu .mobile-menu-content .theme-toggle-mobile.dark-mode-active {
+  background-color: #f3b167;
+  color: #000000;
+}
+.mobile-menu .mobile-menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background-color: white;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+.mobile-menu .mobile-menu-content .close-menu {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666565;
+  margin-bottom: 15px;
+}
+.mobile-menu .mobile-menu-content .close-menu:hover {
+  color: #ec8a1b;
+}
+.mobile-menu .mobile-menu-content a {
+  text-decoration: none;
+  color: #666565;
+  font-size: 14px;
+  font-family: "ArialMT", sans-serif;
+  padding: 15px 15px;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #bcbcbc;
+}
+.mobile-menu .mobile-menu-content a:hover, .mobile-menu .mobile-menu-content a.active {
+  background-color: #ec8a1b;
+  color: white;
+}
+.mobile-menu .mobile-menu-content .theme-toggle-mobile {
+  background: none;
+  border: 2px solid #ec8a1b;
+  color: #ec8a1b;
   padding: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  font-family: "ArialMT", sans-serif;
+}
+.mobile-menu .mobile-menu-content .theme-toggle-mobile:hover {
+  background-color: #ec8a1b;
+  color: white;
 }
 
 .general {
@@ -563,6 +780,10 @@ header .navigation a.active {
 }
 .banerimg {
   width: 638px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .banner {
@@ -571,15 +792,15 @@ header .navigation a.active {
   overflow: hidden;
   margin-bottom: 40px;
   margin-right: 0px;
+  border-radius: 10px 0 0 10px;
 }
 
 .text_banner {
   height: 315px;
   background-color: white;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 0;
   margin-bottom: 15px;
-  margin-left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -590,13 +811,14 @@ header .navigation a.active {
 }
 
 .text_banner h1 {
-  font-family: "ArialMT", sans-serif;
+  font-family: "Century Gothic";
   font-size: 27px;
   color: #363d40;
   line-height: 1;
 }
 
 .text_banner h3 {
+  font-family: "Century Gothic";
   font-size: 14px;
   color: #bcbcbc;
 }
@@ -620,15 +842,109 @@ header .navigation a.active {
   padding: 10px 15px;
   border-radius: 34px;
   font-size: 12px;
-  font-weight: bold;
+  font-family: "ArialMT", sans-serif;
   cursor: pointer;
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-.canvi_color {
-  background-color: #000000;
-  margin: 0px;
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+.dark-mode body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+.dark-mode .card_disseny,
+.dark-mode .card_solucions,
+.dark-mode .card_testimonis {
+  background-color: #2d2d2d;
+  border-color: #404040;
+}
+.dark-mode .card_disseny h2,
+.dark-mode .card_solucions h2,
+.dark-mode .card_testimonis h2 {
+  color: #e0e0e0;
+}
+.dark-mode .card-content {
+  background-color: #2d2d2d;
+}
+.dark-mode .card-content h4 {
+  color: #e0e0e0;
+}
+.dark-mode .card-content p {
+  color: #e0e0e0;
+}
+.dark-mode .card-content p span {
+  color: #f3b167;
+}
+.dark-mode .text_banner {
+  background-color: #2d2d2d;
+}
+.dark-mode .text_banner h1 {
+  color: #e0e0e0;
+}
+.dark-mode .text_banner h3 {
+  color: #bcbcbc;
+}
+.dark-mode .text_banner p {
+  color: #e0e0e0;
+}
+.dark-mode .text h2 {
+  color: #e0e0e0;
+}
+.dark-mode .text p {
+  color: #e0e0e0;
+}
+.dark-mode .subscripcio h2,
+.dark-mode .subscripcio h3 {
+  color: #e0e0e0;
+}
+.dark-mode .subscripcio form input[type=email] {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+.dark-mode .subscripcio form input[type=email]::-webkit-input-placeholder {
+  color: #7e7e7e;
+}
+.dark-mode .subscripcio form input[type=email]::-moz-placeholder {
+  color: #7e7e7e;
+}
+.dark-mode .subscripcio form input[type=email]:-ms-input-placeholder {
+  color: #7e7e7e;
+}
+.dark-mode .subscripcio form input[type=email]::-ms-input-placeholder {
+  color: #7e7e7e;
+}
+.dark-mode .subscripcio form input[type=email]::placeholder {
+  color: #7e7e7e;
+}
+.dark-mode .footer {
+  background-color: #1a1a1a;
+  border-top-color: #404040;
+}
+.dark-mode .footer .navigation_footer a {
+  color: #e0e0e0;
+}
+.dark-mode .footer .navigation_footer a:hover {
+  color: #f3b167;
+}
+.dark-mode .footer .copyright {
+  color: #e0e0e0;
+}
+.dark-mode .btn {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  border: 1px solid #404040;
+}
+.dark-mode hr {
+  border-color: #404040;
+}
+
+.dark-mode .canvi_color {
+  background-color: #2d2d2d;
 }
 
 .canvi_color {

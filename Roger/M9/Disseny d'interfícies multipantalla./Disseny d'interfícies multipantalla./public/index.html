@@ -14,14 +14,34 @@
             <img src="../imatges/INFOTECH - Logo.png" alt="InfoTech Logo" class="imgLogo">
         </div>
         <nav class="navigation">
-            <a href="#home">Home</a>
+            <a href="#home" class="active">HOME</a>
             <a href="#about">About Us</a>
             <a href="#solutions">Solutions</a>
             <a href="#clients">Clients</a>
             <a href="#contact">Contact Us</a>
+            <button class="theme-toggle" id="themeToggle">🌙 Mode Fosc</button>
         </nav>
+
+
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
+    <!-- Menu mobil -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <button class="close-menu" id="closeMenu">×</button>
+            <a href="#home" class="active">HOME</a>
+            <a href="#about">About Us</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#clients">Clients</a>
+            <a href="#contact">Contact Us</a>
+            <button class="theme-toggle-mobile" id="themeToggleMobile">🌙 Mode Fosc</button>
+        </div>
+    </div>
 
     <div class="general">
         <!-- Banner Principal -->
@@ -150,6 +170,8 @@
             <p>© Copyright Your <span>Site Name. Dot Com.</span> All Right Reserved</p>
         </div>
     </footer>
+
+    <script src="indes.js"></script>
 </body>
 
 </html>
