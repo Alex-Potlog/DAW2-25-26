@@ -1,6 +1,16 @@
+@use "../abstracts/variables" as *;
+
 body {
     background-color: rgb(229, 229, 229);
     max-width: 1240px;
     padding: 42px;
     padding-top: 20px;
+}
+
+.century {
+    font-family: $century-font;
+}
+
+.arial {
+    font-family: $arial-font;
 }

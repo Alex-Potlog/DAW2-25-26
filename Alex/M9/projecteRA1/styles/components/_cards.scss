@@ -1,7 +1,3 @@
-.feature-card {
-    border: 1px solid black;
-}
-
-.feature-card:nth-child(1) {
+.feature-card:first-child {
     grid: 2 / 1 / 3 / 2;
 }
