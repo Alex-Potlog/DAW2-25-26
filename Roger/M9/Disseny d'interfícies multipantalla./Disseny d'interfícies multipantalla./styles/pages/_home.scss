@@ -4,6 +4,8 @@
 
 .banerimg {
     width: 638px;
+    object-fit: cover;
+    object-position: center;
 }
 
 
@@ -13,6 +15,7 @@
     overflow: hidden;
     margin-bottom: $spacing-lg;
     margin-right: 0px;
+    border-radius: 10px 0 0 10px; // només esquerra
 }
 
 
@@ -21,21 +24,21 @@
     height: 315px;
     background-color: $color-primary;
     padding: $spacing-md;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0; // dreta arrodonida
     margin-bottom: $spacing-md;
-    margin-left: 0px;
     display: flex;
     flex-direction: column;
 }
 
 .text_banner h1 {
-    font-family: $font-primary;
+    font-family: $font-secundary;
     font-size: $font-titul3;
     color: $titul2-color;
     line-height: 1;
 }
 
 .text_banner h3 {
+    font-family: $font-secundary;
     font-size: $font-size-intermig;
     color: $gris2;
 
@@ -60,7 +63,7 @@
     padding: $spacing-xs $spacing-md;
     border-radius: 34px;
     font-size: $font-size-base;
-    font-weight: bold;
+    font-family: $font-primary;
     cursor: pointer;
     align-self: flex-end;
 }

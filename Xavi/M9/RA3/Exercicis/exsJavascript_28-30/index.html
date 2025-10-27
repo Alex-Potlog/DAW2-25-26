@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicis JavaScript</title>
+    <style>
+        .res {
+            color: black;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .sub {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>1) Calculadora bàsica</h2>
+    <form action="">
+        <input type="text" class="op1">
+        <select name="operations" id="operations">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="^">^</option>
+        </select>
+        <input type="text" class="op2">
+        <span>=</span>
+        <input type="text" class="res" readonly>
+        <br>
+        <button onclick="calcula()" type="button">Calcula</button>
+        <input type="reset" value="Reseteja">
+    </form>
+
+    <br>
+
+    <h2>2) Introdueix una adreça d'email vàlida</h2>
+    <form action="">
+        <input type="text" class="newMail">
+        <br><br>
+        <span>Longitud substring usuari = </span><span class="lonUs"></span>
+        <br><br>
+        <span>Tipus TLD = </span><span class="tld"></span>
+        <br><br>
+        <span>Email amb nou domini = </span><span class="domTho"></span>
+        <br>
+        <button onclick="executa()" type="button">Executa</button>
+        <input type="reset" value="Reseteja">
+    </form>
+
+    <br>
+
+    <h2>3) Filtrar emails</h2>
+
+    <span class="sub">Emails gmail.com:</span>
+    <ul class="gmail">
+
+    </ul>
+
+    <span class="sub">Emails TLD .es:</span>
+    <ul class="es">
+
+    </ul>
+
+    <button onclick="filtra()" type="button">Filtra</button>
+    <button onclick="reset()" type="button">Reseteja</button>
+
+    <br>
+
+    <h2>4) Extreure subdominis</h2>
+
+    <ul class="subDo">
+
+    </ul>
+
+    <br>
+
+    <h2>5) Mostrar data i hora</h2>
+
+    <span class="fecha"></span>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

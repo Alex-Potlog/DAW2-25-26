@@ -2,16 +2,74 @@
 
 header {
     display: flex;
-    justify-content: space-between; //Per posar un espai entre el logo i elements del menu
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: $background-color;
     margin-bottom: 41px;
     margin-top: $spacing-md;
 
+    .theme-toggle {
+        background: none;
+        border: 2px solid $taronja;
+        color: $taronja;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: $font-size-base;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        margin-left: $spacing-md;
+        font-family: $font-primary;
+
+        &:hover {
+            background-color: $taronja;
+            color: $color-primary;
+            transform: scale(1.05);
+        }
+
+        // Mode fosc
+        .dark-mode & {
+            border-color: $color-secundary;
+            color: $color-secundary;
+
+            &:hover {
+                background-color: $color-secundary;
+                color: $dark;
+            }
+
+            &.dark-mode-active {
+                background-color: $color-secundary;
+                color: $dark;
+            }
+        }
+    }
+
+    .theme-toggle {
+        background-color: $background-color;
+    }
+
+    .dark-mode & {
+        background-color: $dark-bg;
+
+        .navigation a {
+            color: $dark-text;
+
+            &:hover {
+                color: $color-secundary;
+            }
+
+            &.active {
+                background-color: $color-secundary;
+                color: $dark;
+            }
+        }
+    }
+
     .logo {
         display: flex;
         align-items: center;
+        margin-right: $spacing-sm;
     }
 
     .imgLogo {
@@ -24,14 +82,19 @@ header {
         align-items: center;
         gap: 30px;
 
+        // AMAGAR NAVEGACIÓ EN MÒBIL
+        @media (max-width: $breakpoint-md) {
+            display: none;
+        }
+
         a {
             text-decoration: none;
             color: $negre2;
             font-size: $font-size-base;
+            font-family: $font-primary;
             transition: color 0.3s ease;
-            position: relative; // Per a la línia inferior
+            position: relative;
 
-            // Estat hover
             &:hover {
                 color: $taronja;
             }
@@ -39,8 +102,183 @@ header {
             &.active {
                 background-color: $taronja;
                 color: $color-primary;
-                padding: $spacing-md;
+                padding-top: $spacing-sm;
+                padding-bottom: $spacing-sm;
+                padding-left: 23px;
+                padding-right: 23px;
+            }
+        }
+    }
 
+    // Botó hamburguesa (mòbil)
+    .hamburger {
+        display: none; // Amagat per defecte
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: $spacing-xs;
+        gap: 4px;
+        z-index: 1001;
+
+        // MOSTRAR HAMBURGUESA EN MÒBIL
+        @media (max-width: $breakpoint-md) {
+            display: flex;
+        }
+
+        span {
+            width: 25px;
+            height: 3px;
+            background-color: $negre2;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        //per ocultar les linies de el menu
+        &.active span:nth-child(1) {
+            display: none;
+        }
+
+        &.active span:nth-child(2) {
+            display: none;
+        }
+
+        &.active span:nth-child(3) {
+            display: none;
+        }
+
+        .dark-mode & span {
+            background-color: $dark-text;
+        }
+    }
+}
+
+// Menú mòbil 
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($dark, 0.8);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: none;
+
+    // MOSTRAR MENÚ MÒBIL EN MÒBIL
+    @media (max-width: $breakpoint-md) {
+        display: block;
+    }
+
+    &.active {
+        right: 0;
+    }
+
+    // Mode fosc per al menú mòbil
+    .dark-mode & {
+        background-color: rgba($dark, 0.9); // Fons una mica més fosc per a millor contrast
+
+        .mobile-menu-content {
+            background-color: $dark-card-bg;
+
+            .close-menu {
+                color: $dark-text;
+
+                &:hover {
+                    color: $color-secundary;
+                }
+            }
+
+            a {
+                color: $dark-text;
+                border-bottom-color: $dark-border;
+
+                &:hover,
+                &.active {
+                    background-color: $color-secundary;
+                    color: $dark;
+                }
+            }
+
+            .theme-toggle-mobile {
+                border-color: $color-secundary;
+                color: $color-secundary;
+                background-color: transparent;
+
+                &:hover {
+                    background-color: $color-secundary;
+                    color: $dark;
+                }
+
+                // Mode fosc actiu en el botó mòbil
+                &.dark-mode-active {
+                    background-color: $color-secundary;
+                    color: $dark;
+                }
+            }
+        }
+    }
+
+    .mobile-menu-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80%;
+        max-width: 300px;
+        height: 100%;
+        background-color: $color-primary;
+        padding: $spacing-lg;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-sm;
+
+        .close-menu {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: $negre2;
+            margin-bottom: $spacing-md;
+
+            &:hover {
+                color: $taronja;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $negre2;
+            font-size: $font-size-intermig;
+            font-family: $font-primary;
+            padding: $spacing-sm $spacing-md;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid $gris2;
+
+            &:hover,
+            &.active {
+                background-color: $taronja;
+                color: $color-primary;
+            }
+        }
+
+        .theme-toggle-mobile {
+            background: none;
+            border: 2px solid $taronja;
+            color: $taronja;
+            padding: $spacing-sm;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: $font-size-base;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: $spacing-md;
+            font-family: $font-primary;
+
+            &:hover {
+                background-color: $taronja;
+                color: $color-primary;
             }
         }
     }

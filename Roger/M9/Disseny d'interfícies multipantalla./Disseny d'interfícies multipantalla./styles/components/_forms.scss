@@ -42,6 +42,10 @@
 .subscripcio {
     margin-left: 20px;
 
+    h2 {
+        font-family: $font-secundary;
+    }
+
     h3 {
         font-size: $font-size-base;
     }
@@ -61,4 +65,8 @@
 
 .text {
     font-size: $font-size-base;
+
+    h2 {
+        font-family: $font-secundary;
+    }
 }
