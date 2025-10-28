@@ -5,6 +5,12 @@ body {
     max-width: 1240px;
     padding: 42px;
     padding-top: 20px;
+    box-sizing: content-box;
+}
+
+.bold {
+    font-weight: bold;
+    color: black;
 }
 
 .century {
@@ -13,4 +19,8 @@ body {
 
 .arial {
     font-family: $arial-font;
+}
+
+.text-standart-color {
+    color: $text-color-standart;
 }

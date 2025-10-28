@@ -1,34 +1,29 @@
 @use "../abstracts/variables" as *;
 
 .header {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: left;
-    padding: 34px;
-    height: 24px;
-    font-family: $arial-font;
-}
-
-.header button {
-    background-color: #f0a54f;
-    height: 24px;
-}
-
-.header ul li {
-    margin-right: 20px;
-    font-size: 12px;
-}
-
-.navbar {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 0;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 29px;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 10px;
+#header-nav {
+    .container {
+        display: flex;
+        gap: 15px;
+
+        li {
+            &:first-child button {
+                background: #f0a54f;
+                border: none;
+                padding: 5px 15px;
+                border-radius: 3px;
+
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
 }

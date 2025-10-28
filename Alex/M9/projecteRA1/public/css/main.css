@@ -12,6 +12,13 @@ body {
   max-width: 1240px;
   padding: 42px;
   padding-top: 20px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.bold {
+  font-weight: bold;
+  color: black;
 }
 
 .century {
@@ -20,6 +27,34 @@ body {
 
 .arial {
   font-family: "ArialMT", sans-serif;
+}
+
+.text-standart-color {
+  color: #9a9b9c;
+}
+
+.subscribe form {
+  margin-bottom: 20px;
+}
+.subscribe form input[type=email] {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-top: 10px;
+}
+.subscribe button {
+  background: #f0a54f;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+.subscribe .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 nav ul {
@@ -60,47 +95,73 @@ nav a:hover {
   display: flex;
 }
 
+.feature-card {
+  background-color: white;
+  border-radius: 5px;
+  height: 180px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.feature-card .card-header {
+  background: #ebebeb;
+  padding: 10px 15px;
+  font-size: 18px;
+}
+.feature-card .feature-content {
+  padding: 15px;
+  padding-top: 20px;
+  font-size: 12px;
+}
+.feature-card .feature-content div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+.feature-card .feature-content div img {
+  width: 48px;
+  height: 48px;
+}
+.feature-card .read-more-link {
+  display: block;
+  text-align: right;
+  padding: 10px 15px;
+  color: #f0a54f;
+  text-decoration: none;
+}
+
 .feature-card:first-child {
   grid: 2/1/3/2;
 }
 
 .header {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  padding: 34px;
-  height: 24px;
-  font-family: "ArialMT", sans-serif;
-}
-
-.header button {
-  background-color: #f0a54f;
-  height: 24px;
-}
-
-.header ul li {
-  margin-right: 20px;
-  font-size: 12px;
-}
-
-.navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding-right: 0;
-  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+  font-size: 29px;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #2c3e50;
-  margin-bottom: 10px;
+#header-nav .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+#header-nav .container li:first-child button {
+  background: #f0a54f;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+#header-nav .container li:first-child button a {
+  color: white;
 }
 
 .footer {

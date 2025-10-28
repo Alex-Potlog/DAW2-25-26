@@ -1,1 +1,26 @@
-// This file is intentionally left blank.
+.subscribe {
+    form {
+        margin-bottom: 20px;
+
+        input[type="email"] {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+    }
+
+    button {
+        background: #f0a54f;
+        color: white;
+        border: none;
+        border-radius: 3px;
+    }
+
+    .social {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+}
