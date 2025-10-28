@@ -11,17 +11,16 @@
 <body>
     <form action="#" method="post">
         <input type="text" name="primer_num" id="prim_num">
-        <select name="operacions" id="operants" onforminput="calcula(this.value)">
-            <option value="">#</option>
+        <select name="operacions" id="operants" onforminput="calcula(this.value)" required>
             <option value="+">+</option>
             <option value="-">-</option>
             <option value="*">*</option>
             <option value="/">/</option>
-            <option value="+">+</option>
+            <option value="^">^</option>
         </select>
         <input type="text" name="segon_num" id="segon_num">
         =
-
+        <input type="text" name="resultat" disabled>
     </form>
 
 
