@@ -118,3 +118,85 @@
 .dark-mode .canvi_color {
     background-color: $dark-card-bg;
 }
+
+
+// ===== DARK MODE PER A CONTACTE =====
+.dark-mode {
+    .contact-section {
+        background-color: $dark-bg;
+
+        h1 {
+            color: $dark-text;
+        }
+
+        .contact-title {
+            color: $color-secundary;
+        }
+
+        .contact-main {
+            p {
+                color: $dark-text;
+            }
+
+            .contact-form {
+                .form-group {
+                    label {
+                        color: $dark-text;
+                    }
+
+                    input[type="text"],
+                    input[type="email"],
+                    textarea {
+                        background-color: $dark-card-bg;
+                        border-color: $dark-border;
+                        color: $dark-text;
+
+                        &:focus {
+                            border-color: $color-secundary;
+                            background-color: $dark-bg;
+                            box-shadow: 0 0 0 2px rgba($color-secundary, 0.2);
+                        }
+
+                        &::placeholder {
+                            color: $gris3;
+                        }
+                    }
+                }
+
+                .submit-btn {
+                    background-color: $color-secundary;
+                    color: $dark;
+
+                    &:hover {
+                        background-color: lighten($color-secundary, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-sidebar {
+        h3 {
+            color: $color-secundary;
+        }
+
+        .contact-info {
+            li {
+                color: $dark-text;
+
+                &::before {
+                    color: $color-secundary;
+                }
+            }
+        }
+
+        .testimonial {
+            color: $dark-text;
+        }
+
+        .testimonial-author {
+            color: $color-secundary;
+            font-weight: bold;
+        }
+    }
+}

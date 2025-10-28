@@ -16,7 +16,7 @@ html {
 
 body {
     margin: auto;
-    max-width: 1240px;
+    max-width: $breakpoint-xl;
     font-family: $font-primary;
     line-height: $line-height-base;
     color: $text-color;
