@@ -1,0 +1,163 @@
+@use "../abstracts/variables" as *;
+
+.contact-section {
+    background-color: $color-primary;
+    padding: 15px;
+
+    h1 {
+        font-family: $font-secundary;
+        font-size: $font-titul2;
+    }
+
+    .contact-title {
+        color: $taronja;
+    }
+
+    .contact-main {
+        p {
+            font-size: $font-size-base;
+            font-family: $font-primary;
+            color: $gris4;
+        }
+
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+
+            .form-group {
+                display: flex; // ← AFEGIT
+                align-items: center; // ← AFEGIT
+                margin-bottom: 20px;
+
+                label {
+                    // display: block; ← ELIMINAT
+                    flex: 0 0 150px; // ← Amplada fixa
+                    color: $gris4;
+                    text-align: left;
+                    font-family: $font-primary;
+                    font-size: $font-size-base;
+                    font-weight: bold;
+                    margin-right: 10px; // ← Marge de 10px a la dreta
+                }
+
+                input[type="text"],
+                input[type="email"],
+                textarea {
+                    // display: inline-block; ← ELIMINAT
+                    // width: calc(100% - 160px); ← ELIMINAT
+                    flex: 1; // ← Ocupa l'espai restant
+                    padding: 12px 15px;
+                    background-color: $gris7;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-family: $font-primary;
+                    font-size: $font-size-base;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #ec8a1b;
+                        background-color: #ffffff;
+                        box-shadow: 0 0 0 2px rgba(236, 138, 27, 0.1);
+                    }
+
+                    &::placeholder {
+                        color: #9a9b9c;
+                    }
+                }
+
+                textarea {
+                    resize: vertical;
+                    min-height: 120px;
+                    align-self: flex-start; // ← Per textarea s'alineï a dalt
+                }
+            }
+
+            .submit-btn {
+                background-color: $grisboto;
+                color: $gris6;
+                border: none;
+                padding: $spacing-xs $spacing-lg;
+                border-radius: 34px;
+                font-size: $font-size-base;
+                cursor: pointer;
+                font-weight: $font-size-base;
+                align-self: flex-start;
+                margin-left: 160px; // ← 150px label + 10px margin
+
+                &:hover {
+                    background-color: #d97c15;
+                    transform: translateY(-2px);
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+            }
+        }
+
+    }
+
+}
+
+.contact-sidebar {
+    margin-top: 19px;
+    padding: 8px;
+
+    h3 {
+        font-size: $font-titul;
+        color: $taronja;
+        font-family: $font-secundary;
+    }
+
+    .contact-info {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            position: relative;
+            margin-top: $spacing-xs;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-family: $font-primary;
+            font-size: $font-size-base;
+            color: $negre2;
+            line-height: 1.4;
+
+            // Punt personalitzat
+            &::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                color: #ec8a1b;
+                font-size: 20px;
+                line-height: 1;
+            }
+        }
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 29px;
+        margin-top: $spacing-sm;
+        justify-content: left;
+        align-items: center;
+
+        img {
+            display: block; // Evita espais addicionals
+        }
+    }
+
+    .testimonial {
+        font-size: $font-size-base;
+        color: $gris4;
+        font-family: $font-primary;
+    }
+
+    .testimonial-author {
+        font-size: $font-size-base;
+        color: $negre2;
+        font-family: $font-primary;
+        font-weight: bold;
+    }
+}
