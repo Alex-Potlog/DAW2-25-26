@@ -1,0 +1,74 @@
+.light-mode {
+    background-color: rgb(229, 229, 229);
+
+    body {
+        background-color: rgb(229, 229, 229);
+    }
+
+    // Card and section backgrounds
+    .hero,
+    .feature-card {
+        background-color: white;
+    }
+
+    .card-header {
+        background-color: #ebebeb;
+        color: #333;
+    }
+
+    // Text colors
+    color: #333;
+
+    .bold {
+        color: black;
+    }
+
+    .text-standart-color,
+    .grey-text,
+    .hero-text {
+        color: #9a9b9c;
+    }
+
+    // Navigation
+    nav a {
+        color: #333;
+    }
+
+    #header-nav .container li:first-child button {
+        background: #f0a54f;
+    }
+
+    #header-nav .container li:first-child button a {
+        color: white;
+    }
+
+    // Form elements
+    input[type="email"] {
+        background-color: white;
+        color: #333;
+        border-color: #ddd;
+    }
+
+    .subscribe button {
+        background: #f0a54f;
+        color: white;
+    }
+
+    // Links
+    a {
+        color: #333;
+    }
+
+    .read-more-link {
+        color: #f0a54f;
+    }
+
+    // Orange text
+    .orange {
+        color: #f1a958;
+    }
+
+    hr {
+        border-color: #e0e1e1;
+    }
+}

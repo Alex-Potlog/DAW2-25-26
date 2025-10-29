@@ -14,19 +14,15 @@ nav a {
     color: #333;
     font-weight: 500;
     transition: color 0.3s;
+    padding: 5px 10px;
 }
 
 nav a:hover {
-    color: #3498db;
+    background-color: orange;
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
 .container {
     width: 90%;
-}
-
-#header-nav {
-    justify-content: flex-end;
-    width: 100%;
-    padding-right: 50px;
-    display: flex;
 }

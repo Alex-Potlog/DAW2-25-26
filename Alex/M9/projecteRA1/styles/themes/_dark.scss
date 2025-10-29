@@ -1,1 +1,101 @@
-// This file is intentionally left blank.
+.dark-mode {
+    background-color: #1a1a1a;
+
+    body {
+        background-color: #1a1a1a;
+    }
+
+    // Card and section backgrounds
+    .hero,
+    .feature-card {
+        background-color: #2d2d2d;
+    }
+
+    .card-header {
+        background-color: #3a3a3a;
+        color: #e0e0e0;
+    }
+
+    // Text colors
+    color: #e0e0e0;
+
+    .bold,
+    h1,
+    h2,
+    h3 {
+        color: #ffffff;
+    }
+
+    .text-standart-color,
+    .grey-text,
+    .hero-text {
+        color: #b0b0b0;
+    }
+
+    // Navigation
+    nav a {
+        color: #e0e0e0;
+    }
+
+    #header-nav .container li:first-child button {
+        background: #f0a54f;
+    }
+
+    #header-nav .container li:first-child button a {
+        color: white;
+    }
+
+    // Form elements
+    input[type="email"] {
+        background-color: #3a3a3a;
+        color: #e0e0e0;
+        border-color: #4a4a4a;
+    }
+
+    .subscribe button {
+        background: #f0a54f;
+        color: white;
+    }
+
+    // Links
+    a {
+        color: #5dade2;
+    }
+
+    .read-more-link {
+        color: #f0a54f;
+    }
+
+    // Orange text stays the same
+    .orange {
+        color: #f1a958;
+    }
+
+    // Footer
+    footer {
+        color: #b0b0b0;
+    }
+
+    hr {
+        border-color: #4a4a4a;
+    }
+
+    #theme {
+        border-color: #f0a54f;
+        color: #f0a54f;
+        background: transparent;
+    }
+
+    #theme:hover {
+        background: #f0a54f;
+        color: white;
+    }
+
+    .footer-nav a {
+        color: #b0b0b0;
+    }
+
+    .copyright {
+        color: #b0b0b0;
+    }
+}

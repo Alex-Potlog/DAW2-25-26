@@ -7,6 +7,10 @@
   font-family: "Century Gothic";
   src: url(../fonts/centurygothic.ttf) format("truetype");
 }
+html {
+  margin: auto 0;
+}
+
 body {
   background-color: rgb(229, 229, 229);
   max-width: 1240px;
@@ -14,6 +18,8 @@ body {
   padding-top: 20px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  margin: 0 auto;
+  justify-items: center;
 }
 
 .bold {
@@ -74,38 +80,34 @@ nav a {
   font-weight: 500;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+  padding: 5px 10px;
 }
 
 nav a:hover {
-  color: #3498db;
+  background-color: orange;
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 .container {
   width: 90%;
 }
 
-#header-nav {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  width: 100%;
-  padding-right: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .feature-card {
   background-color: white;
-  border-radius: 5px;
-  height: 180px;
+  height: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
 .feature-card .card-header {
   background: #ebebeb;
   padding: 10px 15px;
+  margin: 2px;
   font-size: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .feature-card .feature-content {
   padding: 15px;
@@ -141,11 +143,28 @@ nav a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+  padding: 20px 0;
+  font-size: 29px;
+  width: 100%;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+#header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 0;
-  font-size: 29px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 #header-nav .container {
@@ -153,30 +172,80 @@ nav a:hover {
   display: -ms-flexbox;
   display: flex;
   gap: 15px;
-}
-#header-nav .container li:first-child button {
-  background: #f0a54f;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 3px;
-}
-#header-nav .container li:first-child button a {
-  color: white;
-}
-
-.footer {
-  display: inline-block;
-  grid-template-columns: repeat(2, 1fr);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#header-nav .container li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#theme {
+  background: transparent;
+  border: 1px solid #f0a54f;
+  color: #f0a54f;
+  padding: 5px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font: 400 12px "Arial MT", sans-serif;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#theme:hover {
+  background: #f0a54f;
+  color: white;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
+  padding-top: 10px;
+}
+
+.footer-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0 5px;
+}
+
+.copyright {
+  font-size: 12px;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .grid {
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto auto auto auto; /* Cambia de repeat(4, 1fr) a auto */
   grid-template-columns: repeat(3, 1fr);
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
@@ -265,4 +334,133 @@ hr {
 
 .mida12 {
   font-size: 12px;
+}
+
+.light-mode {
+  background-color: rgb(229, 229, 229);
+  color: #333;
+}
+.light-mode body {
+  background-color: rgb(229, 229, 229);
+}
+.light-mode .hero,
+.light-mode .feature-card {
+  background-color: white;
+}
+.light-mode .card-header {
+  background-color: #ebebeb;
+  color: #333;
+}
+.light-mode .bold {
+  color: black;
+}
+.light-mode .text-standart-color,
+.light-mode .grey-text,
+.light-mode .hero-text {
+  color: #9a9b9c;
+}
+.light-mode nav a {
+  color: #333;
+}
+.light-mode #header-nav .container li:first-child button {
+  background: #f0a54f;
+}
+.light-mode #header-nav .container li:first-child button a {
+  color: white;
+}
+.light-mode input[type=email] {
+  background-color: white;
+  color: #333;
+  border-color: #ddd;
+}
+.light-mode .subscribe button {
+  background: #f0a54f;
+  color: white;
+}
+.light-mode a {
+  color: #333;
+}
+.light-mode .read-more-link {
+  color: #f0a54f;
+}
+.light-mode .orange {
+  color: #f1a958;
+}
+.light-mode hr {
+  border-color: #e0e1e1;
+}
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+.dark-mode body {
+  background-color: #1a1a1a;
+}
+.dark-mode .hero,
+.dark-mode .feature-card {
+  background-color: #2d2d2d;
+}
+.dark-mode .card-header {
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+}
+.dark-mode .bold,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+  color: #ffffff;
+}
+.dark-mode .text-standart-color,
+.dark-mode .grey-text,
+.dark-mode .hero-text {
+  color: #b0b0b0;
+}
+.dark-mode nav a {
+  color: #e0e0e0;
+}
+.dark-mode #header-nav .container li:first-child button {
+  background: #f0a54f;
+}
+.dark-mode #header-nav .container li:first-child button a {
+  color: white;
+}
+.dark-mode input[type=email] {
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  border-color: #4a4a4a;
+}
+.dark-mode .subscribe button {
+  background: #f0a54f;
+  color: white;
+}
+.dark-mode a {
+  color: #5dade2;
+}
+.dark-mode .read-more-link {
+  color: #f0a54f;
+}
+.dark-mode .orange {
+  color: #f1a958;
+}
+.dark-mode footer {
+  color: #b0b0b0;
+}
+.dark-mode hr {
+  border-color: #4a4a4a;
+}
+.dark-mode #theme {
+  border-color: #f0a54f;
+  color: #f0a54f;
+  background: transparent;
+}
+.dark-mode #theme:hover {
+  background: #f0a54f;
+  color: white;
+}
+.dark-mode .footer-nav a {
+  color: #b0b0b0;
+}
+.dark-mode .copyright {
+  color: #b0b0b0;
 }/*# sourceMappingURL=main.css.map */

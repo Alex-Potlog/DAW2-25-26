@@ -1,13 +1,17 @@
 .feature-card {
     background-color: white;
-    border-radius: 5px;
-    height: 180px;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     box-sizing: content-box;
 
     .card-header {
         background: #ebebeb;
         padding: 10px 15px;
+        margin: 2px;
         font-size: 18px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
     .feature-content {

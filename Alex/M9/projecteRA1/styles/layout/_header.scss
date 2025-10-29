@@ -1,29 +1,47 @@
-@use "../abstracts/variables" as *;
-
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: right;
     padding: 20px 0;
     font-size: 29px;
+    width: 100%;
+}
+
+.header h1 {
+    margin: 0;
 }
 
 #header-nav {
-    .container {
-        display: flex;
-        gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
-        li {
-            &:first-child button {
-                background: #f0a54f;
-                border: none;
-                padding: 5px 15px;
-                border-radius: 3px;
+#header-nav .container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
-                a {
-                    color: white;
-                }
-            }
-        }
-    }
+#header-nav .container li {
+    display: flex;
+    align-items: center;
+}
+
+#theme {
+    background: transparent;
+    border: 1px solid #f0a54f;
+    color: #f0a54f;
+    padding: 5px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#theme:hover {
+    background: #f0a54f;
+    color: white;
 }

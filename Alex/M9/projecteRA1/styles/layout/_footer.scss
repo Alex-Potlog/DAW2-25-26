@@ -1,7 +1,26 @@
-.footer {
-    display: inline-block;
-    grid-template-columns: repeat(2, 1fr);
+footer {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
     width: 100%;
+    padding-top: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0 5px;
+}
+
+.copyright {
+    font-size: 12px;
+    margin: 0;
+    white-space: nowrap;
 }
