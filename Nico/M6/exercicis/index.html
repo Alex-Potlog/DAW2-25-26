@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Acceso a scripts de subcarpetas</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            max-width: 900px;
+            margin: 32px auto;
+            padding: 0 16px;
+            color: #111
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            margin-bottom: 8px
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            color: #444
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px
+        }
+
+        .card {
+            border: 1px solid #e3e3e3;
+            padding: 12px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, .02)
+        }
+
+        .name {
+            font-weight: 600;
+            margin-bottom: 8px
+        }
+
+        .btns {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        button {
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #cfcfcf;
+            background: #f7f7f7;
+            cursor: pointer
+        }
+
+        button.primary {
+            background: #0366d6;
+            color: #fff;
+            border-color: #0356b6
+        }
+
+        a.file {
+            display: inline-block;
+            padding: 8px 10px;
+            border-radius: 6px;
+            background: #fff;
+            border: 1px solid #cfcfcf;
+            text-decoration: none;
+            color: inherit
+        }
+
+        .status {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666
+        }
+
+        .loaded {
+            color: green;
+            font-weight: 600
+        }
+
+        .error {
+            color: #b01;
+            font-weight: 600
+        }
+
+        small.hint {
+            display: block;
+            margin-top: 8px;
+            color: #888
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Botones para scripts en subcarpetas</h1>
+    <p>Cambia la lista "scripts" abajo para apuntar a las rutas reales de tus subcarpetas. Cada entrada muestra un botón
+        para cargar dinámicamente el script y un enlace para abrir el archivo.</p>
+
+    <div id="list" class="grid" aria-live="polite"></div>
+
+    <p class="status" id="globalStatus"></p>
+
+    <script>
+        /**
+         * Edita este array con las rutas reales de tus scripts en las subcarpetas.
+         * Por ejemplo: { name: 'Ejercicio 1', path: './ej1/main.js' }
+         */
+        const scripts = [
+            { name: 'Ejercicios 1-8', path: './1-8/script.js' },
+            { name: 'Ejercicios 9-13', path: './9-13/script.js' },
+            { name: 'Ejercicios 14-16', path: './14-16/script.js' },
+            { name: 'Ejercicios 18-24', path: './18-24/script.js' },
+            { name: 'Ejercicios 25-27', path: './25-27/script.js' },
+            { name: 'Ejercicios 28-30', path: './28-30/script.js' },
+            { name: 'Ejercicio 31', path: './31/script.js' },
+            { name: 'Ejercicios prueba', path: './proves/script.js' }
+
+
+        ];
+
+        const container = document.getElementById('list');
+        const globalStatus = document.getElementById('globalStatus');
+        const loaded = new Set();
+
+        function createCard(item) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const name = document.createElement('div');
+            name.className = 'name';
+            name.textContent = item.name || item.path;
+            card.appendChild(name);
+
+            const hint = document.createElement('small');
+            hint.className = 'hint';
+            hint.textContent = item.path;
+            card.appendChild(hint);
+
+            const btns = document.createElement('div');
+            btns.className = 'btns';
+
+            const loadBtn = document.createElement('button');
+            loadBtn.textContent = 'Cargar script';
+            loadBtn.onclick = () => loadScript(item.path, item);
+
+            const openLink = document.createElement('a');
+            openLink.className = 'file';
+            openLink.textContent = 'Abrir archivo';
+            openLink.href = item.path;
+            openLink.target = '_blank';
+            openLink.rel = 'noopener';
+
+            btns.appendChild(loadBtn);
+            btns.appendChild(openLink);
+            card.appendChild(btns);
+
+            const status = document.createElement('div');
+            status.className = 'status';
+            status.textContent = '';
+            card.appendChild(status);
+
+            return { card, status, loadBtn };
+        }
+
+        function loadScript(path, item) {
+            const exists = loaded.has(path);
+            const { card, status, loadBtn } = (() => {
+                // find card to update UI
+                for (const child of container.children) {
+                    if (child.querySelector('.hint')?.textContent === path) {
+                        return { card: child, status: child.querySelector('.status'), loadBtn: child.querySelector('button') };
+                    }
+                }
+                return {};
+            })();
+
+            if (exists) {
+                status.textContent = 'Ya cargado';
+                status.className = 'status loaded';
+                return;
+            }
+
+            status.textContent = 'Cargando...';
+            status.className = 'status';
+
+            const script = document.createElement('script');
+            script.src = path;
+            script.async = true;
+
+            script.onload = () => {
+                loaded.add(path);
+                status.textContent = 'Cargado';
+                status.className = 'status loaded';
+                if (loadBtn) loadBtn.disabled = true;
+                updateGlobalStatus();
+            };
+            script.onerror = () => {
+                status.textContent = 'Error al cargar';
+                status.className = 'status error';
+                updateGlobalStatus();
+            };
+
+            document.body.appendChild(script);
+        }
+
+        function updateGlobalStatus() {
+            if (loaded.size === 0) {
+                globalStatus.textContent = 'Ningún script cargado.';
+            } else {
+                globalStatus.textContent = `${loaded.size} script(s) cargado(s).`;
+            }
+        }
+
+        // Render UI
+        if (scripts.length === 0) {
+            container.innerHTML = '<div class="card">No hay scripts configurados. Edita el array <code>scripts</code> en este archivo.</div>';
+        } else {
+            scripts.forEach(item => {
+                const { card } = createCard(item);
+                container.appendChild(card);
+            });
+        }
+        updateGlobalStatus();
+    </script>
+</body>
+
+</html>

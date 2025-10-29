@@ -5,3 +5,65 @@
   font-weight: normal;
   font-style: normal;
 }
+
+
+//Icon fonts de Fontello (para que no sea una imagen)
+@font-face {
+  font-family: "fontello";
+  src: url('../../public/fonts/fontello.ttf') format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+
+  font-size: 120%;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-facebook:before {
+  content: '\f30e';
+  color: #0000ff;
+}
+
+/* '' */
+.icon-twitter:before {
+  content: '\f314';
+  color: #00ffff;
+}
+
+/* '' */
+.icon-linkedin:before {
+  content: '\f31b';
+  color: #0000ff;
+}
+
+/* '' */
