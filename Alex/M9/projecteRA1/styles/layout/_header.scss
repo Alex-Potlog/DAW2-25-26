@@ -41,7 +41,8 @@
     transition: all 0.3s;
 }
 
-#theme:hover {
-    background: #f0a54f;
-    color: white;
+.pagina-actual {
+    background-color: orange;
+    border: 1px solid black;
+    border-radius: 3px;
 }

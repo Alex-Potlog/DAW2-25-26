@@ -5,7 +5,6 @@
         background-color: #1a1a1a;
     }
 
-    // Card and section backgrounds
     .hero,
     .feature-card {
         background-color: #2d2d2d;
@@ -16,7 +15,6 @@
         color: #e0e0e0;
     }
 
-    // Text colors
     color: #e0e0e0;
 
     .bold,
@@ -45,19 +43,12 @@
         color: white;
     }
 
-    // Form elements
     input[type="email"] {
         background-color: #3a3a3a;
         color: #e0e0e0;
         border-color: #4a4a4a;
     }
 
-    .subscribe button {
-        background: #f0a54f;
-        color: white;
-    }
-
-    // Links
     a {
         color: #5dade2;
     }
@@ -66,12 +57,10 @@
         color: #f0a54f;
     }
 
-    // Orange text stays the same
     .orange {
         color: #f1a958;
     }
 
-    // Footer
     footer {
         color: #b0b0b0;
     }
@@ -84,11 +73,6 @@
         border-color: #f0a54f;
         color: #f0a54f;
         background: transparent;
-    }
-
-    #theme:hover {
-        background: #f0a54f;
-        color: white;
     }
 
     .footer-nav a {
