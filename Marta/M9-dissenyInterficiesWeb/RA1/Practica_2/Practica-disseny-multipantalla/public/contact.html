@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/theme.js" defer></script>
+    <link rel="shortcut icon" href="resourses/tech-support.png" type="image/x-icon">
+    <!-- Per a posar una imatge a la barra de tasques del navegador-->
+    <title>Contact Us</title>
+</head>
+
+<body>
+    <div id="container">
+        <header id="principal">
+            <h1 id="infoLogo">INF<span>O</span>TECH</h1>
+            <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false"
+                aria-controls="navbar">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                    fill="#c9c9c9">
+                    <path
+                        d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z">
+                    </path>
+                </svg>
+            </button>
+            <button id="theme-switch">
+                <img src="resourses/moon.png" class="to_dark_mode" />
+                <img src="resourses/sun.png" class="to_light_mode" />
+            </button>
+            <nav id="navbar" class="menuHeader">
+                <ul>
+                    <li>
+                        <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#c9c9c9">
+                                <path
+                                    d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </li>
+                    <li><a href="index.html" class="opt">Home</a></li>
+                    <li><a href="#aboutUs" class="opt">About us</a></li>
+                    <li><a href="#solution" class="opt">Solutions</a></li>
+                    <li><a href="clients.html" class="opt">Clients</a></li>
+                    <li class="actual"><a href="contact.html" class="opt">Contact us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="gridContact">
+            <div class="contactEs">
+                <h1 class="h1Testi">Contact <span class="us">Us</span></h1>
+                <p class="loremContact">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar nisi eu
+                    enim
+                    facilisis dapibus.
+                    Duis viverra turpis vitae dui tincidunt eleifend. Etiam sodales, neque in dignissim dictum, dui
+                    libero dictum orci, vel cursus felis velit vitae dui.</p>
+                <form class="contact">
+                    <label for="inputName" class="inputN">Name</label>
+                    <input type="text" class="input" id="inputName"></input><br>
+                    <label for="inputId" class="inputI">Email - id</label>
+                    <input type="text" class="input" id="inputId"></input><br>
+                    <label for="inputCompany" class="inputC">Company Name</label>
+                    <input type="text" class="input" id="inputCompany"></input><br>
+                    <label for="inputSubject" class="inputS">Subject</label>
+                    <input type="text" class="input" id="inputSubject"></input><br>
+                    <label for="inputMessage" class="inputM">Message</label>
+                    <textarea type="textarea" class="input" class="textArea" id="inputMessage"></textarea><br>
+                    <button type="submit" class="contactSub" id="contactSubmit">Submit</button>
+                </form>
+            </div>
+            <div class="contactDr">
+                <article>
+                    <h1 class="h1Testi">Get in Touch</h1>
+                    <ul class="ulContact">
+                        <li><span>9839 Lorem Ipsum</span></li>
+                        <li><span>India, Bangalore</span></li>
+                        <li><span>Asia, India</span></li>
+                        <li><span>Telephone: +91 - 1234567890</span></li>
+                        <li><span>Email: contact@design3edge.com</span></li>
+                    </ul>
+                </article>
+                <article>
+                    <h1 class="h1Testi"> Follow Us</h1>
+                    <img class="imageF" src="resourses/Twitter.png" alt="Logo twitter" />
+                    <img class="imageF" src="resourses/Facebook.png" alt="Logo de facebook" />
+                    <img class="imageF" src="resourses/LinkedIn.png" alt="Logo de Linkedin" />
+                </article>
+                <article>
+                    <h1 class="h1Testi">Testimonial</h1>
+                    <p class="pTesti">Talk to us if you are looking for business savvy online solutions rather than
+                        possibilities of
+                        technology.</p><br>
+                    <p class="blodTesti">- Design3edge.com</p>
+                </article>
+            </div>
+        </section>
+        <section class="gridFoot">
+            <footer>
+                <nav class="menuFooter">
+                    <ul>
+                        <li><a href="index.html" class="opt">Home</a></li>
+                        <li><a href="#aboutUs" class="opt">About us</a></li>
+                        <li><a href="#solution" class="opt">Solutions</a></li>
+                        <li><a href="clients.html" class="opt">Clients</a></li>
+                        <li><a href="contact.html" class="opt">Contact us</a></li>
+                    </ul>
+                </nav>
+                <p class="copyright">© Copyright <span>Your Site Name. Dot Com.</span> All Rights Reserved </p>
+            </footer>
+        </section>
+
+    </div>
+</body>
+
+</html>

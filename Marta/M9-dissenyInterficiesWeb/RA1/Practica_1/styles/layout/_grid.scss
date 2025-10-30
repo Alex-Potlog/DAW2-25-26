@@ -1,0 +1,31 @@
+//grid area: ens permet donar noms a cada part de la quadricula.
+item.a {
+    grid-area: header;
+}
+
+item.b {
+    grid-area: main;
+}
+
+item.c {
+    grid-area: sidebar;
+}
+
+item.d {
+    grid-area: footer;
+}
+
+// les mesures que podem utilitzar són: px, %, fr (fracció, per a que les columnes o les files seguin exactament iguals)
+// en els cas dels fr, si vull que alguna sigui mes gran que les altres puc canviar el nombre i posar-lo el mes gran possible
+// exemple "fr": per a que siguin iguals pot ser [1fr 1fr 1fr]; en el cas que sigui mes gran [1fr 2fr 1fr].
+.container {
+    display: grid;
+
+    grid-template-columns: 40px 50px auto 50px 40px; //5 columnes
+    grid-template-rows: 25% 100px auto; //3 files
+
+    grid-template-areas:
+        "header header header header header"
+        "main main main . sidebar"
+        "footer footer footer footer footer";
+}

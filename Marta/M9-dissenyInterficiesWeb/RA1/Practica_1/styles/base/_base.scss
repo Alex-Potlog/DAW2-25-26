@@ -1,0 +1,10 @@
+@use '../abstract/' as *; // Ens serveix per importar el que tenim a altres carpetes
+
+
+body {
+    background-color: $background-color; //variable que s'agafa de la carpeta abstract ja que ho importa amb el @use que hem fet el principi.
+}
+
+p {
+    color: blue;
+}

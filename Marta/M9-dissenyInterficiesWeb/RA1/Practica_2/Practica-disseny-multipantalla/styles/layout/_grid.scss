@@ -1,0 +1,234 @@
+@use '../abstract/' as *;
+
+@media screen and (max-width:$breakpoint-small) {
+    .gridBody {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        grid-template-areas:
+            "bann"
+            "titol"
+            "A"
+            "B"
+            "C"
+            "cont"
+            "form"
+            "media"
+        ;
+    }
+
+    .gridClient {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        grid-template-areas:
+            "clientArticle"
+            "divCli1"
+            "divCli2"
+            "divCli3"
+            "divCli4"
+            "tesimonial"
+        ;
+    }
+
+    .gridContact {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+
+        grid-template-areas:
+            "contactEs"
+            "contactDr"
+        ;
+    }
+
+    .gridFoot {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width:$breakpoint-small) and (max-width:$breakpoint-medium) {
+    .gridBody {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        grid-template-areas:
+            "bann titol"
+            "A B"
+            "C form"
+            "cont media"
+        ;
+    }
+
+    .gridClient {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        grid-template-areas:
+            "clientArticle tesimonial"
+            "divCli1"
+            "divCli2"
+            "divCli3"
+            "divCli4"
+        ;
+    }
+
+    .gridContact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+
+        grid-template-areas:
+            "contactEs contactDr"
+        ;
+    }
+
+    .gridFoot {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width:$breakpoint-medium) {
+    .gridBody {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        //grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+
+        grid-template-areas:
+            "bann bann titol"
+            "A B C"
+            "cont cont form"
+            ".     .    media"
+        ;
+    }
+
+    .gridClient {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+
+        grid-template-areas:
+            "clientArticle clientArticle tesimonial"
+        ;
+
+        .clientsArticle {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 10px;
+
+            grid-template-areas:
+                "h1Client h1Client"
+                "divCli1 divCli2"
+                "divCli3 divCli4"
+            ;
+        }
+    }
+
+    .gridContact {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+
+        grid-template-areas:
+            "contactEs contactEs contactDr"
+        ;
+    }
+
+
+    .gridFoot {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+}
+
+.banner {
+    grid-area: bann;
+}
+
+.title {
+    grid-area: titol;
+}
+
+.info1 {
+    grid-area: A;
+}
+
+.info2 {
+    grid-area: B;
+}
+
+.info3 {
+    grid-area: C;
+}
+
+.content {
+    grid-area: cont;
+}
+
+.form {
+    grid-area: form;
+}
+
+.media {
+    grid-area: media;
+}
+
+.clientsArticle {
+    grid-area: clientArticle;
+}
+
+.h1Client {
+    grid-area: h1Client;
+    font-family: "Century Gothic";
+    font-size: var(--font-xl);
+    color: var(--primary-color);
+}
+
+.divClient1 {
+    grid-area: divCli1;
+}
+
+.divClient2 {
+    grid-area: divCli2;
+}
+
+.divClient3 {
+    grid-area: divCli3;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.divClient4 {
+    grid-area: divCli4;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.testimonials {
+    grid-area: tesimonial;
+}
+
+.contactEs {
+    grid-area: contactEs;
+}
+
+.contactDr {
+    grid-area: contactDr;
+}
