@@ -1,0 +1,176 @@
+@use "../abstracts/variables" as *;
+
+
+.clients-section {
+    background-color: $color-primary;
+    padding: $spacing-xs;
+
+    h1 {
+        font-size: $font-titul2;
+        color: $taronja;
+        font-family: $font-secundary;
+    }
+
+}
+
+.clients-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    h1 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    hr {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.client-image {
+    padding: $spacing-xs;
+    background-color: $gris8;
+    border-radius: 7px;
+}
+
+.clients-title {
+    padding-left: $spacing-xs;
+}
+
+.client-card {
+    h3 {
+        color: $gris9;
+        font-weight: bold;
+    }
+}
+
+.testimonial-author {
+    color: $gris9;
+    font-weight: bold;
+}
+
+@media (max-width: $breakpoint-md) {
+    .clients-section {
+        padding: $spacing-xs * 0.8;
+
+        h1 {
+            font-size: $font-titul2 * 0.9;
+        }
+    }
+
+    .clients-header {
+        gap: 8px;
+
+        .header-content {
+            gap: 12px;
+        }
+
+        h1 {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .client-image {
+        padding: $spacing-xs * 0.8;
+        border-radius: 5px;
+    }
+
+    .clients-title {
+        padding-left: $spacing-xs * 0.8;
+    }
+
+    .client-card {
+        h3 {
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+
+    .testimonial-author {
+        font-size: 0.9rem;
+    }
+
+    .testimonials-sidebar {
+        h1 {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .clients-section {
+        padding: $spacing-xs * 0.6;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .clients-header {
+        align-items: center;
+        gap: 5px;
+
+        .header-content {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        h1 {
+            flex-direction: column;
+        }
+    }
+
+    .client-image {
+        border-radius: 3px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .clients-title {
+        padding-left: 0;
+    }
+
+    .client-card {
+        h3 {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        p {
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    }
+
+    .testimonial-author {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .testimonials-sidebar {
+        h1 {
+            font-size: $font-titul2 * 0.8;
+        }
+
+        .testimonial {
+            text-align: center;
+            margin-bottom: $spacing-xs;
+        }
+    }
+}

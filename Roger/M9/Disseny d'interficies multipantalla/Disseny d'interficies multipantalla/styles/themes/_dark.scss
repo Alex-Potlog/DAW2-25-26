@@ -168,7 +168,7 @@
                     color: $dark;
 
                     &:hover {
-                        background-color: lighten($color-secundary, 10%);
+                        background-color: $color-secundary;
                     }
                 }
             }
@@ -198,5 +198,63 @@
             color: $color-secundary;
             font-weight: bold;
         }
+    }
+}
+
+
+
+//===== DARK MODE PER A CLIENT =====
+.dark-mode {
+    .clients-section {
+        background-color: $dark-card-bg;
+
+        h1 {
+            color: $color-secundary;
+        }
+    }
+
+    .clients-header {
+        hr {
+            border-top-color: $dark-border;
+        }
+    }
+
+    .client-card {
+        background-color: $dark-card-bg;
+
+        h3 {
+            color: $dark-text;
+        }
+
+        p {
+            color: $dark-text;
+        }
+    }
+
+    .client-image {
+        background-color: $dark-bg;
+    }
+
+    .testimonials-sidebar {
+        background-color: $dark-card-bg;
+
+        h1 {
+            color: $color-secundary;
+        }
+
+        hr {
+            border-top-color: $dark-border;
+        }
+    }
+
+    .testimonial {
+
+        p {
+            color: $dark-text;
+        }
+    }
+
+    .testimonial-author {
+        color: $dark-text;
     }
 }
