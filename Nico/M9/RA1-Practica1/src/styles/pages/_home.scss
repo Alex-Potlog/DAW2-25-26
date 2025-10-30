@@ -27,12 +27,11 @@ main#home {
             flex-direction: column;
 
 
-            h1 {
+            h1,
+            h1 span {
                 font-size: $sizeXL;
 
-                span {
-                    font-size: $sizeL; //Si lo pongo en la misma regla que el h1 (h1>span) POR ALGUNA RAZON SE HACE MAS GRANDE
-                }
+
             }
 
             hr {
@@ -49,17 +48,20 @@ main#home {
             p {
                 font-size: $sizeS;
                 color: $gris-2;
+                font-family: $font-arialMT;
             }
 
 
         }
 
         button {
-
-
-            &:hover {
-                background-color: darken($naranja-1, 10%);
-            }
+            align-self: flex-end;
+            margin: auto 8px 8px 0;
+            padding: 8px 16px;
+            border: 1px solid $gris-1;
+            background-color: $gris-6;
+            color: $gris-2;
+            border-radius: 35px;
         }
     }
 
