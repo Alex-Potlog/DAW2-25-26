@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Bàsica</title>
+    <style>
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        input[readonly] {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>1. Calculadora bàsica</h4>
+
+    <form id="formCalculadora">
+        <input type="text" id="num1" name="num1" size="20" placeholder="Primer número">
+
+        <select id="operacio" name="operacio">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="^">^</option>
+        </select>
+
+        <input type="text" id="num2" name="num2" size="20" placeholder="Segon número">
+
+        <span>=</span>
+
+        <input type="text" id="resultat" name="resultat" size="20" readonly placeholder="Resultat">
+
+        <br><br>
+
+        <button type="button" id="calcula">Calcula</button>
+        <button type="button" id="reset">Reseteja</button>
+    </form>
+
+
+    <h4>2. Crea un formulari amb un camp de text.</h4>
+    <form action="" id="formularimail">
+        <input type="text" id="mail" name="mail" placeholder="Mail">
+        <button type="button" id="boto">Executa</button>
+        <button type="button" id="eliminar">Eliminar</button>
+    </form>
+
+    <script src="exs.js"></script>
+</body>
+
+</html>

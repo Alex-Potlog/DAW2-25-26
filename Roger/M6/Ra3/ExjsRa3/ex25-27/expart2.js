@@ -87,3 +87,46 @@ console.log(arrbid);
 // 1. La primera columna sigui amb ordre ascendent
 // 2. La segona columna sigui amb ordre descendent
 // 3. La tercera columna sigui amb ordre ascendent
+
+function crearArrayBidimensional3() {
+    const arrayBidimensional = [];
+
+    // Fila 0: números entre 1-9
+    const fila0 = [];
+    while (fila0.length < 3) {
+        const num = Math.floor(Math.random() * 9) + 1;
+        if (!fila0.includes(num)) {
+            fila0.push(num);
+        }
+    }
+    fila0.sort()
+    arrayBidimensional.push(fila0);
+
+    // Fila 1: números entre 10-19
+    const fila1 = [];
+    while (fila1.length < 3) {
+        const num = Math.floor(Math.random() * 10) + 10;
+        if (!fila1.includes(num)) {
+            fila1.push(num);
+        }
+    }
+    fila1.sort()
+    fila1.reverse()
+    arrayBidimensional.push(fila1);
+
+    // Fila 2: números entre 20-29
+    const fila2 = [];
+    while (fila2.length < 3) {
+        const num = Math.floor(Math.random() * 10) + 20;
+        if (!fila2.includes(num)) {
+            fila2.push(num);
+        }
+    }
+    fila2.sort()
+    arrayBidimensional.push(fila2);
+    
+    return arrayBidimensional;
+}
+
+const arrbid2 = crearArrayBidimensional3();
+console.log(arrbid2);
