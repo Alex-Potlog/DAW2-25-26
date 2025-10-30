@@ -1,13 +1,21 @@
 //Import century gothic regular
 @font-face {
   font-family: "CenturyGothic";
-  src: url("../../public/fonts/CenturyGothic.ttf");
+  src: url("../../public/fonts/century-gothic-regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 
-//Icon fonts de Fontello (para que no sea una imagen)
+//Icon fonts de Fontello (para que no sea una imagen) NO IMPLEMENTADO POR CULPA DEL ICONO DE TWITTER
+
+/*
+html:
+<!--
+            <span class="icon-twitter"></span>
+            <span class="icon-facebook"></span>
+            <span class="icon-linkedin"></span>
+-->
 @font-face {
   font-family: "fontello";
   src: url('../../public/fonts/fontello.ttf') format('truetype');
@@ -31,19 +39,19 @@
   text-align: center;
 
 
-  /* For safety - reset parent styles, that can break glyph codes*/
+  // For safety - reset parent styles, that can break glyph codes
   font-variant: normal;
   text-transform: none;
   line-height: 1em;
 
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
+  /* Animation center compensation - margins should be symmetric 
+  /* remove if not needed 
   margin-left: .2em;
 
 
   font-size: 120%;
 
-  /* Font smoothing. That was taken from TWBS */
+  /* Font smoothing. That was taken from TWBS 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -54,13 +62,15 @@
   color: #0000ff;
 }
 
-/* '' */
+/* '' 
 .icon-twitter:before {
   content: '\f314';
   color: #00ffff;
+  background-color: #00f;
+
 }
 
-/* '' */
+/* '' 
 .icon-linkedin:before {
   content: '\f31b';
   color: #0000ff;

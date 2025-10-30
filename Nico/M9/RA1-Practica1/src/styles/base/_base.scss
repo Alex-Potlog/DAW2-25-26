@@ -1,36 +1,33 @@
 @use '../abstracts' as *;
 
+html,
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  background-color: $color-fondo;
 }
 
-h1,
+p,
+li,
+a,
+span {
+  color: $gris-1;
+  font-family: $font-primary;
+  font-size: $sizeS;
+}
+
+.orange {
+  color: $naranja-1;
+}
+
+
+
+h1 {
+  color: $gris-4;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.orange {
-  color: var(--orange);
+  color: $gris-5;
 }

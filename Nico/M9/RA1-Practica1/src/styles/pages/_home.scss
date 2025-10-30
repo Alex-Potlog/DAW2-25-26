@@ -1,0 +1,72 @@
+@use '../abstracts' as *;
+
+main#home {
+
+    section {
+        padding: 8px;
+        background-color: #FFFFFF;
+        margin-bottom: 24px;
+
+        &.Banner {
+            background-image: url('../../public/media/Content Slider.png');
+            background-size: cover;
+            background-position: center;
+            background-position: top left;
+            background-repeat: no-repeat;
+            width: 100%;
+            box-shadow: 1px 1px 10px $gris-1;
+            border-radius: 5px 0 0 5px;
+            height: 300px;
+
+        }
+
+        &.Main {
+            border-radius: 0 5px 5px 0;
+            box-sizing: content-box;
+            display: flex;
+            flex-direction: column;
+
+
+            h1 {
+                font-size: $sizeXL;
+
+                span {
+                    font-size: $sizeL; //Si lo pongo en la misma regla que el h1 (h1>span) POR ALGUNA RAZON SE HACE MAS GRANDE
+                }
+            }
+
+            hr {
+                margin: 15px 0;
+                width: 100%;
+
+            }
+
+            .subtitle {
+                font-size: $sizeM;
+                color: $gris-1;
+            }
+
+            p {
+                font-size: $sizeS;
+                color: $gris-2;
+            }
+
+
+        }
+
+        button {
+
+
+            &:hover {
+                background-color: darken($naranja-1, 10%);
+            }
+        }
+    }
+
+    article {
+        background-color: #FFFFFF;
+        padding: 2px;
+        border-radius: 5px;
+
+    }
+}
