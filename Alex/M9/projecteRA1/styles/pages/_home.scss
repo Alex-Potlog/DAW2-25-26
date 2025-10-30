@@ -12,12 +12,10 @@
     height: 315px;
     border-radius: 10px;
     padding-left: 5px;
+}
 
-    &.h1 {
-        .hero h1 {
-            font-size: 27px;
-        }
-    }
+h1 {
+    padding-top: 5px;
 }
 
 .orange {
@@ -45,6 +43,12 @@ hr {
 .hero-content {
     flex: 1 1 50%;
     margin-right: 10px;
+}
+
+.hero-content button {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .grey-text {

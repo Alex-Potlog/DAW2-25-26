@@ -1,19 +1,18 @@
+@use "../abstracts/variables" as *;
 nav ul {
     list-style: none;
     display: flex;
 }
 
 nav li {
-    font:
-        400 12px "Arial MT",
-        sans-serif;
+    font-family: $arial-font;
+    display: inline-flex;
 }
 
 nav a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s;
     padding: 5px 10px;
 }
 

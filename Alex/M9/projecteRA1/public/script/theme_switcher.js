@@ -34,7 +34,18 @@ function toggleTheme() {
   return newTheme;
 }
 
-// Initialize light mode by default when page loads
-document.addEventListener('DOMContentLoaded', function () {
-  applyTheme(LIGHT_THEME);
+function applyOnLoadTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else {
+    applyTheme(LIGHT_THEME);
+  }
+}
+
+window.addEventListener('beforeunload', () => {
+  const currentTheme = getCurrentTheme();
+  localStorage.setItem(THEME_KEY, currentTheme);
 });
+
+applyOnLoadTheme();
