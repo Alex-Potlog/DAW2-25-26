@@ -37,18 +37,7 @@ $naranja-1: #EA8A19;
     --fondo-seccion: #FFFFFF;
 }
 
-// Tema oscuro, no hay referencia y voy a usar lo que vea conveniente
-html.dark-mode {
-    --gris-1: #d4d4d4;
-    --gris-2: #BFBFBF;
-    --gris-4: #eaeaea;
-    --gris-5: #BFBFBF;
-    --gris-6: #4a4a4a;
-    --gris-7: #ddd;
-    --color-fondo: #121212;
-    --naranja-1: #ffb347;
-    --fondo-seccion: #{$gris-2};
-}
+
 
 // Fuentes
 $font-primary: "CenturyGothic", Arial, sans-serif;

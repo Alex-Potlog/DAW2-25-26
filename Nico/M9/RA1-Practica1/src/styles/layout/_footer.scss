@@ -6,6 +6,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding-bottom: 15px;
 
     hr {
         width: 100%;
@@ -21,11 +22,10 @@
 
                 a {
                     font-size: $sizeM;
+                }
 
-                    .active {
-                        color: var(--gris-5);
-                        font-weight: bold;
-                    }
+                a.active {
+                    color: var(--gris-5);
                 }
 
                 &:not(:last-child)::after {
