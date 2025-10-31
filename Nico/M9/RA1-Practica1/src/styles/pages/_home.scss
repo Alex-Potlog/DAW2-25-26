@@ -4,7 +4,7 @@ main#home {
 
     section {
         padding: 8px;
-        background-color: #FFFFFF;
+        background-color: var(--fondo-seccion);
         margin-bottom: 24px;
 
         &.Banner {
@@ -14,7 +14,6 @@ main#home {
             background-position: top left;
             background-repeat: no-repeat;
             width: 100%;
-            box-shadow: 1px 1px 10px $gris-1;
             border-radius: 5px 0 0 5px;
             height: 300px;
 
@@ -29,7 +28,7 @@ main#home {
 
             h1,
             h1 span {
-                font-size: $sizeXL;
+                font-size: $sizeXXL;
 
 
             }
@@ -42,12 +41,12 @@ main#home {
 
             .subtitle {
                 font-size: $sizeM;
-                color: $gris-1;
+                color: var(--gris-1);
             }
 
             p {
                 font-size: $sizeS;
-                color: $gris-2;
+                color: var(--gris-2);
                 font-family: $font-arialMT;
             }
 
@@ -58,17 +57,151 @@ main#home {
             align-self: flex-end;
             margin: auto 8px 8px 0;
             padding: 8px 16px;
-            border: 1px solid $gris-1;
-            background-color: $gris-6;
-            color: $gris-2;
+            border: 1px solid var(--gris-1);
+            background-color: var(--gris-6);
+            color: var(--gris-2);
             border-radius: 35px;
         }
     }
 
-    article {
-        background-color: #FFFFFF;
+    article.card {
+        background-color: var(--fondo-seccion);
         padding: 2px;
         border-radius: 5px;
+        box-sizing: border-box;
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+        &.cardweb {
+            margin: 0 3% 0 0;
+        }
+
+        &.cardsol {
+            margin: 0 3%;
+        }
+
+        &.cardtest {
+            margin: 0 0 0 3%;
+        }
+
+        h2 {
+            font-size: $sizeL;
+            color: var(--gris-3);
+            padding: 8px 16px;
+            width: 100%;
+            background-color: var(--gris-7);
+            border-radius: 5px 5px 0 0;
+        }
+
+        img {
+            width: 80px;
+            height: auto;
+            padding: 15px;
+            align-self: flex-start;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 15px 10px 0 0;
+
+            h3 {
+                margin-bottom: 16px;
+
+                a {
+                    color: var(--gris-4);
+                    font-weight: bold;
+                    font-size: $sizeS; //Hace como un calculo raro con el tamaño si uso variables, aun si es un valor fijo
+                }
+
+            }
+
+            p {
+                color: var(--gris-5);
+
+                .underline {
+                    color: var(--gris-4);
+                    text-decoration: underline;
+                }
+            }
+
+            a.orange {
+                margin-top: 25px;
+
+                align-self: flex-end;
+            }
+
+
+
+        }
 
     }
+
+    article.info,
+    article.form {
+        margin-top: 28px;
+
+        hr {
+            margin: 6px 0;
+        }
+    }
+
+    article.info {
+        margin-right: 12px;
+
+
+
+        h2 {
+            font-size: $sizeXL;
+
+        }
+
+        p {
+
+            font-family: $font-arialMT;
+            line-height: 1.5em;
+        }
+    }
+
+    article.form {
+        margin-left: 12px;
+
+        h2 {
+            font-size: $sizeXL;
+
+
+        }
+
+        p {
+
+            font-family: $font-arialMT;
+            line-height: 1.5em;
+        }
+
+        input[type="email"] {
+            width: 75%;
+            padding: 4px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            border: 1px solid var(--gris-5);
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            margin: 4px 0 20px 0;
+            padding: 4px 16px;
+            border: 1px solid var(--gris-1);
+            background-color: var(--gris-6);
+            color: var(--gris-2);
+            border-radius: 20px;
+        }
+
+        hr:last-of-type {
+            margin-bottom: 12px;
+        }
+    }
+
 }

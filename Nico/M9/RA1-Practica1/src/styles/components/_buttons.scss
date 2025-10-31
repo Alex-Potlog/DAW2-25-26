@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as *;
+
+button#CambioTema {
+    padding: 8px 16px;
+    margin-right: 20px;
+    border: 1px solid var(--gris-5);
+    border-radius: 4px;
+    background-color: var(--gris-4);
+    cursor: pointer;
+
+
+
+    &:hover {
+        border: 1px solid var(--naranja-1);
+
+    }
+
+    & .icon {
+        font-size: 18px;
+        transition: transform 0.3s ease;
+    }
+
+
+}
+
+html.dark-mode button#CambioTema {
+    background-color: var(--gris-6);
+    color: var(--gris-1);
+}

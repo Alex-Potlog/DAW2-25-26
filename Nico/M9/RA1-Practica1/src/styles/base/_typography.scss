@@ -1,14 +1,18 @@
 //Import century gothic regular
 @font-face {
   font-family: "CenturyGothic";
-  src: url("../../public/fonts/century-gothic-regular.ttf") format("truetype");
+  src: url("../../public/fonts/century-gothic-regular.ttf") format("truetype"); //Deberia poner las otras para compatibilidad?
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "ArialMT";
-  src: url("../../public/fonts/ARIALMT.ttf") format("truetype");
+  src: url('../../public/fonts/ArialMT.eot');
+  src: url('../../public/fonts/ArialMT.eot?#iefix') format('embedded-opentype'),
+    url('../../public/fonts/ArialMT.woff2') format('woff2'),
+    url("../../public/fonts/ArialMT\ Regular.ttf") format("truetype"),
+    url('../../public/fonts/ArialMT.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

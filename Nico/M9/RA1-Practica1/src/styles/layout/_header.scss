@@ -20,12 +20,17 @@
             align-items: center;
             justify-content: space-between;
 
+            li a {
+                font-size: $sizeM;
+                color: var(--gris-2);
+            }
+
             li a.active {
                 background: linear-gradient(to bottom, #fdb76f 0%, #f89a4e 50%, #f17c2e 100%);
                 padding: 10px 24px;
                 border-radius: 5px;
-                color: #F1F1F1;
-                border: 1px solid $gris-2;
+                color: #FFF;
+                border: 1px solid var(--gris-2);
             }
         }
     }

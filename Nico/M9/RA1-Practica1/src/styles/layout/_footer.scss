@@ -18,9 +18,14 @@
             display: flex;
 
             li {
-                a.active {
-                    color: $gris-5;
-                    font-weight: bold;
+
+                a {
+                    font-size: $sizeM;
+
+                    .active {
+                        color: var(--gris-5);
+                        font-weight: bold;
+                    }
                 }
 
                 &:not(:last-child)::after {
