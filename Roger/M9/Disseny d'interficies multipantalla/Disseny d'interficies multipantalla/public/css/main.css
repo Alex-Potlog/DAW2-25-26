@@ -19,11 +19,17 @@ body {
   font-family: "ArialMT", sans-serif;
   line-height: 1;
   color: #9a9b9c;
-  background-color: #e5e5e5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e4e4e4), to(#fdfdfd));
+  background: linear-gradient(to bottom, #e4e4e4, #fdfdfd);
 }
 
 hr {
-  color: #ececec;
+  display: block;
+  height: 1px;
+  border: 0px;
+  border-top: 2px solid #e0e1e1;
+  margin: 1em 0px;
+  padding: 0px;
 }
 
 /* Enllaços */
@@ -204,6 +210,7 @@ table {
           align-items: flex-start;
   gap: 15px;
   height: 100%;
+  border-radius: 0 0 10px 10px;
 }
 
 .card-img img {
@@ -229,6 +236,7 @@ table {
       -ms-flex-positive: 1;
           flex-grow: 1;
   height: 100%;
+  border-radius: 0px 7px 7px 0px;
 }
 
 .card-content h4 {
@@ -273,6 +281,16 @@ table {
   margin-top: 0px;
 }
 
+@media (max-width: 1024px) {
+  .card_solucions {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .card_disseny {
+    margin-right: 0px;
+  }
+}
 .subscripcio form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -370,7 +388,6 @@ table {
           align-items: center;
   gap: 20px;
   padding: 10px 20px;
-  background-color: #e5e5e5;
   color: #fff;
   border-top: 1px solid #bcbcbc;
   margin-top: 40px;
@@ -432,9 +449,15 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px;
-  background-color: #e5e5e5;
+  background-color: #e4e4e4;
   margin-bottom: 41px;
   margin-top: 15px;
+}
+header .navigation a.active {
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdb76f), color-stop(50%, #f89a4e), to(#f17c2e));
+  background: linear-gradient(to bottom, #fdb76f 0%, #f89a4e 50%, #f17c2e 100%);
+  border: 1px solid #666666;
 }
 header .theme-toggle {
   background: none;
@@ -469,7 +492,7 @@ header .theme-toggle:hover {
   color: #000000;
 }
 header .theme-toggle {
-  background-color: #e5e5e5;
+  background-color: #e4e4e4;
 }
 .dark-mode header {
   background-color: #1a1a1a;
@@ -481,7 +504,6 @@ header .theme-toggle {
   color: #f3b167;
 }
 .dark-mode header .navigation a.active {
-  background-color: #f3b167;
   color: #000000;
 }
 header .logo {
@@ -986,6 +1008,8 @@ header .hamburger.active span:nth-child(3) {
 .contact-section {
   background-color: white;
   padding: 15px;
+  border-radius: 7px;
+  height: 647px;
 }
 .contact-section h1 {
   font-family: "Century Gothic";
@@ -1096,7 +1120,7 @@ header .hamburger.active span:nth-child(3) {
   padding: 8px;
 }
 .contact-sidebar h3 {
-  font-size: 20px;
+  font-size: 19px;
   color: #ec8a1b;
   font-family: "Century Gothic";
 }
@@ -1154,6 +1178,7 @@ header .hamburger.active span:nth-child(3) {
 .clients-section {
   background-color: white;
   padding: 10px;
+  border-radius: 7px;
 }
 .clients-section h1 {
   font-size: 22px;
@@ -1210,6 +1235,12 @@ header .hamburger.active span:nth-child(3) {
 .client-card h3 {
   color: #666666;
   font-weight: bold;
+  font-family: "Century Gothic";
+  padding-left: 5px;
+}
+.client-card p {
+  padding-right: 7px;
+  padding-left: 5px;
 }
 
 .testimonial-author {
@@ -1243,12 +1274,6 @@ header .hamburger.active span:nth-child(3) {
   }
   .clients-title {
     padding-left: 8px;
-  }
-  .client-card h3 {
-    font-size: 1.1rem;
-  }
-  .client-card p {
-    font-size: 0.9rem;
   }
   .testimonial-author {
     font-size: 0.9rem;
@@ -1294,15 +1319,12 @@ header .hamburger.active span:nth-child(3) {
     padding-left: 0;
   }
   .client-card h3 {
-    font-size: 1rem;
     text-align: center;
   }
   .client-card p {
-    font-size: 0.85rem;
     text-align: center;
   }
   .testimonial-author {
-    font-size: 0.85rem;
     text-align: center;
   }
   .testimonials-sidebar h1 {
@@ -1313,11 +1335,13 @@ header .hamburger.active span:nth-child(3) {
     margin-bottom: 10px;
   }
 }
-.dark-mode {
-  background-color: #1a1a1a;
+body.dark-mode {
+  background: #1a1a1a;
+  background-image: none;
   color: #e0e0e0;
 }
-.dark-mode body {
+
+.dark-mode {
   background-color: #1a1a1a;
   color: #e0e0e0;
 }

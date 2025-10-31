@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/theme.js" defer></script>
+    <link rel="shortcut icon" href="resourses/tech-support.png" type="image/x-icon">
+    <!-- Per a posar una imatge a la barra de tasques del navegador-->
+    <title>Homepage</title>
+</head>
+
+<body>
+    <div id="container">
+        <header id="principal">
+            <h1 id="infoLogo">INF<span>O</span>TECH</h1>
+            <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false"
+                aria-controls="navbar">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                    fill="#c9c9c9">
+                    <path
+                        d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z">
+                    </path>
+                </svg>
+            </button>
+            <button id="theme-switch">
+                <img src="resourses/moon.png" class="to_dark_mode" />
+                <img src="resourses/sun.png" class="to_light_mode" />
+            </button>
+            <nav id="navbar" class="menuHeader">
+                <ul>
+                    <li>
+                        <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#c9c9c9">
+                                <path
+                                    d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="actual"><a href="index.html" class="opt">Home</a></li>
+                    <li><a href="#aboutUs" class="opt">About us</a></li>
+                    <li><a href="#solution" class="opt">Solutions</a></li>
+                    <li><a href="clients.html" class="opt">Clients</a></li>
+                    <li><a href="contact.html" class="opt">Contact us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="gridBody">
+            <div class="banner">
+                <img src="resourses/banner.png" />
+            </div>
+            <div class="title">
+                <h1 class="h1">ADVANCE YOUR BUSINESS WITH <span>ONLINE PRESENCE</span></h1>
+                <p class="p1">Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+                    default.
+                </p>
+                <p class="p2">Talk to us if you are looking for business savvy online solutions rather than
+                    possibilities of
+                    technology. Talk to us if you are looking for business savvy
+                    online solutions rather than possibilities of technology.
+                </p>
+                <button type="button" class="read">Read more</button>
+            </div>
+            <article class="info-card info1">
+                <header class="header">
+                    <h2>Web designing</h2>
+                </header>
+                <main class="main1">
+                    <img class="imageCard" src="resourses/designIcon.png" alt="Logo Web Designing" />
+                    <div>
+                        <p class="titD">Design3Edge.com</p>
+                        <p class="descrip">Talk to us if you are looking for business
+                            savvy online solutions rather than
+                            possibilities of <u>technology</u>.
+                        </p>
+                        <a href="#" class="readMore">Read More</a>
+                    </div>
+                </main>
+            </article>
+            <article class="info-card info2">
+                <header class="header">
+                    <h2>Solutions</h2>
+                </header>
+                <main class="main1">
+                    <img class="imageCard" src="resourses/solutionICON.png" alt="Logo Solutions" />
+                    <div>
+                        <p class="titD">Design3Edge.com</p>
+                        <p class="descrip">Talk to us if you are looking for business
+                            savvy online solutions rather than
+                            possibilities of <u>technology</u>.
+                        </p>
+                        <a href="#" class="readMore">Read More</a>
+                    </div>
+                </main>
+            </article>
+            <article class="info-card info3">
+                <header class="header">
+                    <h2>Testimonials</h2>
+                </header>
+                <main class="main1">
+                    <img class="imageCard" src="resourses/testimonialICON.png" alt="Logo Testimonials" />
+                    <div>
+                        <p class="titD">Design3Edge.com</p>
+                        <p class="descrip">Talk to us if you are looking for business
+                            savvy online solutions rather than
+                            possibilities of <u>technology</u>.
+                        </p>
+                        <a href="#" class="readMore">Read More</a>
+                    </div>
+                </main>
+            </article>
+            <div class="content">
+                <h2 class="welcome">Welcome to Infotech</h2>
+                <p class="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar nisi eu enim
+                    facilisis dapibus.
+                    Duis viverra turpis vitae dui tincidunt eleifend. Etiam sodales, neque in dignissim dictum, dui
+                    libero dictum orci, vel cursus felis velit vitae dui. Etiam malesuada viverra est pretium lobortis.
+                    Vivamus fermentum, neque a elementum interdum, erat nisl mattis odio, eu lobortis libero tortor sed
+                    ante. Vestibulum felis metus,
+                    accumsan at rhoncus id, ultrices et lacus.
+                </p>
+                <p class="p2">Pellentesque in ligula urna, ac eleifend enim. Aliquam sollicitudin velit eget felis
+                    scelerisque
+                    tempus. In dictum odio vitae nisl vehicula non tincidunt massa malesuada. Ut sed odio id risus
+                    placerat dignissim.
+                </p>
+            </div>
+            <div class="form">
+                <h2 class="  ">Subscribe by Email</h2>
+                <label for="name" class="emailAdd">Email Address:</label><br>
+                <input type="text" id="name" name="name" size="30" /><br><br>
+                <button type="button" class="subs">Subscribe</button>
+            </div>
+            <div class="media">
+                <h2>Follow us on</h2>
+                <img class="imageF" src="resourses/Twitter.png" alt="Logo twitter" />
+                <img class="imageF" src="resourses/Facebook.png" alt="Logo de facebook" />
+                <img class="imageF" src="resourses/LinkedIn.png" alt="Logo de Linkedin" />
+            </div>
+        </section>
+        <section class="gridFoot">
+            <footer>
+                <nav class="menuFooter">
+                    <ul>
+                        <li><a href="index.html" class="opt">Home</a></li>
+                        <li><a href="#aboutUs" class="opt">About us</a></li>
+                        <li><a href="#solution" class="opt">Solutions</a></li>
+                        <li><a href="clients.html" class="opt">Clients</a></li>
+                        <li><a href="contact.html" class="opt">Contact us</a></li>
+                    </ul>
+                </nav>
+                <p class="copyright">© Copyright <span>Your Site Name. Dot Com.</span> All Rights Reserved </p>
+            </footer>
+        </section>
+    </div>
+</body>
+
+</html>

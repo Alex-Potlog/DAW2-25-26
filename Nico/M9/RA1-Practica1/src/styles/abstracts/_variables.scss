@@ -1,3 +1,55 @@
+// Tamaños
+$breakpoint-small: 768px;
+$breakpoint-medium: 1024px;
+$breakpoint-large: 1240px;
+$container-max-width: 1240px;
+$sizeXS: 10px;
+$sizeS: 12px;
+$sizeM: 14px;
+$sizeL: 18px;
+$sizeXL: 24px;
+$sizeXXL: 32px;
+
+//Colores
+$gris-1: #9B9B9A;
+$gris-2: #666666;
+$gris-3: #665D54;
+$gris-4: #353D40;
+$gris-5: #7D7D7D;
+$gris-6: #D6D4D4;
+$gris-7: #E8E8E7;
+$color-fondo: #E6E6E5;
+$negro-1: #121212;
+$naranja-1: #EA8A19;
+
 :root {
-    --orange: #ff6600;
+    --gris-1: #{$gris-1};
+    --gris-2: #{$gris-2};
+    --gris-3: #{$gris-3};
+    --gris-4: #{$gris-4};
+    --gris-5: #{$gris-5};
+    --gris-6: #{$gris-6};
+    --gris-7: #{$gris-7};
+
+    --color-fondo: #{$color-fondo};
+    --negro-1: #{$negro-1};
+    --naranja-1: #{$naranja-1};
+    --fondo-seccion: #FFFFFF;
 }
+
+// Tema oscuro, no hay referencia y voy a usar lo que vea conveniente
+html.dark-mode {
+    --gris-1: #d4d4d4;
+    --gris-2: #BFBFBF;
+    --gris-4: #eaeaea;
+    --gris-5: #BFBFBF;
+    --gris-6: #4a4a4a;
+    --gris-7: #ddd;
+    --color-fondo: #121212;
+    --naranja-1: #ffb347;
+    --fondo-seccion: #{$gris-2};
+}
+
+// Fuentes
+$font-primary: "CenturyGothic", Arial, sans-serif;
+$font-arialMT: "ArialMT", Arial, sans-serif;

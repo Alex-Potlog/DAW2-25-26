@@ -20,11 +20,17 @@ body {
     font-family: $font-primary;
     line-height: $line-height-base;
     color: $text-color;
-    background-color: $background-color;
+    background: linear-gradient(to bottom, $background-color, $gris10);
+    // background-color: $background-color;
 }
 
 hr {
-    color: $grislinea;
+    display: block;
+    height: 1px;
+    border: 0px;
+    border-top: 2px solid $grislinea;
+    margin: 1em 0px;
+    padding: 0px;
 }
 
 /* Enllaços */

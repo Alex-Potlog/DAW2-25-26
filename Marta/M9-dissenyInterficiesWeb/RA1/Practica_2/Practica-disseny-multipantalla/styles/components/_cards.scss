@@ -1,0 +1,63 @@
+.info-card {
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: max-content;
+    width: auto;
+    padding: 2px;
+    background: var(--component-bg);
+
+
+    .header {
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 8px;
+        padding: 0.5px 0.5px 0.5px 18px;
+        background-color: var(--heading-color);
+        font-family: 'Century Gothic';
+        font-size: var(--font-md);
+    }
+
+    main {
+        padding: 10px;
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+
+        .imageCard {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg);
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .titD {
+            font-family: 'ArialMTbold';
+            font-size: var(--font-sm);
+            color: var(--font-secondary-color);
+            margin-bottom: 8px;
+        }
+
+        .descrip {
+            font-family: 'ArialMT';
+            font-size: var(--font-sm);
+            color: var(--font-color);
+            line-height: 1.6;
+            margin-bottom: 12px;
+
+            u {
+                font-weight: bold;
+            }
+        }
+
+        .readMore {
+            font-family: 'ArialMT';
+            font-size: var(--font-sm);
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            float: right;
+        }
+    }
+}

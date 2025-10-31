@@ -1,0 +1,310 @@
+@use '../abstract/' as *;
+
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: linear-gradient(var(--bg-color), var(--bg-color-gradient));
+    color: var(--font-color);
+    margin: auto;
+}
+
+body {
+    max-width: $breakpoint-large;
+    margin: auto;
+
+    #container {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+
+#theme-switch {
+    border: 1px solid var(--primary-color);
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--bg-color-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    margin-left: -25px;
+
+    .to_dark_mode {
+        display: block;
+        height: 32px;
+    }
+
+    .to_light_mode {
+        display: none;
+        height: 32px;
+    }
+}
+
+.darkmode {
+    #theme-switch .to_dark_mode {
+        display: none;
+    }
+
+    #theme-switch .to_light_mode {
+        display: block;
+    }
+}
+
+.dark {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: var(--colorD8);
+    margin: auto;
+}
+
+.menuHeader {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.h1 {
+    font-family: 'Century Gothic';
+    font-size: var(--font-xl);
+}
+
+.h1Info {
+    font-family: 'Century Gothic';
+    font-size: 50px;
+    margin-left: 10px;
+}
+
+h1 span {
+    color: var(--primary-color)
+}
+
+.title {
+    background: var(--component-bg);
+    padding: 20px;
+}
+
+.p1 {
+    font-family: 'Century Gothic';
+    font-size: var(--font-sm);
+}
+
+.p2 {
+    font-family: 'ArialMT';
+    font-size: var(--font-xs);
+}
+
+.welcome {
+    font-family: 'Century Gothic';
+    font-size: var(--font-lg);
+    color: var(--primary-color);
+}
+
+.media h2 {
+    font-family: 'Century Gothic';
+    font-size: var(--font-md);
+    color: var(--primary-color);
+}
+
+.gridBody {
+    //border: solid 2px black;
+    padding: 10px;
+    margin: 0;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+}
+
+.gridClient {
+    padding: 18px;
+    margin: 8px;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    background-color: var(--component-bg);
+    border-radius: 20px;
+}
+
+
+.clientImg {
+    padding-right: 10px;
+}
+
+.linkWebCli {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--font-secondary-color);
+    font-family: "Century Gothic";
+    font-size: var(--font-xs);
+}
+
+.pClient {
+    width: 85%;
+    color: var(--font-color);
+    font-family: "ArialMT";
+    font-size: var(--font-xs);
+}
+
+.h1Testi {
+    font-family: "Century Gothic";
+    font-size: var(--font-xl);
+    color: var(--primary-color);
+    padding-top: 12px;
+}
+
+.us {
+    font-family: "Century Gothic";
+    font-size: var(--font-xl);
+    color: var(--font-secondary-color);
+    padding-top: 12px;
+}
+
+.pTesti {
+    font-style: italic;
+    color: var(--font-color);
+    padding-top: 20px;
+    width: 85%;
+    font-family: "Century Gothic";
+    font-size: var(--font-xs);
+}
+
+.blodTesti {
+    color: var(--font-secondary-color);
+    font-family: "ArialMTbold";
+    font-size: var(--font-xs);
+}
+
+.h1Client::after,
+.h1Testi::after {
+    content: '';
+    display: block;
+    width: 95%;
+    height: 2px;
+    background-color: var(--bg-color);
+    margin-top: 10px;
+}
+
+.gridContact {
+    padding: 18px;
+    margin: 8px;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    background-color: var(--component-bg);
+    border-radius: 20px;
+    height: 740px;
+}
+
+.inputN {
+    padding-right: 102px;
+}
+
+.inputI {
+    padding-right: 78px;
+}
+
+.inputC {
+    padding-right: 35px;
+}
+
+.inputS {
+    padding-right: 88px;
+}
+
+.inputM {
+    padding-right: 78px;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+.input {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: var(--heading-color);
+    border: 2px solid var(--bg-color);
+}
+
+input.input {
+    width: 375px;
+}
+
+textarea.input {
+    width: 550px;
+    height: 100px;
+}
+
+.contact>label {
+    font-family: "ArialMTbold";
+    font-size: var(--font-sm);
+}
+
+.contactSub {
+    margin-top: 30px;
+    margin-left: 150px;
+    padding: 8px 25px 8px 25px;
+    border-radius: 20px;
+    border: 2px solid var(--bg-color);
+    font-family: "ArialMT";
+    font-size: var(--font-xs);
+}
+
+.loremContact {
+    width: 85%;
+    color: var(--font-color);
+    font-family: "ArialMT";
+    font-size: var(--font-sm);
+}
+
+.ulContact {
+    margin-left: 25px;
+
+    li {
+        padding-top: 10px;
+        color: var(--primary-color);
+    }
+
+    li>span {
+        color: var(--font-color);
+        font-family: "ArialMT";
+        font-size: var(--font-xs);
+    }
+}
+
+.imageF {
+    margin-top: 13px;
+    margin-right: 25px;
+}
+
+.gridFoot::before {
+    content: '';
+    display: block;
+    width: auto;
+    height: 2px;
+    background-color: var(--bg-color);
+    margin-top: 10px;
+}
+
+.imageF {
+    width: 30px;
+    height: 30px;
+}
+
+footer {
+    //border: solid 2px black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0;
+    font-family: "ArialMT";
+    font-size: var(--font-xs);
+}
+
+.copyright span {
+    color: var(--primary-color)
+}

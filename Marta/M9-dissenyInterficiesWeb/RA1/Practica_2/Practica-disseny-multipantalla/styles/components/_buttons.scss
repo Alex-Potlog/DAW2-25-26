@@ -1,0 +1,22 @@
+.read {
+    float: right;
+    font-family: 'ArialMT';
+    font-size: var(--font-xs);
+}
+
+.subs {
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'ArialMT';
+    font-size: var(--font-xs);
+}
+
+.homeUp {
+    padding: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'ArialMT';
+    font-size: var(--font-sm);
+    color: var(--font-color);
+    background-color: var(--primary-color);
+}

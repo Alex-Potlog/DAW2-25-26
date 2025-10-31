@@ -1,0 +1,126 @@
+#navbar {
+    font-family: 'ArialMT';
+    font-size: var(--font-sm);
+
+    ul {
+        display: flex;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+
+        a {
+            color: var(--font-color);
+            display: flex;
+            text-decoration: none;
+            padding: 1em 2em;
+
+            font-family: "Century Gothic";
+            font-size: var(--font-xs);
+        }
+
+        &.actual {
+            background-color: var(--primary-color);
+        }
+    }
+}
+
+#open-sidebar-button {
+    display: none;
+    background: none;
+    border: none;
+    padding: 1em;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+#close-sidebar-button {
+    display: none;
+    background: none;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.menuFooter {
+    font-family: 'ArialMT';
+    font-size: var(--font-sm);
+
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        border-right: 1px solid var(--font-color);
+    }
+
+    li:last-child {
+        border-right: none;
+    }
+
+    a {
+        padding: 15px;
+        color: var(--font-color);
+
+        text-decoration: none;
+        padding: 3px 15px;
+        display: block;
+    }
+}
+
+.opt {
+    text-decoration: none;
+    font-family: "ArialMT";
+    font-size: var(--font-xs);
+}
+
+@media screen and (max-width:$breakpoint-small) {
+    #navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: min(15em, 100%);
+        z-index: 10;
+        border-left: 1px solid var(--bg-color);
+        transition: right 300ms ease-in-out;
+        background-color: var(--component-bg);
+
+        &.show {
+            right: 0;
+        }
+
+        ul {
+            width: 100%;
+            flex-direction: column;
+
+            li {
+                display: block;
+
+                a:hover {
+                    background-color: var(--bg-color);
+                }
+            }
+        }
+    }
+
+    #open-sidebar-button {
+        display: block;
+
+        svg {
+            fill: var(--primary-color);
+        }
+    }
+
+    #close-sidebar-button {
+        display: block;
+
+        svg {
+            fill: var(--primary-color);
+        }
+    }
+}

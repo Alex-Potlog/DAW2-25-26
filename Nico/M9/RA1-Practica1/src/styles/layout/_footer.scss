@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    hr {
+        width: 100%;
+        margin: 0 auto 20px auto;
+    }
+
+    .navigation.footnav {
+        ul {
+            list-style: none;
+            display: flex;
+
+            li {
+
+                a {
+                    font-size: $sizeM;
+
+                    .active {
+                        color: var(--gris-5);
+                        font-weight: bold;
+                    }
+                }
+
+                &:not(:last-child)::after {
+                    content: " | ";
+                    margin: 15px;
+                }
+            }
+        }
+    }
+}
