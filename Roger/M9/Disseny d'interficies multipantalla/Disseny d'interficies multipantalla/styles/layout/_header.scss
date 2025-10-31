@@ -9,6 +9,16 @@ header {
     margin-bottom: 41px;
     margin-top: $spacing-md;
 
+    .navigation a {
+
+        &.active {
+            // background-color: $color-secundary;
+            color: $color-primary;
+            background: linear-gradient(to bottom, #fdb76f 0%, #f89a4e 50%, #f17c2e 100%);
+            border: 1px solid $gris9;
+        }
+    }
+
     .theme-toggle {
         background: none;
         border: 2px solid $taronja;
@@ -27,6 +37,7 @@ header {
             color: $color-primary;
             transform: scale(1.05);
         }
+
 
         // Mode fosc
         .dark-mode & {
@@ -60,7 +71,7 @@ header {
             }
 
             &.active {
-                background-color: $color-secundary;
+                // background-color: $color-secundary;
                 color: $dark;
             }
         }

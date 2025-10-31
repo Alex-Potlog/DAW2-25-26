@@ -36,6 +36,7 @@
     align-items: flex-start;
     gap: $spacing-md;
     height: 100%;
+    border-radius: 0 0 10px 10px;
 }
 
 .card-img img {
@@ -53,7 +54,7 @@
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
-
+    border-radius: 0px 7px 7px 0px;
 
 }
 
@@ -95,4 +96,18 @@
     text-decoration: none;
     display: inline-block;
     margin-top: 0px;
+}
+
+@media (max-width: $breakpoint-md) {
+    .card_solucions {
+        margin-right: 0px;
+    }
+
+}
+
+@media (max-width: $breakpoint-sm) {
+    .card_disseny {
+        margin-right: 0px;
+    }
+
 }
