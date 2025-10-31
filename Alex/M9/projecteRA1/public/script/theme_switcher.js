@@ -18,12 +18,14 @@ function applyTheme(theme) {
     root.classList.add('dark-mode');
     root.classList.remove('light-mode');
     isDark = true;
-    document.querySelector('#theme').textContent = 'Light Mode';
+    const themeBtn = document.querySelector('#theme');
+    if (themeBtn) themeBtn.textContent = 'Light Mode';
   } else {
     root.classList.add('light-mode');
     root.classList.remove('dark-mode');
     isDark = false;
-    document.querySelector('#theme').textContent = 'Dark Mode';
+    const themeBtn = document.querySelector('#theme');
+    if (themeBtn) themeBtn.textContent = 'Dark Mode';
   }
 }
 
@@ -48,4 +50,51 @@ window.addEventListener('beforeunload', () => {
   localStorage.setItem(THEME_KEY, currentTheme);
 });
 
-applyOnLoadTheme();
+function initHamburger() {
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('header-nav');
+  const overlay = document.getElementById('overlay');
+
+  console.log('Hamburger:', hamburger);
+  console.log('Nav:', nav);
+  console.log('Overlay:', overlay);
+
+  if (!hamburger || !nav || !overlay) {
+    console.error('Elements no trobats!');
+    return;
+  }
+
+  hamburger.addEventListener('click', function (e) {
+    e.preventDefault();
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+  });
+
+  overlay.addEventListener('click', function () {
+    hamburger.classList.remove('active');
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  const navLinks = nav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  });
+}
+
+// Executar quan el DOM estigui llest
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function () {
+    applyOnLoadTheme();
+    initHamburger();
+  });
+} else {
+  applyOnLoadTheme();
+  initHamburger();
+}

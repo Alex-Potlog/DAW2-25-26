@@ -47,6 +47,18 @@
         color: white;
     }
 
+    .dark-mode #header-nav {
+        background-color: #2d2d2d;
+    }
+
+    .dark-mode .hamburger span {
+        background-color: #e0e0e0;
+    }
+
+    .dark-mode #header-nav .container li {
+        border-bottom-color: #3a3a3a;
+    }
+
     input[type="email"] {
         background-color: #3a3a3a;
         color: #e0e0e0;
@@ -85,5 +97,21 @@
 
     .copyright {
         color: #b0b0b0;
+    }
+
+    #header-nav {
+        background-color: #2d2d2d;
+    }
+
+    .hamburger span {
+        background-color: #e0e0e0;
+    }
+
+    #header-nav .container li {
+        border-bottom-color: #3a3a3a;
+    }
+
+    #header-nav .container li a {
+        color: #e0e0e0;
     }
 }
