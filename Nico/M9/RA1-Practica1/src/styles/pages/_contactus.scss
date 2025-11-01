@@ -1,1 +1,124 @@
 @use '../abstracts' as *;
+
+//Si hubiera mas paginas iguales, a lo mejor me pienso hacer las clases base para organizarlas asi, como son solo dos, estan separadas
+main#Contact {
+    background: linear-gradient(var(--fondo-seccion) 65%, var(--color-fondo) 100%);
+    padding: 10px;
+    border-radius: 5px;
+    height: 750px;
+
+    .contactus-section {
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 5px; //se me juntan las letras, no es la mejor solucion
+
+
+            span {
+                font-size: $sizeXL;
+            }
+
+            img {
+                width: auto;
+                height: 40px;
+            }
+        }
+
+        hr {
+            margin: 8px 0;
+        }
+
+        p {
+            font-size: $sizeM;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 20px;
+
+            label {
+                margin: 8px 0 0 8px;
+                width: 130px;
+                font-family: $font-arialMT;
+                font-weight: bold;
+                color: var(--gris-2);
+                font-size: $sizeM;
+            }
+
+            input,
+            textarea {
+                padding: 7px;
+                border: 1px solid var(--gris-6);
+                border-radius: 4px;
+                background-color: var(--color-fondo);
+                width: 60%;
+            }
+
+            textarea {
+                resize: none;
+                min-height: 100px;
+                width: 80%;
+            }
+
+        }
+
+        input[type=submit] {
+            padding: 4px 16px;
+            border: 1px solid var(--gris-1);
+            background-color: var(--gris-6);
+            color: var(--gris-2);
+            border-radius: 20px;
+            margin: 0 0 0 18%; //TODO arreglar form si da tiempo, esto va mal para diferentes pantallas, grid? o arreglar flex?
+        }
+    }
+
+    .contact-info-section {
+        h2 {
+            display: flex;
+            align-items: center;
+            height: 48px;
+        }
+
+        hr {
+            margin: 0 0 10px 0;
+        }
+
+        .info-block {
+            margin-bottom: 20px;
+        }
+
+        .contact-list {
+            li {
+                margin: 0 0 10px 10px;
+            }
+        }
+
+        .social {
+            hr {
+                margin: 10px 0;
+            }
+
+            a img {
+                margin-right: 30px;
+            }
+        }
+
+        .testimonial {
+            p {
+                font-family: $font-arialMT;
+                font-style: italic;
+                font-size: $sizeM;
+                line-height: $sizeL;
+
+            }
+
+            p.author {
+                font-weight: bold;
+                margin: 5px 0 15px 0;
+            }
+        }
+
+    }
+}

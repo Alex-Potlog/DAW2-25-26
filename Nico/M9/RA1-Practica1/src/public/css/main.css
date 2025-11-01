@@ -310,6 +310,34 @@ html.dark-mode button#CambioTema {
   grid-area: 3/5/4/7;
 }
 
+main#Clients {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+main#Clients .clients-section {
+  grid-column: 1;
+  grid-row: 1/3;
+}
+main#Clients .clients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 60px;
+     -moz-column-gap: 60px;
+          column-gap: 60px;
+}
+main#Clients .testimonials-section {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+main#Contact {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #home.grid {
     grid-template-columns: repeat(2, 1fr);
@@ -495,6 +523,171 @@ main#home article.form input[type=submit] {
 }
 main#home article.form hr:last-of-type {
   margin-bottom: 12px;
+}
+
+main#Clients {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(85%, var(--fondo-seccion)), to(var(--color-fondo)));
+  background: linear-gradient(var(--fondo-seccion) 85%, var(--color-fondo) 100%);
+  padding: 10px 10px 30px 10px;
+  border-radius: 5px;
+}
+main#Clients .clients-section h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main#Clients .clients-section h2 img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+main#Clients .clients-section hr {
+  margin: 10px 0;
+}
+main#Clients .clients-section .client-card img {
+  padding: 10px;
+  background-color: var(--color-fondo);
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+main#Clients .clients-section .client-card a {
+  color: var(--gris-2);
+  padding: 8px;
+  font-size: 14px;
+}
+main#Clients .clients-section .client-card p {
+  color: var(--gris-1);
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+main#Clients .testimonials-section h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+main#Clients .testimonials-section hr {
+  margin: 0 0 10px 0;
+}
+main#Clients .testimonials-section p {
+  font-family: "ArialMT", Arial, sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 18px;
+}
+main#Clients .testimonials-section p.author {
+  font-weight: bold;
+  margin: 5px 0 15px 0;
+}
+
+main#Contact {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(65%, var(--fondo-seccion)), to(var(--color-fondo)));
+  background: linear-gradient(var(--fondo-seccion) 65%, var(--color-fondo) 100%);
+  padding: 10px;
+  border-radius: 5px;
+  height: 750px;
+}
+main#Contact .contactus-section h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+main#Contact .contactus-section h2 span {
+  font-size: 24px;
+}
+main#Contact .contactus-section h2 img {
+  width: auto;
+  height: 40px;
+}
+main#Contact .contactus-section hr {
+  margin: 8px 0;
+}
+main#Contact .contactus-section p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+main#Contact .contactus-section .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-bottom: 20px;
+}
+main#Contact .contactus-section .form-group label {
+  margin: 8px 0 0 8px;
+  width: 130px;
+  font-family: "ArialMT", Arial, sans-serif;
+  font-weight: bold;
+  color: var(--gris-2);
+  font-size: 14px;
+}
+main#Contact .contactus-section .form-group input,
+main#Contact .contactus-section .form-group textarea {
+  padding: 7px;
+  border: 1px solid var(--gris-6);
+  border-radius: 4px;
+  background-color: var(--color-fondo);
+  width: 60%;
+}
+main#Contact .contactus-section .form-group textarea {
+  resize: none;
+  min-height: 100px;
+  width: 80%;
+}
+main#Contact .contactus-section input[type=submit] {
+  padding: 4px 16px;
+  border: 1px solid var(--gris-1);
+  background-color: var(--gris-6);
+  color: var(--gris-2);
+  border-radius: 20px;
+  margin: 0 0 0 18%;
+}
+main#Contact .contact-info-section h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 48px;
+}
+main#Contact .contact-info-section hr {
+  margin: 0 0 10px 0;
+}
+main#Contact .contact-info-section .info-block {
+  margin-bottom: 20px;
+}
+main#Contact .contact-info-section .contact-list li {
+  margin: 0 0 10px 10px;
+}
+main#Contact .contact-info-section .social hr {
+  margin: 10px 0;
+}
+main#Contact .contact-info-section .social a img {
+  margin-right: 30px;
+}
+main#Contact .contact-info-section .testimonial p {
+  font-family: "ArialMT", Arial, sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 18px;
+}
+main#Contact .contact-info-section .testimonial p.author {
+  font-weight: bold;
+  margin: 5px 0 15px 0;
 }
 
 html.dark-mode {

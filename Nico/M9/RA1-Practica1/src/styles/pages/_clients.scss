@@ -1,3 +1,80 @@
 @use '../abstracts' as *;
 
-main#clients {}
+//Me he dado cuenta que repito algunas reglas y podria haberlo diseñado mejor
+main#Clients {
+    background: linear-gradient(var(--fondo-seccion) 85%, var(--color-fondo) 100%);
+    padding: 10px 10px 30px 10px;
+    border-radius: 5px;
+
+
+    .clients-section {
+        h2 {
+            display: flex;
+            align-items: center;
+        }
+
+
+        h2 img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        hr {
+            margin: 10px 0;
+        }
+
+        .client-card {
+
+
+            img {
+                padding: 10px;
+                background-color: var(--color-fondo);
+                border-radius: 5px;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            a {
+                color: var(--gris-2);
+                padding: 8px;
+                font-size: $sizeM;
+            }
+
+            p {
+                color: var(--gris-1);
+                padding: 8px;
+                font-size: $sizeM;
+                margin-bottom: 30px;
+            }
+
+        }
+    }
+
+    .testimonials-section {
+
+        h2 {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+
+        hr {
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            font-family: $font-arialMT;
+            font-style: italic;
+            font-size: $sizeM;
+            line-height: $sizeL; //Se ve un poco mas grande el espacio, a lo mejor soy yo, pero creo que queda mejor
+
+        }
+
+        p.author {
+            font-weight: bold;
+            margin: 5px 0 15px 0;
+        }
+    }
+
+}
