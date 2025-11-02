@@ -3,15 +3,16 @@
 @use "../abstracts/variables" as *;
 
 // Mode fosc per a tota la pàgina
+
+body.dark-mode {
+    background: $dark-bg;
+    background-image: none; // Elimina el gradient
+    color: $dark-text;
+}
+
 .dark-mode {
     background-color: $dark-bg;
     color: $dark-text;
-
-    // Body
-    body {
-        background-color: $dark-bg;
-        color: $dark-text;
-    }
 
     // Header (ja definit a _header.scss)
 
