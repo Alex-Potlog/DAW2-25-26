@@ -4,26 +4,11 @@
 //Per llegir -> const cat=localStorage.getItem("myCat")
 //Per eliminar -> localStorage.removeItem("myCat")
 
-const myObj = {name: "Marta", age: 33, city:"Mataró"};
-
-const myJson=JSON.stringify(myObj);
-
-localStorage.setItem('myObj', myJson);
-
-const recuperada= JSON.parse(localStorage.getItem('myObj'))
-
-console.log(recuperada)
-
-//StruturedClone -> 
-
-//-----------------------------------------------------------------------
-
 function creaForm(){
     const createFormField = (label, name, type = 'text', required = false) => `
-    <div>
-        <label for="${name}">${label}${required ? ' *' : ''}:</label><br>
-        <input type="${type}" id="${name}" name="${name}" ${required ? 'required' : ''}>
-    </div>
+    <label for="${name}">${label}${required ? ' *' : ''}:</label><br>
+    <input type="${type}" id="${name}" name="${name}" ${required ? 'required' : ''}><br>
+
 `;
 
 const form = `
@@ -48,17 +33,17 @@ function creaBotons(){
 
     const botoReset= document.createElement("button");
     botoReset.type='submit';
-    botoReset.className='reset';
-    botoReset.id='reset';
+    botoReset.className='borrar';
+    botoReset.id='borrar';
     botoReset.innerHTML='Reseteja';
 
     divForm.append(document.createElement("br"),botoEnvia, botoReset);
 }
 
 function carregaDades(){
-    const formRef=document.querySelector('form');
-    const storageKey='formData'; //Clau per guardades les dades
-    let formData={}; //objecte per guardar les dades del formulari
+    const formRef=document.getElementById('form1');
+    const storageKey='formData'; //Clau per guardar les dades
+    let formData=[]; //objecte per guardar les dades del formulari
 
     //Per a poder carregar les dades guardades
     const saveData= localStorage.getItem(storageKey);
@@ -80,23 +65,30 @@ function carregaDades(){
         formData[e.target.name]=e.target.value;
         console.log(formData)
         localStorage.setItem(storageKey, JSON.stringify(formData))
-    }) 
+    });
 
+    //EventListener del botó submit/enviar
+    document.getElementById('envia').addEventListener('click', function(e) {
+        e.preventDefault(); //Atura la execució per defecte del event (un submit d'un formulari no l'envia)
+        
+        alert('Formulari enviat correctament!')
+    });
     
+    //EventListener del botó reset
+    document.getElementById('borrar').addEventListener('click', function(e){
+        e.preventDefault(); //Atura la execució per defecte del event
+
+        //Per netejar el localStorage i el formulari sencer
+        localStorage.removeItem(storageKey);
+        formData={};
+        formRef.reset();
+
+        console.log('Formulari i localStorage nets!');
+    });
 }
-// Save the entered date
-/*formRef.addEventListener ('change', function (e) {
-    console.log(e);
-    formData[e.target.name]=e.target.value;
-    console.log(formData)
-    localStorage.setItem(storageKey, JSON.stringify(formData))
-}) 
-    
-document.getElementById('submit).addEventListener('click'...)
-document.getElementById('reset').addEventListener('click',)
-*/
 
-
+// Cridar la funció quan el DOM estigui llest
+document.addEventListener('DOMContentLoaded', carregaDades);
 
 creaForm();
 creaBotons();

@@ -554,7 +554,7 @@ header {
 header #infoLogo {
   font-family: "Century Gothic";
   font-size: 50px;
-  margin-left: 10px;
+  margin: 25px 0 25px 17px;
 }
 
 .info-card {
@@ -640,6 +640,9 @@ header #infoLogo {
   float: right;
   font-family: "ArialMT";
   font-size: var(--font-xs);
+  padding: 2px 15px 2px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--colorD8);
 }
 
 .subs {
