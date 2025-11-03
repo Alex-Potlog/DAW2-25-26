@@ -1,10 +1,6 @@
 .dark-mode {
     background-color: #1a1a1a;
 
-    * {
-        transition: ease-in-out 0.3s;
-    }
-
     body {
         background-color: #1a1a1a;
     }
@@ -34,7 +30,6 @@
         color: #b0b0b0;
     }
 
-    // Navigation
     nav a {
         color: #e0e0e0;
     }
@@ -45,10 +40,6 @@
 
     #header-nav .container li:first-child button a {
         color: white;
-    }
-
-    .dark-mode #header-nav {
-        background-color: #2d2d2d;
     }
 
     .dark-mode .hamburger span {
@@ -99,10 +90,6 @@
         color: #b0b0b0;
     }
 
-    #header-nav {
-        background-color: #2d2d2d;
-    }
-
     .hamburger span {
         background-color: #e0e0e0;
     }
@@ -113,5 +100,11 @@
 
     #header-nav .container li a {
         color: #e0e0e0;
+    }
+
+    @media (max-width: 1024px) {
+        #header-nav {
+            background-color: #2d2d2d;
+        }
     }
 }

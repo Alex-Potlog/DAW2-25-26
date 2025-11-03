@@ -10,7 +10,6 @@ function getCurrentTheme() {
   return LIGHT_THEME;
 }
 
-// Apply the theme to the document
 function applyTheme(theme) {
   const root = document.documentElement;
 
@@ -55,15 +54,6 @@ function initHamburger() {
   const nav = document.getElementById('header-nav');
   const overlay = document.getElementById('overlay');
 
-  console.log('Hamburger:', hamburger);
-  console.log('Nav:', nav);
-  console.log('Overlay:', overlay);
-
-  if (!hamburger || !nav || !overlay) {
-    console.error('Elements no trobats!');
-    return;
-  }
-
   hamburger.addEventListener('click', function (e) {
     e.preventDefault();
     hamburger.classList.toggle('active');
@@ -88,7 +78,6 @@ function initHamburger() {
   });
 }
 
-// Executar quan el DOM estigui llest
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function () {
     applyOnLoadTheme();

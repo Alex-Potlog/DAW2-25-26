@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as *;
+.clients {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    h2 {
+        font-size: 22px;
+    }
+}
