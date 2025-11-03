@@ -42,11 +42,11 @@
         color: white;
     }
 
-    .dark-mode .hamburger span {
+    .hamburger span {
         background-color: #e0e0e0;
     }
 
-    .dark-mode #header-nav .container li {
+    #header-nav .container li {
         border-bottom-color: #3a3a3a;
     }
 
@@ -102,9 +102,124 @@
         color: #e0e0e0;
     }
 
+    .client-main {
+        background-color: #1a1a1a;
+    }
+
     @media (max-width: 1024px) {
         #header-nav {
             background-color: #2d2d2d;
         }
     }
+}
+
+.dark-mode .contact-title,
+.dark-mode .get-in-touch,
+.dark-mode .form-group label,
+.dark-mode .design3edge,
+.dark-mode .contact-item strong,
+.dark-mode .social-links strong {
+    color: #ffffff;
+}
+
+.dark-mode .contact-description,
+.dark-mode .contact-item,
+.dark-mode .testimonial p {
+    color: #b0b0b0;
+}
+
+.dark-mode .form-control {
+    background-color: #3a3a3a;
+    border-color: #4a4a4a;
+    color: #e0e0e0;
+}
+
+.dark-mode .testimonial {
+    background-color: inherit;
+}
+
+.dark-mode .contact-main {
+    background-color: #2a2a2a;
+}
+
+.dark-mode .contact-section h2,
+.dark-mode .info-header h2 {
+    color: #e0e0e0;
+}
+
+.dark-mode .contact-details {
+    color: #b0b0b0;
+}
+
+.dark-mode .contact-info .testimonial p {
+    color: #b0b0b0;
+}
+
+.dark-mode .form-label {
+    background-color: inherit;
+    color: #b0b0b0;
+}
+
+.dark-mode .form-input {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border-color: #4a4a4a;
+}
+
+.dark-mode .form-input:focus {
+    outline-color: #f0a54f;
+}
+
+.dark-mode .submit-btn {
+    background-color: #4a4a4a;
+    color: #e0e0e0;
+}
+
+.dark-mode .submit-btn:hover {
+    background-color: #5a5a5a;
+}
+
+.dark-mode .testimonial-author {
+    color: #b0b0b0;
+}
+
+.dark-mode .clients {
+    h2, h3 {
+        color: #e0e0e0;
+    }
+
+    p {
+        color: #b0b0b0;
+    }
+
+    .client-screenshot {
+        background-color: #3a3a3a;
+    }
+}
+
+.dark-mode .testimonials {
+    h2 {
+        color: #e0e0e0;
+    }
+
+    p {
+        color: #b0b0b0;
+    }
+}
+
+.dark-mode .testimonial-author {
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .client-card {
+    background-color: #3a3a3a;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #4a4a4a;
+    }
+}
+
+.dark-mode .client-details h3 {
+    color: #e0e0e0;
 }

@@ -13,18 +13,113 @@
 <body>
     <header id="home-header" class="header">
         <h1 class="century">INF<span class="orange">O</span>TECH</h1>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav class="navbar" id="header-nav">
             <ul class="container">
                 <li><a href="../main.html" class="mida12">HOME</a></li>
                 <li><a href="#" class="mida12">ABOUT US</a></li>
                 <li><a href="#" class="mida12">SOLUTIONS</a></li>
-                <li><a href="client.html" class="mida12">CLIENTS</a></li>
-                <li><a href="contact.html" class="mida12 pagina-actual">CONTACT US</a></li>
-                <li><button type="button" onclick="toggleTheme()" class="arial mida12" id="theme">Dark Mode</button>
+                <li>
+                    <a href="client.html" class="mida12">CLIENTS</a>
+                </li>
+                <li><a href="contact.html" class="pagina-actual mida12">CONTACT
+                        US</a></li>
+                <li>
+                    <button type="button" onclick="toggleTheme()" class="arial mida12" id="theme">
+                        Dark Mode
+                    </button>
                 </li>
             </ul>
         </nav>
     </header>
+    <main class="contact-main grid-contact-us">
+        <section class="contact-section">
+            <div class="contact-header">
+                <img src="../img/Contact Us Image.png" alt="Contact Us" class="contact-icon">
+                <h2 class="century orange">Contact Us</h2>
+            </div>
+            <hr>
+            <p class="arial mida12 text-standart-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                pulvinar nisi eu enim facilisis dapibus.
+                Duis viverra turpis vitae dui tincidunt eleifend. Etiam sodales, neque in dignissim dictum, dui libero
+                dictum orci, vel cursus felis velit vitae dui.</p>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-row">
+                        <label for="name" class="arial form-label">Name</label>
+                        <input type="text" id="name" class="form-input" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email" class="arial form-label">Email - ID</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="company" class="arial form-label">Company Name</label>
+                        <input type="text" id="company" class="form-input">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="subject" class="arial form-label">Subject</label>
+                        <input type="text" id="subject" class="form-input">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="message" class="arial form-label">Message</label>
+                        <textarea id="message" class="form-input form-textarea" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-label"></div>
+                        <button type="submit" class="submit-btn arial">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <aside class="contact-info">
+            <div class="info-header">
+                <h2 class="orange century">Get in Touch</h2>
+            </div>
+            <hr>
+            <ul class="contact-details arial mida12">
+                <li>9839 Lorem Ipsum</li>
+                <li>India, Bangalore</li>
+                <li>Asia, India</li>
+                <li>Telephone: +91 - 1234567890</li>
+                <li>Email: contact@design3edge.com</li>
+            </ul>
+
+            <div class="info-header">
+                <h2 class="orange century">Follow us on</h2>
+            </div>
+            <hr>
+            <div class="social-icons">
+                <a href="#"><img src="../img/Twitter.png" alt="Twitter" width="48"></a>
+                <a href="#"><img src="../img/Facebook.png" alt="Facebook" width="48"></a>
+                <a href="#"><img src="../img/LinkedIn.png" alt="LinkedIn" width="48"></a>
+            </div>
+
+            <div class="info-header">
+                <h2 class="orange century">Testimonial</h2>
+            </div>
+            <hr>
+            <div class="testimonial">
+                <p class="arial mida12 text-standart-color">
+                    <em>Talk to us if you are looking for business savvy online solutions rather than possibilities of
+                        technology.</em>
+                </p>
+                <p class="testimonial-author arial mida12">- Design3edge.com</p>
+            </div>
+        </aside>
+    </main>
+    <br>
     <hr>
     <footer>
         <nav class="footer-nav">

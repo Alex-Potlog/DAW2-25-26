@@ -5,3 +5,24 @@
     column-gap: 20px;
     row-gap: 24px;
 }
+
+.grid-client {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+.grid-client-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 70px;
+    row-gap: 24px;
+    padding: 10px;
+}
+
+.grid-contact-us {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}

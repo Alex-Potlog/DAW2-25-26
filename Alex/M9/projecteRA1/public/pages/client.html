@@ -1,61 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>INFOTECH</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/main.css" />
+        <link rel="shortcut icon" href="../img/favicon.ico"
+            type="image/x-icon" />
+        <script src="../script/theme_switcher.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>INFOTECH</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <script src="../script/theme_switcher.js"></script>
-</head>
-
-<body>
-    <header id="home-header" class="header">
-        <h1 class="century">INF<span class="orange">O</span>TECH</h1>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="navbar" id="header-nav">
-            <ul class="container">
-                <li><a href="main.html" class="pagina-actual mida12">HOME</a></li>
-                <li><a href="#" class="mida12">ABOUT US</a></li>
-                <li><a href="#" class="mida12">SOLUTIONS</a></li>
-                <li><a href="pages/client.html" class="mida12">CLIENTS</a></li>
-                <li><a href="pages/contact.html" class="mida12">CONTACT US</a></li>
-                <li><button type="button" onclick="toggleTheme()" class="arial mida12" id="theme">Dark Mode</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main class="grid-client">
-        <section class="clients">
-            <img src="../img/Clients Image.png" alt="Client Image">
-            <h2 class="century orange">Clients</h2>
-            <hr>
-            <div class="client-info">
-            <div class="client-image"><img src="../img/Design3edge - Client1.png" alt="Design3Edge"></div>
+    <body>
+        <div id="overlay"></div>
+        <header id="home-header" class="header">
+            <h1 class="century">INF<span class="orange">O</span>TECH</h1>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </section>
-        <section class="testimonials">
-            
-        </section>
-    </main>
-    <footer>
-        <nav class="footer-nav">
-            <a href="#" class="arial">Home</a> |
-            <a href="#" class="arial">About Us</a> |
-            <a href="#" class="arial">Solutions</a> |
-            <a href="#" class="arial">Clients</a> |
-            <a href="#" class="arial">Contact Us</a>
-        </nav>
-        <p class="copyright">
-            &copy; Copyright Your <span class="orange">Site Name</span>. <span class="orange">Dot Com</span>. All
-            Rights Reserved
-        </p>
-    </footer>
-</body>
+            <nav class="navbar" id="header-nav">
+                <ul class="container">
+                    <li><a href="../main.html" class="mida12">HOME</a></li>
+                    <li><a href="#" class="mida12">ABOUT US</a></li>
+                    <li><a href="#" class="mida12">SOLUTIONS</a></li>
+                    <li>
+                        <a href="client.html"
+                            class="pagina-actual mida12">CLIENTS</a>
+                    </li>
+                    <li><a href="contact.html" class="mida12">CONTACT
+                            US</a></li>
+                    <li>
+                        <button
+                            type="button"
+                            onclick="toggleTheme()"
+                            class="arial mida12"
+                            id="theme">
+                            Dark Mode
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="grid-client client-main">
+            <section class="clients">
+                <div class="clients-header">
+                    <img
+                        src="../img/Clients Image.png"
+                        alt="Clients Icon"
+                        class="clients-icon" />
+                    <h2 class="century orange">Clients</h2>
+                </div>
+                <hr />
+                <div class="grid-client-cards" id="client-cards">
+                    <div class="client-card">
+                        <div class="client-screenshot">
+                            <img src="../img/Design3edge - Client1.png"
+                                alt="Design3Edge" />
+                        </div>
+                        <div class="client-details">
+                            <h3
+                                class="mida12 century">http://www.design3edge.com</h3>
+                            <p class="arial mida12">
+                                Talk to us if you are looking for business savvy
+                                online
+                                solutions rather than possibilities of
+                                technology.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-screenshot">
+                            <img src="../img/Design3edge - Client1.png"
+                                alt="Design3Edge" />
+                        </div>
+                        <div class="client-details">
+                            <h3
+                                class="mida12 century">http://www.design3edge.com</h3>
+                            <p class="arial mida12">
+                                Talk to us if you are looking for business savvy
+                                online
+                                solutions rather than possibilities of
+                                technology.
+                            </p>
+                        </div>
+                    </div>
 
+                    <div class="client-card">
+                        <div class="client-screenshot">
+                            <img src="../img/CSS Stack.png" alt="CSS Stack" />
+                        </div>
+                        <div class="client-details">
+                            <h3
+                                class="mida12 century">http://www.cssstack.com</h3>
+                            <p class="arial mida12">
+                                Talk to us if you are looking for business savvy
+                                online
+                                solutions rather than possibilities of
+                                technology.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="client-card">
+                        <div class="client-screenshot">
+                            <img src="../img/Techiepark.com.png"
+                                alt="Techie Park" />
+                        </div>
+                        <div class="client-details">
+                            <h3
+                                class="mida12 century">http://www.techiepark.com</h3>
+                            <p class="arial mida12">
+                                Talk to us if you are looking for business savvy
+                                online
+                                solutions rather than possibilities of
+                                technology.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="testimonials">
+                <div class="testimonial-header">
+                    <h2 class="orange century">Testimonials</h2>
+                    <hr/>
+                </div>
+                <div class="testimonial">
+                    <p class="arial mida12">
+                        <em>Talk to us if you are looking for business savvy
+                            online solutions
+                            rather than possibilities of technology.</em>
+                    </p>
+                    <p class="testimonial-author arial mida12">-
+                        Design3edge.com</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="arial mida12">
+                        <em>Talk to us if you are looking for business savvy
+                            online solutions
+                            rather than possibilities of technology.</em>
+                    </p>
+                    <p class="testimonial-author arial mida12">-
+                        Design3edge.com</p>
+                </div>
+
+                <div class="testimonial">
+                    <p class="arial mida12">
+                        <em>Talk to us if you are looking for business savvy
+                            online solutions
+                            rather than possibilities of technology.</em>
+                    </p>
+                    <p class="testimonial-author arial mida12">-
+                        Design3edge.com</p>
+                </div>
+            </aside>
+        </main>
+        <br />
+        <hr />
+        <footer>
+            <nav class="footer-nav">
+                <a href="../main.html" class="arial">Home</a> |
+                <a href="#" class="arial">About Us</a> |
+                <a href="#" class="arial">Solutions</a> |
+                <a href="client.html" class="arial">Clients</a> |
+                <a href="contact.html" class="arial">Contact Us</a>
+            </nav>
+            <p class="copyright">
+                &copy; Copyright Your <span class="orange">Site Name</span>.
+                <span class="orange">Dot Com</span>. All Rights Reserved
+            </p>
+        </footer>
+    </body>
 </html>
