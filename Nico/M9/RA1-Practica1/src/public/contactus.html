@@ -11,15 +11,23 @@
 
 <body class="container">
     <header class="header">
-        <img src="./media/INFOTECH - Logo.png" alt="">
+        <img src="./media/INFOTECH - Logo.png" alt="infotech">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <!--Para la version pequeña, menu hamburguesa, comprueba el estado con el :checked,
+        uso label para que al darle en una zona mas amplia se vea como una hamburguesa con los span y siga funcionando-->
+        <label for="menu-toggle" class="menu-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <nav class="navigation headnav">
             <button id="CambioTema"><span class="icon">🌙</span></button>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="404.html">About Us</a></li>
-                <li><a href="404.html">Solutions</a></li>
-                <li><a href="clients.html">Clients</a></li>
-                <li><a href="contactus.html" class="active">Contact Us</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="404.html">ABOUT US</a></li>
+                <li><a href="404.html">SOLUTIONS</a></li>
+                <li><a href="clients.html">CLIENTS</a></li>
+                <li><a href="contactus.html" class="active">CONTACT US</a></li>
             </ul>
         </nav>
     </header>
@@ -66,7 +74,7 @@
         </section>
 
         <aside class="contact-info-section">
-            <div class="info-block">
+            <div class="info-block info">
                 <h2 class="orange">Get in Touch</h2>
                 <hr>
                 <ul class="contact-list">
@@ -94,7 +102,7 @@
             </div>
 
             <div class="info-block social">
-                <h3 class="orange">Follow us on</h3>
+                <h2 class="orange">Follow us on</h2>
                 <hr>
 
                 <a href=""><img src="media/Twitter.svg" alt="Twitter"></a>
@@ -104,7 +112,7 @@
             </div>
 
             <div class="info-block testimonial">
-                <h3 class="orange">Testimonial</h3>
+                <h2 class="orange">Testimonial</h2>
                 <hr>
                 <p>Talk to us if you are looking for business savvy online solutions rather
                     than possibilities of technology.</p>

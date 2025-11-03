@@ -205,3 +205,28 @@ main#home {
     }
 
 }
+
+@media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+    main#home article.card.cardtest {
+        margin: 20px 0 0 0;
+        width: 97%;
+    }
+
+    main#home article.form {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+
+    main#home article.card.cardtest,
+    main#home article.card.cardsol {
+        margin: 20px 0 0 0;
+        width: 97%;
+    }
+
+
+    main#home article.form {
+        margin-left: 0;
+    }
+}

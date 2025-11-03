@@ -58,8 +58,7 @@ main#Contact {
 
             textarea {
                 resize: none;
-                min-height: 100px;
-                width: 80%;
+                width: 70%;
             }
 
         }
@@ -70,7 +69,7 @@ main#Contact {
             background-color: var(--gris-6);
             color: var(--gris-2);
             border-radius: 20px;
-            margin: 0 0 0 18%; //TODO arreglar form si da tiempo, esto va mal para diferentes pantallas, grid? o arreglar flex?
+            margin: 0 0 0 140px;
         }
     }
 
@@ -96,9 +95,7 @@ main#Contact {
         }
 
         .social {
-            hr {
-                margin: 10px 0;
-            }
+
 
             a img {
                 margin-right: 30px;
@@ -121,4 +118,13 @@ main#Contact {
         }
 
     }
+}
+
+@media screen and (max-width:$breakpoint-small) {
+    main#Contact .contact-info-section .social a img {
+
+        margin: 5px;
+
+    }
+
 }

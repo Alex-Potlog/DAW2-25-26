@@ -78,3 +78,9 @@ main#Clients {
     }
 
 }
+
+@media screen and (max-width:$breakpoint-small) {
+    .client-card img {
+        height: 320px; //si no, se ve DEMASIADO grande, y aun asi la calidad de la imagen es pesima
+    }
+}
