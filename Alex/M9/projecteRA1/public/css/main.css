@@ -353,7 +353,7 @@ nav a {
     z-index: 999;
     padding-top: 80px;
     overflow-y: auto;
-    pointer-events: auto; /* Add this line to ensure menu is always clickable */
+    pointer-events: auto;
   }
   #header-nav.active {
     right: 0;
@@ -429,8 +429,7 @@ footer {
 }
 .grid {
   display: grid;
-  grid-template-rows: auto auto auto auto; /* Cambia de repeat(4, 1fr) a auto */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto auto;
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 24px;

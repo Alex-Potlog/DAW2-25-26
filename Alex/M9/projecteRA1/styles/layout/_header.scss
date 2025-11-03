@@ -117,7 +117,7 @@
         z-index: 999;
         padding-top: 80px;
         overflow-y: auto;
-        pointer-events: auto; /* Add this line to ensure menu is always clickable */
+        pointer-events: auto; 
     }
 
     #header-nav.active {
