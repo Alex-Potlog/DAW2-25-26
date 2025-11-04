@@ -7,5 +7,5 @@ def mostra(nom):
     finally:
         arxiu.close
 
-#fitxer = input("Entra el nom del fitxer: ")
-mostra("fitxer.txt")
+fitxer = input("Entra el nom del fitxer: ")
+mostra(fitxer)

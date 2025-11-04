@@ -1,0 +1,5 @@
+Aquest fitxer es tant gran 
+Que te mes d'una linea
+Es un arxiu amb molts gats
+Aquest fitxer també té molts i molts gats
+Tants que ocupen varies linees
