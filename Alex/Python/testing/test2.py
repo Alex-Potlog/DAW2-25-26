@@ -33,7 +33,7 @@ def tirar(dice_notation: str, k: int = 1):
 
 
 def test1():
-    assert atac_critic(30) == 30 or 60
+    assert atac_critic(30) in [30, 60]
 
 
 def test2():
@@ -43,9 +43,9 @@ def test2():
     resultats = tirar("2d10", 5)
     assert 1 <= resultats["maxim"] <= 10
     assert 1 <= resultats["mitjana"] <= 10
-    results = tirar("1d20", 20)
-    assert 1 <= results["maxim"] <= 20
-    assert 1 <= results["mitjana"] <= 20
+    resultats = tirar("1d20", 20)
+    assert 1 <= resultats["maxim"] <= 20
+    assert 1 <= resultats["mitjana"] <= 20
 
 
 if __name__ == "__main__":
