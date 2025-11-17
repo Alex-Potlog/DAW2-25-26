@@ -1,6 +1,6 @@
 #!/bin/bash
-#Para utilizar el scss hay que hacer un conjunto de carpetas y archivos en el proyecto
-#Utiliza los siguientes comandos para crearlo todo
+# scss.sh (c) 2025 by Adrian Martinez Barquiel is licensed under CC BY-NC 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/ 
+# Generates a template for create a website using scss
 
 mkdir public
 

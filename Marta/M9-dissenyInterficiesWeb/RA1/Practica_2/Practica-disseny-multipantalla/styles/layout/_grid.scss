@@ -7,14 +7,20 @@
         gap: 10px;
 
         grid-template-areas:
-            "bann"
-            "titol"
+            "banner"
             "A"
             "B"
             "C"
             "cont"
-            "form"
-            "media"
+            "formMedia"
+        ;
+    }
+
+    .containerBanner {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "bann"
+            "titol"
         ;
     }
 
@@ -59,12 +65,34 @@
         gap: 10px;
 
         grid-template-areas:
-            "bann titol"
+            "banner banner"
             "A B"
-            "C form"
-            "cont media"
+            "C formMedia"
+            "cont formMedia"
         ;
     }
+
+    .containerBanner {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "bann titol"
+        ;
+    }
+
+
+    .formMedia {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "form"
+            "media"
+        ;
+
+        .form {
+            padding-bottom: 50px;
+        }
+    }
+
+
 
     .gridClient {
         display: grid;
@@ -73,10 +101,10 @@
 
         grid-template-areas:
             "clientArticle tesimonial"
-            "divCli1"
-            "divCli2"
-            "divCli3"
-            "divCli4"
+            "divCli1 ."
+            "divCli2 ."
+            "divCli3 ."
+            "divCli4 ."
         ;
     }
 
@@ -107,10 +135,20 @@
         gap: 10px;
 
         grid-template-areas:
-            "bann bann titol"
+            "banner banner banner"
             "A B C"
-            "cont cont form"
-            ".     .    media"
+            "cont cont formMedia"
+        ;
+    }
+
+    .containerBanner {
+        grid-area: banner;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+
+        grid-template-areas:
+            "bann titol"
         ;
     }
 
@@ -182,8 +220,13 @@
     grid-area: cont;
 }
 
+.formMedia {
+    grid-area: formMedia;
+}
+
 .form {
     grid-area: form;
+    padding-bottom: 30px;
 }
 
 .media {

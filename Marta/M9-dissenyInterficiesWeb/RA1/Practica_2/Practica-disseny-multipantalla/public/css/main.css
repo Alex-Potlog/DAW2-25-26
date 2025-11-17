@@ -147,6 +147,15 @@ body #container {
   font-size: var(--font-xl);
 }
 
+.h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bg-color);
+  margin-top: 10px;
+}
+
 .h1Info {
   font-family: "Century Gothic";
   font-size: 50px;
@@ -159,17 +168,34 @@ h1 span {
 
 .title {
   background: var(--component-bg);
-  padding: 20px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 0 8px 8px 0;
 }
 
 .p1 {
   font-family: "Century Gothic";
-  font-size: var(--font-sm);
+  font-size: 18px;
+  padding-top: 18px;
+}
+
+.p1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bg-color);
+  margin-top: 18px;
 }
 
 .p2 {
   font-family: "ArialMT";
-  font-size: var(--font-xs);
+  font-size: 15px;
+  width: 93%;
+}
+
+#name {
+  margin-top: 8px;
+  height: 25px;
 }
 
 .welcome {
@@ -178,10 +204,29 @@ h1 span {
   color: var(--primary-color);
 }
 
+.welcome::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bg-color);
+  margin-top: 3px;
+  margin-bottom: 6px;
+}
+
 .media h2 {
   font-family: "Century Gothic";
   font-size: var(--font-md);
   color: var(--primary-color);
+}
+
+.media > h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bg-color);
+  margin-top: 3px;
 }
 
 .gridBody {
@@ -383,7 +428,11 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
-    grid-template-areas: "bann" "titol" "A" "B" "C" "cont" "form" "media";
+    grid-template-areas: "banner" "A" "B" "C" "cont" "formMedia";
+  }
+  .containerBanner {
+    grid-template-columns: 1fr;
+    grid-template-areas: "bann" "titol";
   }
   .gridClient {
     display: grid;
@@ -409,13 +458,24 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    grid-template-areas: "bann titol" "A B" "C form" "cont media";
+    grid-template-areas: "banner banner" "A B" "C formMedia" "cont formMedia";
+  }
+  .containerBanner {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "bann titol";
+  }
+  .formMedia {
+    grid-template-columns: 1fr;
+    grid-template-areas: "form" "media";
+  }
+  .formMedia .form {
+    padding-bottom: 50px;
   }
   .gridClient {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    grid-template-areas: "clientArticle tesimonial" "divCli1" "divCli2" "divCli3" "divCli4";
+    grid-template-areas: "clientArticle tesimonial" "divCli1 ." "divCli2 ." "divCli3 ." "divCli4 .";
   }
   .gridContact {
     display: grid;
@@ -436,7 +496,14 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 10px;
-    grid-template-areas: "bann bann titol" "A B C" "cont cont form" ".     .    media";
+    grid-template-areas: "banner banner banner" "A B C" "cont cont formMedia";
+  }
+  .containerBanner {
+    grid-area: banner;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "bann titol";
   }
   .gridClient {
     display: grid;
@@ -489,8 +556,13 @@ footer {
   grid-area: cont;
 }
 
+.formMedia {
+  grid-area: formMedia;
+}
+
 .form {
   grid-area: form;
+  padding-bottom: 30px;
 }
 
 .media {
@@ -627,13 +699,13 @@ header #infoLogo {
 
 .banner {
   background: var(--component-bg);
-  border-collapse: collapse;
   width: auto;
   height: auto;
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
 }
 .banner img {
-  width: 100%;
+  width: 650px;
+  height: auto;
 }
 
 .read {
@@ -643,11 +715,14 @@ header #infoLogo {
   padding: 2px 15px 2px 15px;
   border-radius: 10px;
   border: 1px solid var(--colorD8);
+  margin-top: 30px;
 }
 
 .subs {
-  padding: 10px;
+  padding: 5px 25px 5px 25px;
+  margin-top: 12px;
   border-radius: 10px;
+  border: 1px solid var(--colorD8);
   font-family: "ArialMT";
   font-size: var(--font-xs);
 }
@@ -700,6 +775,10 @@ header #infoLogo {
 }
 #navbar li.actual {
   background-color: var(--primary-color);
+  border-radius: 5px;
+  border: 1px solid;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--orangeL)), to(var(--orange)));
+  background: linear-gradient(var(--orangeL), var(--orange));
 }
 
 #open-sidebar-button {
