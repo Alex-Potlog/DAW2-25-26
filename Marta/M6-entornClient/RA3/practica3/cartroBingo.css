@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#bingo {
+    width: 50%;
+}
+
+.divTable {
+    display: table;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 40px auto 30px;
+    font-size: 2rem;
+}
+
+.row {
+    display: table-row;
+}
+
+.caselles {
+    border: 1px solid #39393a;
+    width: 200px;
+    height: auto;
+    display: table-cell;
+    padding: 3px 10px;
+    text-align: center;
+    padding: 40px 0px;
+}
+
+.buida {
+    background-color: black;
+}
+
+#extreuBola {
+    display: flex;
+    text-align: center;
+    padding: 10px 25px;
+    color: #43a4da;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.numerosExtrets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.bola {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.marcar {
+    background-color: green;
+    color: white;
+}

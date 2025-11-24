@@ -33,7 +33,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    position: fixed;
+    position: fixed; //Queda bé, però si mous la pantalla sempre es queda fix i no es desplaça amb la pantalla
     top: 10px;
     left: 50%;
     margin-left: -25px;
@@ -77,6 +77,15 @@ body {
     font-size: var(--font-xl);
 }
 
+.h1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bg-color);
+    margin-top: 10px;
+}
+
 .h1Info {
     font-family: 'Century Gothic';
     font-size: 50px;
@@ -89,17 +98,34 @@ h1 span {
 
 .title {
     background: var(--component-bg);
-    padding: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 0 8px 8px 0;
 }
 
 .p1 {
     font-family: 'Century Gothic';
-    font-size: var(--font-sm);
+    font-size: 18px;
+    padding-top: 18px;
+}
+
+.p1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bg-color);
+    margin-top: 18px;
 }
 
 .p2 {
     font-family: 'ArialMT';
-    font-size: var(--font-xs);
+    font-size: 15px;
+    width: 93%;
+}
+
+#name {
+    margin-top: 8px;
+    height: 25px;
 }
 
 .welcome {
@@ -108,10 +134,29 @@ h1 span {
     color: var(--primary-color);
 }
 
+.welcome::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bg-color);
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+
 .media h2 {
     font-family: 'Century Gothic';
     font-size: var(--font-md);
     color: var(--primary-color);
+}
+
+.media>h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bg-color);
+    margin-top: 3px;
 }
 
 .gridBody {
