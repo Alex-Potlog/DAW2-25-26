@@ -1,0 +1,109 @@
+Conceptos Django
+
+1. Definicions curtes (resposta breu)
+
+Model
+    Un Model es la fuente definitiva de información sobre bases de datos. Contiene los campos y comportamientos esenciales de los datos que almacena. Generalmente, cada modelo se asigna a una sola tabla de base de datos.
+View
+    Las vistas de Django son funciones de Python que toman solicitudes http y devuelven una respuesta http, como documentos HTML.
+Template
+    Una plantilla contiene las partes estáticas de la salida HTML deseada, así como una sintaxis especial que describe cómo se insertará el contenido dinámico.
+URL (urls.py)
+    El archivo urls.py mapea URLs a vistas específicas. Define qué vista debe ejecutarse cuando el usuario visita cierta URL
+ORM (Object Relational Mapping)
+    El ORM es la capa que traduce entre objetos de Python y tablas de base de datos. Te permite trabajar con la BD usando código Python en lugar de SQL
+
+2. Relaciona cada concepte amb la seva funció
+
+Concepte        Funció
+A. Model        1. Decideix quin contingut s'envia al navegador i quin template es mostra.
+B. View         2. Indica a quina vista ha d’accedir cada adreça del navegador.
+C. Template     3. Conté la informació i estructura de la base de dades.
+D. URLs         4. Mostra la informació amb HTML i etiquetes de Django.
+
+A3
+B1
+C4
+D2
+
+3. Explica el flux de dades en Django
+
+Cuando un usuario accede a una pagina de Django:
+Django recibe la peticion y revisa el archivo urls.py para saber que Vista tiene que ejecutar
+Si la vista tiene datos, utiliza ORM para consultar el Model
+La Vista decide que Template usar para mostrar los datos
+Template ejecuta el HTML (lo muestra)
+
+4. Mini pràctica (interpretació de codi)
+
+Mira el codi següent i explica què fa cada part:
+
+    models.py
+    class Product(models.Model):
+        name = models.CharField(max_length=100)
+        price = models.FloatField()
+
+    views.py
+    def product_list(request):
+        products = Product.objects.all()
+        return render(request, 'products.html', {'products': products})
+
+    urls.py
+    path('products/', product_list)
+
+    templates/products.html
+    <h1>Llista de productes</h1>
+    {% for p in products %}
+        <p>{{ p.name }} - {{ p.price }}€</p>
+    {% endfor %}
+
+Quin és el model i què representa?
+    Representa un producto, nombre y precio
+
+Què fa la vista product_list?
+    Recoge los datos de productos (todos) y los guarda en product_list
+
+Quina funció té el fitxer urls.py aquí?
+    Indica que pagina (url) mostrara que vista (product_list)
+
+Què acabarà veient l’usuari al navegador?
+    Una lista de productos de la siguiente manera (HTML)
+         <p>Platano - 100.00€</p>
+         <p>Manzana - 120.00€</p>
+         <p>Pipas - 90.00€</p>
+
+
+5. Activitat creativa
+
+Dissenya un petit esquema (visual o escrit) del funcionament d'una aplicació Django amb aquests passos:
+
+URL → View → Model → Template → Navegador
+
+Usuario escribe/entra en www.botiga.com/productes
+                    V
+                 urls.py
+Busca si tiene "productes" (path('productes/', views.llista_productes))
+                    V
+                  Vista
+Ejecuta la vista relacionada con la pagina, la vista requiere de datos, se lo pregunta al model
+    def llista_productes(request):
+        productes = Producte.objects.all() --> Model
+                                                 V
+                                class Producte(models.Model):
+                                    nom = CharField(max_length=100)
+                                                V
+                                Ya tiene los datos, se los pasa al Template
+                                                V
+Crea una plantilla para mostrar datos   <--Template
+                V
+<h1>Llista de Productes</h1>
+    {% for producte in productes %}
+        <div class="producte">
+            <h2>{{ producte.nom }}</h2>
+        </div>
+    {% endfor %}
+
+                    V
+        Envia los datos al navegador
+
+

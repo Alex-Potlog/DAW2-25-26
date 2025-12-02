@@ -1,1 +1,0 @@
-Al menos una pregunta sera un menu, seguramente usando match/case
