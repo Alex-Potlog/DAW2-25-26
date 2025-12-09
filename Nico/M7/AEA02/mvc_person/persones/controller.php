@@ -9,7 +9,7 @@ class controller
   //rutes o esdeveniments possibles
   //view1: nom i edat
   //view2: nom i alçada
-  private $peticions = array('view1', 'view2', 'consulta');
+  private $peticions = array('view1', 'view2', 'form-select', 'view-select');
 
   public function handler()
   {
@@ -42,10 +42,12 @@ class controller
         $view->retornar_vista($event, $dades);
         break;
 
-      case 'select':
-        //Muestra vista
-        //Consulta model
-        //TODO 3 cases (consulta, insert, update o delete)
+      case 'form-select': //Esto es el action realmente
+        $view->retornar_vista($event);
+        break;
+      case 'view-select':
+        $dades = $per->select($_POST['nom']);
+        $view->retornar_vista($event, $dades);
         break;
       case 'insert':
         //Muestra vista

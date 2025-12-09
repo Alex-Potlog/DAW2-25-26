@@ -47,11 +47,17 @@ class persones extends DBAbstractModel
 
   public function select($nom = "")
   {
-    //TODO queries
+
+    $this->query = "SELECT nom, edat, alcada FROM persones WHERE nom = $nom";
+    $this->get_results_from_query();
+    return $this->rows;
   }
 
 
-  public function insert($user_data = array()) {}
+  public function insert($user_data = array())
+  {
+    //TODO queries
+  }
 
   public function update($userData = array()) {}
 

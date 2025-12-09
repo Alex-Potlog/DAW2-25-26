@@ -7,11 +7,14 @@ class view
 		'subtitle' => array(
 			'inici' => 'Buscar persona', // titles for each view
 			'view1' => 'Mostrar dades nom i edat',
-			'view2' => 'Mostrar dades nom i alcada'
+			'view2' => 'Mostrar dades nom i alcada' //TODO añadir todos los casos para que se muestre la informacion
 		),
 		'capçalera' => array(
 			'view1' => array('nom', 'edat'), // table headers for each view
 			'view2' => array('nom', 'alcada')
+		),
+		'form' => array(
+			'form_select' => array('nom') //TODO añadir mas formularios (los que haga falta para el ejercicio)
 		)
 	);
 
