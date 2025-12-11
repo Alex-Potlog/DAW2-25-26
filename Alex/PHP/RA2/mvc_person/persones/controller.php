@@ -42,11 +42,8 @@ class controller {
         
         case 'inici':
             $view->retornar_vista($event, array());
-        case 'consulta':
-          $view->selectForm();
-          
-          $dades = $per->select();
-          
+        
+              
         }
       
   }

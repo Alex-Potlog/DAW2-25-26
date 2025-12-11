@@ -5,19 +5,16 @@ class view {
   private $diccionari = array (
     'subtitle' => array ('inici' => 'Buscar persona', // titles for each view
                          'view1' => 'Mostrar dades nom i edat',
-                         'view2' => 'Mostrar dades nom i alcada',
-						'search' => 'Busca per nom'),
+                         'view2' => 'Mostrar dades nom i alcada'),
     'capçalera' => array ('view1' => array('nom','edat'), // table headers for each view
-                         'view2' => array('nom','alcada'),
-						'search' => array('nom', 'edat', 'alcada')));
+                         'view2' => array('nom','alcada')));
   
 
 public function retornar_vista ($vista, $dades=array(), $message="Dades de l'usuari") {
 	
 	// the main template is read (menu, message and the main body (a form or select result)
         // read entire file into a string
-		echo __DIR__;
-	$html = file_get_contents(__DIR__ . '/persones_template.html');
+	$html = file_get_contents(__DIR__ . '/../site_media/html/persones_template.html');
         //print_r ($html);
 	
 	// subtitle of the page is writen 
@@ -32,7 +29,7 @@ public function retornar_vista ($vista, $dades=array(), $message="Dades de l'usu
 	if ($vista=='view1' || $vista=='view2' ) {
 		
 		// the view template is read and its contents is included in the main template
-		$view = file_get_contents(__DIR__ . '/./view_template.html');
+		$view = file_get_contents(__DIR__ . '/../site_media/html/view_template.html');
 		$html = str_replace ('{main}', $view, $html);
 		
 		// the table header is built and writen on the template
@@ -47,13 +44,11 @@ public function retornar_vista ($vista, $dades=array(), $message="Dades de l'usu
 	 
 	if ($vista=='inici' || ($vista=='view_select' && count($dades)==0) || $vista=='view_insert')
 		$vista='form_select';
+
+
+
 	print $html;
 } 
-
-public function selectForm($html){
-	$html = file_get_contents(__DIR__ . './plantilla_form_template.html');
-	return $html;
-}
 
 
 private function buildHeader ($vista) {

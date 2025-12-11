@@ -1,0 +1,4 @@
+- Crea el metode per fer la query a model
+- Crea el case a controller per executar el metode de model
+- Crea la vista del formulari
+- Crea la vista de la taula final

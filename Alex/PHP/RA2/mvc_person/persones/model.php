@@ -1,7 +1,7 @@
 <?php
 
 // magic constant
-require_once (__DIR__ . "/./DBAbstractModel.php");
+require_once (__DIR__ . "/../core/DBAbstractModel.php");
 
 class persones extends DBAbstractModel {
   
@@ -46,9 +46,7 @@ class persones extends DBAbstractModel {
   }
   
   public function select($nom="") {
-    //filter_var($nom, )
-    $this->query="SELECT * FROM persones WHERE persones.nom = $nom;";
-
+   
   }
   
   
