@@ -3,16 +3,14 @@
 require_once 'model.php';
 require_once 'view.php';
 
-class controller
-{
+class controller{
 
   //rutes o esdeveniments possibles
   //view1: nom i edat
   //view2: nom i alçada
   private $peticions = array('view1', 'view2', 'form-select', 'view-select');
 
-  public function handler()
-  {
+  public function handler(){
 
     // Què em demanen?
     $event = 'inici';
@@ -30,8 +28,6 @@ class controller
     $view = new view();
 
     switch ($event) {
-
-
       case 'view1':
         $dades = $per->selectAll(array("nom", "edat"));
         $view->retornar_vista($event, $dades);

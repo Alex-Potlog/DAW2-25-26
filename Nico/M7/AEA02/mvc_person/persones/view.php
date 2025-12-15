@@ -7,7 +7,8 @@ class view
 		'subtitle' => array(
 			'inici' => 'Buscar persona', // titles for each view
 			'view1' => 'Mostrar dades nom i edat',
-			'view2' => 'Mostrar dades nom i alcada' //TODO añadir todos los casos para que se muestre la informacion
+			'view2' => 'Mostrar dades nom i alcada', //TODO añadir todos los casos para que se muestre la informacion
+			'form_select' => 'Formulari de selecció de persona'
 		),
 		'capçalera' => array(
 			'view1' => array('nom', 'edat'), // table headers for each view
@@ -19,9 +20,7 @@ class view
 	);
 
 
-	public function retornar_vista($vista, $dades = array(), $message = "Dades de l'usuari")
-	{
-
+	public function retornar_vista($vista, $dades = array(), $message = "Dades de l'usuari"){
 		// the main template is read (menu, message and the main body (a form or select result)
 		// read entire file into a string
 		$html = file_get_contents(__DIR__ . '/../site_media/html/persones_template.html');
@@ -51,18 +50,14 @@ class view
 			$html = str_replace('{contingut}', $contingut, $html);
 		}
 
-
 		if ($vista == 'inici' || ($vista == 'view_select' && count($dades) == 0) || $vista == 'view_insert')
 			$vista = 'form_select';
-
-
 
 		print $html;
 	}
 
 
-	private function buildHeader($vista)
-	{
+	private function buildHeader($vista) {
 		$str = "";
 		foreach ($this->diccionari['capçalera'][$vista] as $value)
 			$str .= "<th>" . $value . "</th>";
@@ -70,8 +65,7 @@ class view
 	}
 
 
-	private function buildContents($dades)
-	{
+	private function buildContents($dades){
 		$str = "";
 		for ($i = 0; $i < count($dades); $i++) {
 			$str .= "<tr>";
@@ -83,8 +77,7 @@ class view
 	}
 
 
-	private function buildForm($vista)
-	{
+	private function buildForm($vista){
 		$str = "";
 		foreach ($this->diccionari['form'][$vista] as $value) {
 
