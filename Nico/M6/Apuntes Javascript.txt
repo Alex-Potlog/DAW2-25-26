@@ -1,0 +1,1234 @@
+APUNTES DE JAVASCRIPT
+
+Array
+
+    nota: arr. es un array ya hecho(con objetos), no el propio Array
+
+    Array.from() crea una nueva instancia de Array a partir de un objeto iterable
+        console.log(Array.from('foo'));
+        // expected output: Array ["f", "o", "o"]
+
+        console.log(Array.from([1, 2, 3], x => x + x));
+        // expected output: Array [2, 4, 6]
+
+    arr.pop() elimina el último elemento de un array y lo devuelve
+        const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+        console.log(plants.pop());
+        // expected output: "tomato"
+
+        console.log(plants);
+        // expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+        plants.pop();
+
+        console.log(plants);
+        // expected output: Array ["broccoli", "cauliflower", "cabbage"]
+
+    arr.push() añade uno o más elementos al final de un array y devuelve la nueva longitud del array.
+        const animals = ['pigs', 'goats', 'sheep'];
+
+        const count = animals.push('cows');
+        console.log(count);
+        // expected output: 4
+        console.log(animals);
+        // expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+        animals.push('chickens', 'cats', 'dogs');
+        console.log(animals);
+        // expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+
+    arr.slice() devuelve una copia (no son el mismo objeto pero son iguales) de una parte del array a un nuevo array desde start hasta end (end no se incluye) teniendo en cuenta que son indices (empieza por 0). The original array will not be modified
+        const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+
+        console.log(animals.slice(2));
+        // Expected output: Array ["camel", "duck", "elephant"]
+
+        console.log(animals.slice(2, 4));
+        // Expected output: Array ["camel", "duck"]
+
+        console.log(animals.slice(1, 5));
+        // Expected output: Array ["bison", "camel", "duck", "elephant"]
+
+        console.log(animals.slice(-2));
+        // Expected output: Array ["duck", "elephant"]
+
+        console.log(animals.slice(2, -1));
+        // Expected output: Array ["camel", "duck"]
+
+        console.log(animals.slice());
+        // Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+    arr.sort() ordena un array, por defecto por posicion de string y valor unicode (1,10,2,21,"a","b")
+
+        Un array de elementos string, sin especificar una función de comparación:
+            var arr = [ 'a', 'b', 'Z', 'Aa', 'AA' ];
+            arr.sort();
+            //[ 'AA', 'Aa', 'Z', 'a', 'b' ]
+        Un array de elementos numéricos, sin función de comparación:
+            var arr = [ 40, 1, 5, 200 ];
+            arr.sort();
+            //[ 1, 200, 40, 5 ]
+        Un array de elementos numéricos, usando una función de comparación:
+            var arr = [ 40, 1, 5, 200 ];
+            function comparar ( a, b ){ return a - b; }
+            arr.sort( comparar );
+            // [ 1, 5, 40, 200 ]
+        Lo mismo pero usando una función anónima normal:
+            var arr = [ 40, 1, 5, 200 ];
+            arr.sort(function(a,b){return a - b;});
+            // [ 1, 5, 40, 200 ]
+        Lo mismo escrito más compacto mediante una función flecha:
+            var arr = [ 40, 1, 5, 200 ];
+            arr.sort((a,b)=>a-b);
+            // [ 1, 5, 40, 200 ]
+        Para letras NO ASCII:
+            var items = ['réservé', 'premier', 'cliché', 'communiqué', 'café', 'adieu'];
+            items.sort(function (a, b) {
+            return a.localeCompare(b);
+            });
+            // items is ['adieu', 'café', 'cliché', 'communiqué', 'premier', 'réservé']
+    arr.join() es un arr.toString, solo los pone juntos, separados por simples comas y no []
+
+Date
+
+    nota: date. es un objeto date ya creado:
+        Formato ISO
+            const date1 = new Date('2024-12-25');
+            // Expected output: Wed Dec 25 2024 01:00:00 GMT+0100 (medianoche en UTC)
+
+            const date2 = new Date('2024-12-25T10:30:00');
+            // Expected output: Wed Dec 25 2024 10:30:00 GMT+0100
+
+            const date3 = new Date('2024-12-25T10:30:00Z');
+            // Expected output: Wed Dec 25 2024 11:30:00 GMT+0100 (Z indica UTC)
+
+            const date4 = new Date('2024-12-25T10:30:00+02:00');
+            // Expected output: fecha ajustada según timezone especificado
+
+        Formato Americano
+            // MM/DD/YYYY (formato americano)
+            const date1 = new Date('12/25/2024');
+            // Expected output: Wed Dec 25 2024
+
+            // Con hora
+            const date2 = new Date('12/25/2024 10:30:00');
+            // Expected output: Wed Dec 25 2024 10:30:00
+
+        Formato Constructor
+            // new Date(year, monthIndex, day, hours, minutes, seconds, milliseconds)
+            // IMPORTANTE: monthIndex va de 0 (enero) a 11 (diciembre)
+
+            const date1 = new Date(2024, 11, 25);
+            // Expected output: Wed Dec 25 2024 00:00:00 (11 = diciembre)
+
+            const date2 = new Date(2024, 11, 25, 10, 30, 0);
+            // Expected output: Wed Dec 25 2024 10:30:00
+
+            const date3 = new Date(2024, 0, 1);
+            // Expected output: Mon Jan 01 2024 (0 = enero)
+
+    Resumen:
+        getDate() - día del mes (1-31)
+        getDay() - día de la semana (0-6, donde 0 es domingo)
+        getFullYear() - año completo (4 dígitos)
+        getHours() - hora (0-23)
+        getMinutes() - minutos (0-59)
+        getMonth() - mes (0-11, donde 0 es enero)
+        getSeconds() - segundos (0-59)
+        getTime() - milisegundos desde Unix Epoch
+        toDateString() - fecha en formato legible
+        toLocaleDateString() - fecha según el idioma local
+        toLocaleTimeString() - hora según el idioma local
+
+    Date.now() Devuelve el número de milisegundos transcurridos desde las 00:00:00 UTC del 1 de enero de 1970.
+
+
+    date.getDate() Devuelve el día del mes (1-31) para la fecha especificada según la hora local.
+
+        const birthday = new Date('August 19, 1995 23:15:30');
+        console.log(birthday.getDate());
+        // Expected output: 19
+
+        const date1 = new Date('December 25, 2024 10:30:00');
+        console.log(date1.getDate());
+        // Expected output: 25
+
+        const date2 = new Date('February 1, 2024');
+        console.log(date2.getDate());
+        // Expected output: 1
+
+
+    date.getDay() Devuelve el día de la semana (0-6) para la fecha especificada según la hora local, donde 0 representa el domingo.
+
+
+        const birthday = new Date('August 19, 1995 23:15:30');
+        console.log(birthday.getDay());
+        // Expected output: 6 (Saturday)
+
+        const date1 = new Date('December 25, 2024');
+        console.log(date1.getDay());
+        // Expected output: 3 (Wednesday)
+
+        const date2 = new Date('January 1, 2024');
+        console.log(date2.getDay());
+        // Expected output: 1 (Monday)
+
+
+    date.getFullYear() Devuelve el año (4 dígitos) de la fecha especificada según la hora local.
+
+
+        const moonLanding = new Date('July 20, 1969 00:20:18');
+        console.log(moonLanding.getFullYear());
+        // Expected output: 1969
+
+        const date1 = new Date('December 31, 2024 23:59:59');
+        console.log(date1.getFullYear());
+        // Expected output: 2024
+
+        const date2 = new Date('January 1, 2000');
+        console.log(date2.getFullYear());
+        // Expected output: 2000
+
+
+    date.getHours() Devuelve la hora (0-23) de la fecha especificada según la hora local.
+
+
+        const birthday = new Date('March 13, 1995 13:30:00');
+        console.log(birthday.getHours());
+        // Expected output: 13
+
+        const date1 = new Date('December 25, 2024 00:00:00');
+        console.log(date1.getHours());
+        // Expected output: 0
+
+        const date2 = new Date('December 25, 2024 23:45:30');
+        console.log(date2.getHours());
+        // Expected output: 23
+
+
+    date.getMinutes() Devuelve los minutos (0-59) de la fecha especificada según la hora local.
+
+
+        const birthday = new Date('March 13, 1995 13:30:00');
+        console.log(birthday.getMinutes());
+        // Expected output: 30
+
+        const date1 = new Date('December 25, 2024 10:05:00');
+        console.log(date1.getMinutes());
+        // Expected output: 5
+
+        const date2 = new Date('December 25, 2024 23:59:30');
+        console.log(date2.getMinutes());
+        // Expected output: 59
+
+
+    date.getMonth() Devuelve el mes (0-11) de la fecha especificada según la hora local, donde 0 representa enero.
+
+
+        const moonLanding = new Date('July 20, 1969 00:20:18');
+        console.log(moonLanding.getMonth());
+        // Expected output: 6 (July es el mes 7, pero el índice es 6)
+
+        const date1 = new Date('January 1, 2024');
+        console.log(date1.getMonth());
+        // Expected output: 0
+
+        const date2 = new Date('December 31, 2024');
+        console.log(date2.getMonth());
+        // Expected output: 11
+
+
+    date.getSeconds() Devuelve los segundos (0-59) de la fecha especificada según la hora local.
+
+
+        const moonLanding = new Date('July 20, 1969 00:20:18');
+        console.log(moonLanding.getSeconds());
+        // Expected output: 18
+
+        const date1 = new Date('December 25, 2024 10:30:45');
+        console.log(date1.getSeconds());
+        // Expected output: 45
+
+        const date2 = new Date('December 25, 2024 23:59:00');
+        console.log(date2.getSeconds());
+        // Expected output: 0
+
+
+    date.getTime() Devuelve el valor numérico de la fecha especificada como el número de milisegundos desde el 1 de enero de 1970 00:00:00 UTC (Unix Epoch).
+
+
+        const moonLanding = new Date('July 20, 1969 20:17:40 UTC');
+        console.log(moonLanding.getTime());
+        // Expected output: -14182940000
+
+        const date1 = new Date('January 1, 2024 00:00:00');
+        console.log(date1.getTime());
+        // Expected output: 1704067200000 (aproximado, depende de la zona horaria)
+
+        const date2 = new Date();
+        console.log(date2.getTime());
+        // Expected output: timestamp actual en milisegundos
+
+
+    date.toDateString() Devuelve la porción de fecha de un objeto Date en un formato legible para humanos en inglés.
+
+
+        const event = new Date('August 19, 1995 23:15:30 GMT+00:00');
+        console.log(event.toDateString());
+        // Expected output: "Sat Aug 19 1995"
+
+        const date1 = new Date('December 25, 2024 10:30:00');
+        console.log(date1.toDateString());
+        // Expected output: "Wed Dec 25 2024"
+
+        const date2 = new Date('January 1, 2000');
+        console.log(date2.toDateString());
+        // Expected output: "Sat Jan 01 2000"
+
+
+    date.toLocaleDateString() Devuelve una cadena con una representación sensible al idioma de la porción de fecha de la fecha especificada. Los argumentos opcionales pueden personalizar el formato.
+
+
+        const event = new Date('August 19, 1995 23:15:30');
+        console.log(event.toLocaleDateString('en-US'));
+        // Expected output: "8/19/1995"
+
+        console.log(event.toLocaleDateString('es-ES'));
+        // Expected output: "19/8/1995"
+
+        console.log(event.toLocaleDateString('de-DE'));
+        // Expected output: "19.8.1995"
+
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        console.log(event.toLocaleDateString('es-ES', options));
+        // Expected output: "sábado, 19 de agosto de 1995"
+
+
+    date.toLocaleTimeString() Devuelve una cadena con una representación sensible al idioma de la porción de hora de la fecha especificada. Los argumentos opcionales pueden personalizar el formato.
+
+
+        const event = new Date('August 19, 1995 23:15:30');
+        console.log(event.toLocaleTimeString('en-US'));
+        // Expected output: "11:15:30 PM"
+
+        console.log(event.toLocaleTimeString('es-ES'));
+        // Expected output: "23:15:30"
+
+        console.log(event.toLocaleTimeString('de-DE'));
+        // Expected output: "23:15:30"
+
+        const options = { hour: '2-digit', minute: '2-digit' };
+        console.log(event.toLocaleTimeString('en-US', options));
+        // Expected output: "11:15 PM"
+
+Document
+
+    createElement() - Crea un nuevo elemento HTML
+    createTextNode() - Crea un nodo de texto
+    querySelector() - Busca el primer elemento que coincida con un selector CSS
+    querySelectorAll() - Busca todos los elementos que coincidan con un selector CSS (devuelve NodeList)
+
+
+    Document.createElement()
+        Crea un nuevo elemento HTML con el nombre de etiqueta especificado.
+
+
+        const newDiv = document.createElement('div');
+        newDiv.textContent = 'Hola Mundo';
+        document.body.appendChild(newDiv);
+        // Expected output: se añade un div con texto al body
+
+        const button = document.createElement('button');
+        button.textContent = 'Click me';
+        button.id = 'myButton';
+        // Expected output: botón creado (aún no está en el DOM)
+
+        const img = document.createElement('img');
+        img.src = 'photo.jpg';
+        // Expected output: elemento img creado con atributo src
+
+
+    Document.createTextNode()
+        Crea un nuevo nodo de texto con el contenido especificado.
+
+
+        const textNode = document.createTextNode('Este es un texto');
+        document.body.appendChild(textNode);
+        // Expected output: texto añadido directamente al body
+
+        const p = document.createElement('p');
+        const text1 = document.createTextNode('Hola ');
+        const text2 = document.createTextNode('Mundo');
+        p.appendChild(text1);
+        p.appendChild(text2);
+        // Expected output: párrafo con "Hola Mundo"
+
+
+    Document.querySelector()
+        Devuelve el primer elemento del documento que coincida con el selector CSS especificado.
+
+
+        const element = document.querySelector('.myClass');
+        // Expected output: primer elemento con clase "myClass" o null
+
+        const button = document.querySelector('submitBtn');
+        // Expected output: elemento con id "submitBtn"
+
+        const firstParagraph = document.querySelector('p');
+        // Expected output: primer elemento <p> del documento
+
+        const complexSelect = document.querySelector('div.container > p:first-child');
+        // Expected output: primer <p> hijo directo de div con clase "container"
+
+
+    Document.querySelectorAll()
+        Devuelve una NodeList estática de todos los elementos que coincidan con el selector CSS especificado.
+
+
+        const allDivs = document.querySelectorAll('div');
+        console.log(allDivs.length);
+        // Expected output: número de divs en el documento
+
+        const items = document.querySelectorAll('.list-item');
+        items.forEach(item => console.log(item.textContent));
+        // Expected output: texto de cada elemento con clase "list-item"
+
+        const buttons = document.querySelectorAll('button.active');
+        // Expected output: NodeList con todos los botones que tengan clase "active"
+
+Element
+
+    after() - Inserta nodos después del elemento
+    getAttribute() - Obtiene el valor de un atributo
+    innerHTML - Obtiene/establece el HTML interno
+    insertAdjacentElement() - Inserta un elemento en posición relativa (beforebegin, afterbegin, beforeend, afterend)
+    insertAdjacentHTML() - Inserta HTML en posición relativa
+    insertAdjacentText() - Inserta texto en posición relativa (no interpreta HTML)
+    prepend() - Inserta nodos al inicio del elemento
+    remove() - Elimina el elemento del DOM
+    removeAttribute() - Elimina un atributo
+    setAttribute() - Establece el valor de un atributo
+    addEventListener() - Registra un controlador de eventos
+
+    element.after()
+        Inserta un conjunto de nodos u objetos después del elemento.
+
+
+        const container = document.querySelector('container');
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = 'Nuevo párrafo';
+        container.after(newParagraph);
+        // Expected output: párrafo insertado después del container
+
+        const div = document.querySelector('myDiv');
+        div.after('Texto después', document.createElement('span'));
+        // Expected output: texto y span insertados después del div
+
+
+    element.getAttribute()
+        Devuelve el valor del atributo especificado del elemento.
+
+
+        const link = document.querySelector('a');
+        console.log(link.getAttribute('href'));
+        // Expected output: valor del atributo href o null
+
+        const img = document.querySelector('img');
+        console.log(img.getAttribute('src'));
+        // Expected output: ruta de la imagen
+
+        const div = document.querySelector('div');
+        console.log(div.getAttribute('data-id'));
+        // Expected output: valor del atributo personalizado data-id
+
+
+    element.innerHTML
+        Obtiene o establece el contenido HTML dentro de un elemento.
+
+
+        const div = document.querySelector('myDiv');
+        console.log(div.innerHTML);
+        // Expected output: "<p>Contenido</p>" (HTML interno)
+
+        div.innerHTML = '<strong>Nuevo contenido</strong>';
+        // Expected output: el div ahora contiene texto en negrita
+
+        div.innerHTML += '<span>Añadido</span>';
+        // Expected output: añade span al contenido existente
+
+
+    element.insertAdjacentElement()
+        Inserta un elemento en una posición relativa al elemento especificado.
+
+
+        const targetDiv = document.querySelector('target');
+        const newElement = document.createElement('p');
+        newElement.textContent = 'Nuevo';
+
+        targetDiv.insertAdjacentElement('beforebegin', newElement);
+        // Expected output: inserta antes del targetDiv
+
+        targetDiv.insertAdjacentElement('afterbegin', newElement);
+        // Expected output: inserta como primer hijo dentro del targetDiv
+
+        targetDiv.insertAdjacentElement('beforeend', newElement);
+        // Expected output: inserta como último hijo dentro del targetDiv
+
+        targetDiv.insertAdjacentElement('afterend', newElement);
+        // Expected output: inserta después del targetDiv
+
+
+    element.insertAdjacentHTML()
+        Inserta HTML en una posición relativa al elemento especificado.
+
+
+        const div = document.querySelector('myDiv');
+
+        div.insertAdjacentHTML('beforebegin', '<p>Antes del div</p>');
+        // Expected output: párrafo insertado antes del div
+
+        div.insertAdjacentHTML('afterbegin', '<span>Primer hijo</span>');
+        // Expected output: span insertado como primer hijo del div
+
+        div.insertAdjacentHTML('beforeend', '<span>Último hijo</span>');
+        // Expected output: span insertado como último hijo del div
+
+        div.insertAdjacentHTML('afterend', '<p>Después del div</p>');
+        // Expected output: párrafo insertado después del div
+
+
+    element.insertAdjacentText()
+        Inserta texto en una posición relativa al elemento especificado (no interpreta HTML).
+
+
+        const div = document.querySelector('myDiv');
+
+        div.insertAdjacentText('beforebegin', 'Texto antes');
+        // Expected output: texto insertado antes del div
+
+        div.insertAdjacentText('afterbegin', 'Primer texto');
+        // Expected output: texto insertado como primer contenido del div
+
+        div.insertAdjacentText('beforeend', '<strong>No se renderiza</strong>');
+        // Expected output: el HTML se muestra como texto literal, no se interpreta
+
+
+    element.prepend()
+        Inserta un conjunto de nodos u objetos antes del primer hijo del elemento.
+
+
+        const list = document.querySelector('ul');
+        const newItem = document.createElement('li');
+        newItem.textContent = 'Primero';
+        list.prepend(newItem);
+        // Expected output: nuevo li insertado al principio de la lista
+
+        const div = document.querySelector('myDiv');
+        div.prepend('Texto al inicio', document.createElement('span'));
+        // Expected output: texto y span insertados al inicio del div
+
+
+    element.remove()
+        Elimina el elemento del DOM.
+
+
+        const elementToRemove = document.querySelector('removeMe');
+        elementToRemove.remove();
+        // Expected output: el elemento es eliminado del documento
+
+        const buttons = document.querySelectorAll('.delete-btn');
+        buttons.forEach(btn => btn.addEventListener('click', (e) => {
+        e.target.parentElement.remove();
+        }));
+        // Expected output: elimina el padre del botón al hacer click
+
+
+    element.removeAttribute()
+        Elimina el atributo especificado del elemento.
+
+
+        const input = document.querySelector('input');
+        input.removeAttribute('disabled');
+        // Expected output: el input ya no está deshabilitado
+
+        const div = document.querySelector('div');
+        div.removeAttribute('data-id');
+        // Expected output: el atributo data-id es eliminado
+
+        const link = document.querySelector('a');
+        link.removeAttribute('target');
+        // Expected output: el atributo target es eliminado
+
+
+    element.setAttribute()
+        Establece el valor de un atributo en el elemento especificado.
+
+
+        const img = document.querySelector('img');
+        img.setAttribute('src', 'new-image.jpg');
+        // Expected output: la imagen ahora apunta a new-image.jpg
+
+        const button = document.querySelector('button');
+        button.setAttribute('disabled', 'true');
+        // Expected output: el botón queda deshabilitado
+
+        const div = document.querySelector('div');
+        div.setAttribute('data-user-id', '12345');
+        // Expected output: añade atributo personalizado data-user-id
+
+
+    element.addEventListener()
+        Registra un controlador de eventos para el tipo de evento especificado.
+
+
+        const button = document.querySelector('button');
+        button.addEventListener('click', () => {
+        console.log('Botón clickeado');
+        });
+        // Expected output: "Botón clickeado" cuando se hace click
+
+        const input = document.querySelector('input');
+        input.addEventListener('input', (e) => {
+        console.log(e.target.value);
+        });
+        // Expected output: muestra el valor del input cada vez que cambia
+
+        document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') console.log('Escape presionado');
+        });
+        // Expected output: detecta cuando se presiona la tecla Escape
+
+HTMLElement
+
+    HTMLElement.innerText
+        Obtiene o establece el contenido de texto visible de un elemento y sus descendientes.
+
+
+        const paragraph = document.querySelector('p');
+        console.log(paragraph.innerText);
+        // Expected output: "Texto visible" (no incluye HTML oculto con CSS)
+
+        paragraph.innerText = 'Nuevo texto';
+        // Expected output: reemplaza todo el contenido con texto plano
+
+        const div = document.querySelector('div');
+        div.innerText = '<strong>No se interpreta</strong>';
+        // Expected output: muestra el HTML como texto literal
+
+JSON
+
+    JSON.parse()
+        Convierte una cadena JSON en un objeto JavaScript.
+
+
+        const jsonString = '{"name":"Juan","age":30}';
+        const obj = JSON.parse(jsonString);
+        console.log(obj.name);
+        // Expected output: "Juan"
+
+        const arrayString = '[1, 2, 3, 4, 5]';
+        const arr = JSON.parse(arrayString);
+        console.log(arr[0]);
+        // Expected output: 1
+
+        const boolString = 'true';
+        const bool = JSON.parse(boolString);
+        console.log(bool);
+        // Expected output: true
+
+
+    JSON.stringify()
+        Convierte un objeto JavaScript en una cadena JSON.
+
+
+        const obj = { name: 'Juan', age: 30 };
+        const jsonString = JSON.stringify(obj);
+        console.log(jsonString);
+        // Expected output: '{"name":"Juan","age":30}'
+
+        const arr = [1, 2, 3, 4, 5];
+        console.log(JSON.stringify(arr));
+        // Expected output: '[1,2,3,4,5]'
+
+        const formatted = JSON.stringify(obj, null, 2);
+        console.log(formatted);
+        // Expected output: JSON formateado con indentación de 2 espacios
+
+Math
+
+    ceil() - Redondea hacia arriba
+    floor() - Redondea hacia abajo
+    random() - Genera número aleatorio entre 0 (inclusive) y 1 (exclusivo)
+    round() - Redondea al entero más cercano
+
+    Math.ceil()
+        Redondea un número hacia arriba al entero más cercano.
+
+
+        console.log(Math.ceil(4.2));
+        // Expected output: 5
+
+        console.log(Math.ceil(4.9));
+        // Expected output: 5
+
+        console.log(Math.ceil(-4.2));
+        // Expected output: -4
+
+        console.log(Math.ceil(0.1));
+        // Expected output: 1
+
+
+    Math.floor()
+        Redondea un número hacia abajo al entero más cercano.
+
+
+        console.log(Math.floor(4.9));
+        // Expected output: 4
+
+        console.log(Math.floor(4.2));
+        // Expected output: 4
+
+        console.log(Math.floor(-4.2));
+        // Expected output: -5
+
+        console.log(Math.floor(0.9));
+        // Expected output: 0
+
+
+    Math.random()
+        Devuelve un número pseudoaleatorio entre 0 (inclusivo) y 1 (exclusivo).
+
+
+        console.log(Math.random());
+        // Expected output: 0.4578912345 (ejemplo, número aleatorio)
+
+        const randomInt = Math.floor(Math.random() * 10);
+        console.log(randomInt);
+        // Expected output: número entero entre 0 y 9
+
+        const randomRange = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
+        console.log(randomRange);
+        // Expected output: número entero entre 50 y 100
+
+
+    Math.round()
+        Redondea un número al entero más cercano.
+
+
+        console.log(Math.round(4.5));
+        // Expected output: 5
+
+        console.log(Math.round(4.4));
+        // Expected output: 4
+
+        console.log(Math.round(-4.5));
+        // Expected output: -4
+
+        console.log(Math.round(4.6));
+        // Expected output: 5
+
+Node
+
+    Node.hasChildNodes()
+        Devuelve true si el nodo tiene nodos hijos, false en caso contrario.
+
+
+        const div = document.querySelector('myDiv');
+        console.log(div.hasChildNodes());
+        // Expected output: true (si tiene hijos) o false
+
+        const emptyDiv = document.createElement('div');
+        console.log(emptyDiv.hasChildNodes());
+        // Expected output: false
+
+        const parent = document.querySelector('ul');
+        if (parent.hasChildNodes()) {
+        console.log('Tiene elementos hijos');
+        }
+        // Expected output: mensaje si ul tiene elementos li
+
+
+    Node.insertBefore()
+        Inserta un nodo antes del nodo hijo especificado.
+
+
+        const parent = document.querySelector('parent');
+        const newChild = document.createElement('p');
+        newChild.textContent = 'Nuevo';
+        const referenceChild = document.querySelector('reference');
+        parent.insertBefore(newChild, referenceChild);
+        // Expected output: newChild insertado antes de referenceChild
+
+        const list = document.querySelector('ul');
+        const newItem = document.createElement('li');
+        newItem.textContent = 'Segundo';
+        const firstItem = list.children[0];
+        list.insertBefore(newItem, firstItem);
+        // Expected output: nuevo item insertado antes del primero
+
+Number
+
+    isInteger() - Verifica si es un número entero
+    isNaN() - Verifica si es NaN (no convierte como isNaN global)
+    parseFloat() - Convierte string a número decimal
+    parseInt() - Convierte string a número entero (acepta base)
+    toFixed() - Formatea número con decimales fijos (devuelve string)
+    parseInt() (función global) - Igual que Number.parseInt()
+
+    Number.isInteger()
+        Determina si el valor proporcionado es un número entero.
+
+
+        console.log(Number.isInteger(5));
+        // Expected output: true
+
+        console.log(Number.isInteger(5.5));
+        // Expected output: false
+
+        console.log(Number.isInteger('5'));
+        // Expected output: false
+
+        console.log(Number.isInteger(0));
+        // Expected output: true
+
+
+    Number.isNaN()
+        Determina si el valor proporcionado es NaN (Not a Number).
+
+
+        console.log(Number.isNaN(NaN));
+        // Expected output: true
+
+        console.log(Number.isNaN(123));
+        // Expected output: false
+
+        console.log(Number.isNaN('hello'));
+        // Expected output: false (no convierte, a diferencia de isNaN global)
+
+        console.log(Number.isNaN(undefined));
+        // Expected output: false
+
+
+    Number.parseFloat()
+        Analiza un argumento string y devuelve un número de punto flotante.
+
+
+        console.log(Number.parseFloat('3.14'));
+        // Expected output: 3.14
+
+        console.log(Number.parseFloat('3.14abc'));
+        // Expected output: 3.14
+
+        console.log(Number.parseFloat('abc'));
+        // Expected output: NaN
+
+        console.log(Number.parseFloat('  5.5  '));
+        // Expected output: 5.5
+
+
+    Number.parseInt()
+        Analiza un argumento string y devuelve un número entero de la base especificada.
+
+
+        console.log(Number.parseInt('123'));
+        // Expected output: 123
+
+        console.log(Number.parseInt('123abc'));
+        // Expected output: 123
+
+        console.log(Number.parseInt('1010', 2));
+        // Expected output: 10 (binario a decimal)
+
+        console.log(Number.parseInt('FF', 16));
+        // Expected output: 255 (hexadecimal a decimal)
+
+
+    Number.prototype.toFixed()
+        Formatea un número usando notación de punto fijo con el número especificado de decimales.
+
+
+        const num = 3.14159;
+        console.log(num.toFixed(2));
+        // Expected output: "3.14"
+
+        const price = 19.9;
+        console.log(price.toFixed(2));
+        // Expected output: "19.90"
+
+        const large = 1234.5678;
+        console.log(large.toFixed(0));
+        // Expected output: "1235"
+
+
+    parseInt()
+        Función global que analiza un string y devuelve un entero.
+
+
+        console.log(parseInt('123'));
+        // Expected output: 123
+
+        console.log(parseInt('123.45'));
+        // Expected output: 123
+
+        console.log(parseInt('0x10'));
+        // Expected output: 16 (hexadecimal)
+
+        console.log(parseInt('10', 2));
+        // Expected output: 2 (binario)
+
+String.prototype
+
+    Búsqueda y verificación:
+
+        charAt() - Devuelve el carácter en el índice especificado
+        endsWith() - Verifica si termina con ciertos caracteres
+        includes() - Verifica si contiene ciertos caracteres
+        indexOf() - Índice de la primera aparición (devuelve -1 si no existe)
+        lastIndexOf() - Índice de la última aparición (devuelve -1 si no existe)
+        search() - Busca con regex y devuelve índice
+
+    Transformación:
+
+        match() - Extrae coincidencias con regex (devuelve array o null)
+        replace() - Reemplaza coincidencias
+        split() - Divide string en array
+        substring() - Extrae parte de la cadena entre índices
+        toLowerCase() - Convierte a minúsculas
+        toUpperCase() - Convierte a mayúsculas
+        valueOf() - Devuelve el valor primitivo del string
+
+    String.prototype.charAt()
+        Devuelve el carácter en el índice especificado.
+
+
+        const str = 'Hello';
+        console.log(str.charAt(0));
+        // Expected output: "H"
+
+        console.log(str.charAt(4));
+        // Expected output: "o"
+
+        console.log(str.charAt(10));
+        // Expected output: "" (string vacío si índice fuera de rango)
+
+
+    String.prototype.endsWith()
+        Determina si una cadena termina con los caracteres especificados.
+
+
+        const str = 'Hello World';
+        console.log(str.endsWith('World'));
+        // Expected output: true
+
+        console.log(str.endsWith('Hello'));
+        // Expected output: false
+
+        console.log(str.endsWith('o', 5));
+        // Expected output: true (verifica hasta posición 5: "Hello")
+
+
+    String.prototype.includes()
+        Determina si una cadena contiene los caracteres especificados.
+
+
+        const str = 'Hello World';
+        console.log(str.includes('World'));
+        // Expected output: true
+
+        console.log(str.includes('world'));
+        // Expected output: false (case-sensitive)
+
+        console.log(str.includes('o', 5));
+        // Expected output: true (busca desde posición 5)
+
+
+    String.prototype.indexOf()
+        Devuelve el índice de la primera aparición del valor especificado, o -1 si no se encuentra.
+
+
+        const str = 'Hello World';
+        console.log(str.indexOf('o'));
+        // Expected output: 4
+
+        console.log(str.indexOf('o', 5));
+        // Expected output: 7 (busca desde posición 5)
+
+        console.log(str.indexOf('xyz'));
+        // Expected output: -1
+
+
+    String.prototype.lastIndexOf()
+        Devuelve el índice de la última aparición del valor especificado, o -1 si no se encuentra.
+
+
+        const str = 'Hello World';
+        console.log(str.lastIndexOf('o'));
+        // Expected output: 7
+
+        console.log(str.lastIndexOf('o', 5));
+        // Expected output: 4 (busca hacia atrás desde posición 5)
+
+        console.log(str.lastIndexOf('xyz'));
+        // Expected output: -1
+
+
+    String.prototype.match()
+        Recupera el resultado de coincidir una cadena contra una expresión regular.
+
+
+        const str = 'The rain in Spain';
+        console.log(str.match(/ain/g));
+        // Expected output: ["ain", "ain"]
+
+        console.log(str.match(/[A-Z]/g));
+        // Expected output: ["T", "S"]
+
+        console.log(str.match(/xyz/));
+        // Expected output: null
+
+
+    String.prototype.replace()
+        Devuelve una nueva cadena con algunas o todas las coincidencias reemplazadas.
+
+
+        const str = 'Hello World';
+        console.log(str.replace('World', 'Universe'));
+        // Expected output: "Hello Universe"
+
+        console.log(str.replace(/o/g, '0'));
+        // Expected output: "Hell0 W0rld"
+
+        const newStr = 'cat, bat, sat';
+        console.log(newStr.replace(/at/g, 'oot'));
+        // Expected output: "coot, boot, soot"
+
+
+    String.prototype.search()
+        Busca una coincidencia con una expresión regular y devuelve el índice.
+
+
+        const str = 'Hello World';
+        console.log(str.search('World'));
+        // Expected output: 6
+
+        console.log(str.search(/[A-Z]/));
+        // Expected output: 0 (primera letra mayúscula)
+
+        console.log(str.search(/xyz/));
+        // Expected output: -1
+
+
+    String.prototype.split()
+        Divide una cadena en un array de subcadenas.
+
+
+        const str = 'Hello World';
+        console.log(str.split(' '));
+        // Expected output: ["Hello", "World"]
+
+        const csv = 'apple,banana,orange';
+        console.log(csv.split(','));
+        // Expected output: ["apple", "banana", "orange"]
+
+        console.log(str.split(''));
+        // Expected output: ["H", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d"]
+
+        console.log(str.split(' ', 1));
+        // Expected output: ["Hello"] (limita a 1 elemento)
+
+
+    String.prototype.substring()
+        Devuelve la parte de la cadena entre los índices de inicio y fin.
+
+
+        const str = 'Hello World';
+        console.log(str.substring(0, 5));
+        // Expected output: "Hello"
+
+        console.log(str.substring(6));
+        // Expected output: "World"
+
+        console.log(str.substring(6, 11));
+        // Expected output: "World"
+
+        console.log(str.substring(6, 8));
+        // Expected output: "Wo"
+
+
+    String.prototype.toLowerCase()
+        Convierte la cadena a minúsculas.
+
+
+        const str = 'Hello World';
+        console.log(str.toLowerCase());
+        // Expected output: "hello world"
+
+        const mixed = 'JavaScript';
+        console.log(mixed.toLowerCase());
+        // Expected output: "javascript"
+
+        const upper = 'ABC123';
+        console.log(upper.toLowerCase());
+        // Expected output: "abc123"
+
+
+    String.prototype.toUpperCase()
+        Convierte la cadena a mayúsculas.
+
+
+        const str = 'Hello World';
+        console.log(str.toUpperCase());
+        // Expected output: "HELLO WORLD"
+
+        const mixed = 'JavaScript';
+        console.log(mixed.toUpperCase());
+        // Expected output: "JAVASCRIPT"
+
+        const lower = 'abc123';
+        console.log(lower.toUpperCase());
+        // Expected output: "ABC123"
+
+
+    String.prototype.valueOf()
+        Devuelve el valor primitivo de un objeto String.
+
+
+        const strObj = new String('Hello');
+        console.log(strObj.valueOf());
+        // Expected output: "Hello"
+
+        const str = 'World';
+        console.log(str.valueOf());
+        // Expected output: "World"
+
+        console.log(typeof strObj.valueOf());
+        // Expected output: "string"
+
+Estructuras de Control
+
+    if...else
+        Ejecuta un bloque de código si una condición es verdadera, opcionalmente ejecuta otro bloque si es falsa.
+
+
+        const age = 18;
+        if (age >= 18) {
+        console.log('Mayor de edad');
+        } else {
+        console.log('Menor de edad');
+        }
+        // Expected output: "Mayor de edad"
+
+        const score = 75;
+        if (score >= 90) {
+        console.log('A');
+        } else if (score >= 80) {
+        console.log('B');
+        } else if (score >= 70) {
+        console.log('C');
+        } else {
+        console.log('D');
+        }
+        // Expected output: "C"
+
+
+    while
+        Ejecuta un bloque de código mientras una condición sea verdadera.
+
+
+        let i = 0;
+        while (i < 5) {
+        console.log(i);
+        i++;
+        }
+        // Expected output: 0, 1, 2, 3, 4
+
+        let count = 10;
+        while (count > 0) {
+        console.log(count);
+        count -= 2;
+        }
+        // Expected output: 10, 8, 6, 4, 2
+
+
+    do...while
+        Ejecuta un bloque de código al menos una vez, y luego repite mientras una condición sea verdadera.
+
+
+        let i = 0;
+        do {
+        console.log(i);
+        i++;
+        } while (i < 5);
+        // Expected output: 0, 1, 2, 3, 4
+
+        let x = 10;
+        do {
+        console.log(x);
+        x++;
+        } while (x < 5);
+        // Expected output: 10 (se ejecuta al menos una vez aunque la condición sea falsa)
+
+Window
+
+    localStorage - Almacena datos clave-valor sin expiración
+
+        setItem(key, value) - Guarda un dato
+        getItem(key) - Recupera un dato
+        removeItem(key) - Elimina un dato
+        clear() - Elimina todos los datos
+
+    Window.localStorage
+        Permite almacenar datos clave-valor en el navegador sin fecha de expiración.
+
+
+        // Guardar datos
+        localStorage.setItem('username', 'Juan');
+        localStorage.setItem('userId', '12345');
+        // Expected output: datos guardados en localStorage
+
+        // Obtener datos
+        console.log(localStorage.getItem('username'));
+        // Expected output: "Juan"
+
+        // Guardar objetos (deben convertirse a JSON)
+        const user = { name: 'Ana', age: 25 };
+        localStorage.setItem('user', JSON.stringify(user));
+
+        // Recuperar objetos
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+        console.log(storedUser.name);
+        // Expected output: "Ana"
+
+        // Eliminar un item
+        localStorage.removeItem('username');
+        // Expected output: 'username' eliminado de localStorage
+
+        // Limpiar todo
+        localStorage.clear();
+        // Expected output: todo el localStorage vaciado
+
+        // Verificar si existe una clave
+        if (localStorage.getItem('theme') !== null) {
+        console.log('Theme existe');
+        }
+
+
+
+Notas Importantes
+    Diferencias clave:
+
+        innerHTML vs innerText: innerHTML interpreta HTML, innerText solo muestra texto
+        insertAdjacentHTML vs insertAdjacentText: HTML interpreta etiquetas, Text las muestra literalmente
+        Number.isNaN() vs isNaN(): Number.isNaN no convierte el valor, isNaN() global sí
+        querySelector vs querySelectorAll: querySelector devuelve 1 elemento, querySelectorAll devuelve NodeList
+        while vs do...while: do...while se ejecuta al menos una vez
+
+    Recordatorios:
+
+        localStorage solo almacena strings (usar JSON.stringify/parse para objetos)
+        Índices en strings y arrays empiezan en 0
+        insertAdjacentElement posiciones: beforebegin, afterbegin, beforeend, afterend
+        Math.random() devuelve [0, 1), usar Math.floor(Math.random() * n) para enteros
+        toFixed() devuelve string, no número

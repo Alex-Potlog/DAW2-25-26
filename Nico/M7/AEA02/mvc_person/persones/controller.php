@@ -3,14 +3,16 @@
 require_once 'model.php';
 require_once 'view.php';
 
-class controller{
+class controller
+{
 
   //rutes o esdeveniments possibles
   //view1: nom i edat
   //view2: nom i alçada
-  private $peticions = array('view1', 'view2', 'form-select', 'view-select');
+  private $peticions = array('view1', 'view2', 'form-select', 'view-select', 'form-insert', 'view-insert', 'form-update', 'view-update', 'form-delete', 'view-delete');
 
-  public function handler(){
+  public function handler()
+  {
 
     // Què em demanen?
     $event = 'inici';
@@ -45,20 +47,37 @@ class controller{
         $dades = $per->select($_POST['nom']);
         $view->retornar_vista($event, $dades);
         break;
-      case 'insert':
-        //Muestra vista
-        //Consulta model
-        //TODO 3 cases (consulta, insert, update o delete)
+      case 'form-insert':
+        $view->retornar_vista($event);
         break;
-      case 'update':
-        //Muestra vista
-        //Consulta model
-        //TODO 3 cases (consulta, insert, update o delete)
+      case 'view-insert':
+        $per->insert(array(
+          'nom' => $_POST['nom'],
+          'edat' => $_POST['edat'],
+          'alcada' => $_POST['alcada']
+        ));
+        $dades = $per->selectAll(array("nom", "edat", "alcada"));
+        $view->retornar_vista($event, $dades);
         break;
-      case 'delete':
-        //Muestra vista
-        //Consulta model
-        //TODO 3 cases (consulta, insert, update o delete)
+      case 'form-update':
+        $view->retornar_vista($event);
+        break;
+      case 'view-update':
+        $per->update(array(
+          'nom' => $_POST['nom'],
+          'edat' => $_POST['edat'],
+          'alcada' => $_POST['alcada']
+        ));
+        $dades = $per->selectAll(array("nom", "edat", "alcada"));
+        $view->retornar_vista($event, $dades);
+        break;
+      case 'form-delete':
+        $view->retornar_vista($event);
+        break;
+      case 'view-delete':
+        $per->delete($_POST['nom']);
+        $dades = $per->selectAll(array("nom", "edat", "alcada"));
+        $view->retornar_vista($event, $dades);
         break;
 
       case 'inici':
