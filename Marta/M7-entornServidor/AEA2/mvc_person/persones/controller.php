@@ -9,7 +9,7 @@ class controller {
   //view1: nom i edat
   //view2: nom i alçada
   //consulta: 
-  private $peticions = array('view1', 'view2', 'form_select', 'view_select', 'form_insert', 'view_insert');
+  private $peticions = array('view1', 'view2', 'form_select', 'view_select', 'form_insert', 'view_insert', 'form_searchPerson', 'form_update', 'view_update');
   
   public function handler () {
     
@@ -39,7 +39,7 @@ class controller {
           $view->retornar_vista($event, $dades);
           break;
         
-        //Cas en el que volem veure les dades d'una persona.
+        //CONSULTAR = Cas en el que volem veure les dades d'una persona.
         case 'form_select': //Esto es el action realmente
         $view->retornar_vista($event);
         break;
@@ -49,7 +49,7 @@ class controller {
         $view->retornar_vista($event, $dades);
         break;
         
-        //Cas on volem inserir una nova persona i després veure les dades de totes les persones.
+        //INSERT = Cas on volem inserir una nova persona i després veure les dades de totes les persones.
         case 'form_insert':
         $view->retornar_vista($event);
         break;
@@ -69,10 +69,27 @@ class controller {
         $view->retornar_vista($event, $dades);
         break;
 
-        case 'update':
-        //Muestra vista
-        //Consulta model
-        //TODO 3 cases (consulta, insert, update o delete)
+        // UPDATE = Cas on volem actualitzar les dades d'una persona i veure-les.
+        case 'form_searchPerson':
+        $view -> retornar_vista($event);
+        break;
+        
+        case 'form_update':
+        $dades = $per -> select($_POST['nom']);
+        $view -> retornar_vista($event, $dades);
+        break;
+
+        case 'view_update':
+        $per -> update(array(
+          'nom' => $_POST['nom'],
+          'edat' => $_POST['edat'],
+          'alcada' => $_POST['alcada']
+        ));
+
+        $dades = $per -> select($_POST['nom']);
+        
+        $view -> retornar_vista($event, $dades);
+        
         break;
         
         case 'delete':
