@@ -47,8 +47,7 @@ class persones extends DBAbstractModel
 
   public function select($nom = "")
   {
-
-    $this->query = "SELECT nom, edat, alcada FROM persones WHERE nom = $nom";
+    $this->query = "SELECT nom, edat, alcada FROM persones WHERE nom = '$nom'";
     $this->get_results_from_query();
     return $this->rows;
   }
@@ -56,10 +55,26 @@ class persones extends DBAbstractModel
 
   public function insert($user_data = array())
   {
-    //TODO queries
+    $this->query = "INSERT INTO persones (nom, edat, alcada) VALUES (
+      '" . $user_data['nom'] . "',
+      '" . $user_data['edat'] . "',
+      '" . $user_data['alcada'] . "'
+      )";
+    $this->execute_single_query();
   }
 
-  public function update($userData = array()) {}
+  public function update($userData = array())
+  {
+    $this->query = "UPDATE persones SET 
+      edat = '" . $userData['edat'] . "',
+      alcada = '" . $userData['alcada'] . "'
+      WHERE nom = '" . $userData['nom'] . "'";
+    $this->execute_single_query();
+  }
 
-  public function delete($nom = "") {}
+  public function delete($nom = "")
+  {
+    $this->query = "DELETE FROM persones WHERE nom = '$nom'";
+    $this->execute_single_query();
+  }
 }
