@@ -1,0 +1,12 @@
+@mixin generateProperties($map){
+    $property: map-get($map, property);
+    $class: map-get($map, class);
+    $unit: map-get($map, unit);
+    $values: map-get($map, values);
+
+    @each $key, $value in $values {
+        .#{$class}-#{$key}{
+            #{$property}: #{$value}#{$unit};
+        }
+    }
+};

@@ -430,6 +430,7 @@ footer {
 .grid {
   display: grid;
   grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 24px;
@@ -1108,4 +1109,4 @@ body.dark-mode .client-grid .client-card:hover {
 
 .dark-mode .client-details h3 {
   color: #e0e0e0;
-}/*# sourceMappingURL=main.css.map */
+}

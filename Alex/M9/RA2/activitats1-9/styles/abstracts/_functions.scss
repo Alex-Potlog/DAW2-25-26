@@ -1,0 +1,15 @@
+@function calculaColor($color, $percetatge, $limit:90){
+    @if ($limit>=0) {
+        @if ($percetatge > $limit){
+            $percetatge: $limit;
+        }
+        $color: darken($color, $percetatge);
+        @return $color;
+    } @else {
+        @if ($percetatge < $limit){
+            $percetatge: $limit;
+        }
+        $color: darken($color, $percetatge);
+        @return $color;
+    }
+}

@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "018ff3eb7b576b58",
@@ -185,6 +186,7 @@
   },
   "active": "263c2cee59a137c9",
   "lastOpenFiles": [
+    "Untitled.md",
     "PHP steps a afegir una vista.md"
   ]
 }

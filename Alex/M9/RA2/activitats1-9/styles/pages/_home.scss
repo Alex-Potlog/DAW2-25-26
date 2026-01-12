@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+$font-size : (
+property: font-size,
+class: fs,
+unit: rem,
+values: (
+'xs': 0.4,
+'md': 0.625,
+'lg': 1.2,
+'xl': 1.8,
+'xxl': 2.5,
+)
+);
+
+#exercici6 {
+    @include generateProperties($font-size);
+}
+
+#exercici7 {
+    color: calculaColor(rgb(2, 200, 200), 30, -20);
+}
