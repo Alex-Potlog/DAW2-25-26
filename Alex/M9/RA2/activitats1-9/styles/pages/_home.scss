@@ -18,5 +18,13 @@ values: (
 }
 
 #exercici7 {
-    color: calculaColor(rgb(2, 200, 200), 30, -20);
+    color: calculaColor(red, 25, -90);
+}
+
+#exercici8 {
+    $escala: calculaEscala(orange, 10, 50);
+    @debug $escala;
+    @each $color in $escala {
+        @debug "#{$color}";        
+    }
 }

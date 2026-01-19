@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './but-counter.html',
   styleUrl: './but-counter.scss',
 })
+
 export class ButCounter {
   value = 0;
   
+  increment($event: Event) {
+    this.value++;
+  }
 }
