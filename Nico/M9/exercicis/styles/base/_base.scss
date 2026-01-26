@@ -1,0 +1,212 @@
+// 1. Llista de colors: complementaris i aplicació del segon color
+$colors: #ff5733, #33ff57, #3357ff, #f3ff33;
+
+// Crear llista de complementaris
+$complementary-colors: (
+);
+
+@each $color in $colors {
+    $complementary-colors: append($complementary-colors, invert($color));
+}
+
+// Aplicar el segon color de la llista a una classe
+.second-color {
+    background-color: nth($colors, 2);
+}
+
+// 2. Mixin per crear box-shadow amb tots els paràmetres
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+    box-shadow: $x $y $blur $spread $color;
+}
+
+.shadow-box {
+    @include box-shadow(5px, 5px, 10px, 2px, rgba(0, 0, 0, 0.3));
+}
+
+// 3. Mixin modificat amb valors per defecte
+@mixin box-shadow-default($x, $y, $blur, $spread, $color: rgb(128, 128, 128), $opacity: 0.5) {
+    box-shadow: $x $y $blur $spread rgba(red($color), green($color), blue($color), $opacity);
+}
+
+.shadow-default {
+    @include box-shadow-default(3px, 3px, 8px, 1px);
+}
+
+// 4. Mixin per gradient lineal amb llista de colors
+@use "sass:list";
+@use "sass:color";
+
+@mixin linear-gradient($colors, $angle) {
+    @each $color in $colors {
+        $index: list.index($colors, $color);
+        $final-color: color.adjust($color, $lightness: -20%);
+        $gradient-angle: $index * $angle;
+
+        .gradient-#{$index} {
+            background: linear-gradient(#{$gradient-angle}deg, $color, $final-color);
+        }
+    }
+}
+
+@include linear-gradient($colors, 45deg);
+
+// 5. Map de font-weights: incrementar i fusionar
+@use "sass:map";
+
+$font-weights: (
+    "regular": 1rem,
+    "medium": 1.5rem,
+    "large": 2rem
+);
+
+// Crear nou map amb valors incrementats
+$font-weights-incremented: (
+);
+
+@each $key, $value in $font-weights {
+    $font-weights-incremented: map.set($font-weights-incremented, $key, $value + 0.4rem);
+}
+
+// Fusionar els dos maps
+$font-weights-merged: map.merge($font-weights, $font-weights-incremented);
+
+// Exemple d'ús dels font-weights fusionats
+@each $name, $size in $font-weights-merged {
+    .font-#{$name} {
+        font-size: $size;
+    }
+}
+
+// 6. crea un mixin a partir del map que generi classes css per aplicar directament a l'HTML
+$opacity : (property: opacity,
+    class: op,
+    values: (0: 0,
+        25: .25,
+        50: .5,
+        75: .75,
+        100: 1,
+    ));
+
+@mixin gen-class($map) {
+    @if $map {
+        @each $key, $value in map.get($map, values) {
+            .#{map.get($map, class)}-#{$key} {
+                #{map.get($map, property)}: #{$value};
+            }
+        }
+    }
+}
+
+@include gen-class($opacity);
+
+//Modifica el mixin anterior perquè es pugui indicar la unitat de la propietat.
+$font-size : (property: font-size,
+    class: fs,
+    unit: rem,
+    values: ('xs': 0.4,
+        'md': 0.625,
+        'lg': 1.2,
+        'xl': 1.8,
+        'xxl': 2.5,
+    ));
+
+@mixin gen-class-unit($map) {
+    @if $map {
+        @each $key, $value in map.get($map, values) {
+            .#{map.get($map, class)}-#{$key} {
+                #{map.get($map, property)}: #{$value}#{if(map.get($map, unit), map.get($map, unit), '')};
+            }
+        }
+    }
+}
+
+@include gen-class-unit($font-size);
+
+// 7. Funció corregida per escalar colors
+@function color-scale($color, $percentatge, $limit: 90) {
+    @if math.abs($limit)>90 {
+        $limit: 90;
+    }
+
+    $light-limit: math.abs($limit) * -1;
+    $dark-limit: math.abs($limit);
+
+
+    @if $percentatge < $light-limit {
+        $percentatge: $light-limit;
+    }
+
+    @if $percentatge >$dark-limit {
+        $percentatge: $dark-limit;
+    }
+
+
+    @if $percentatge >0 {
+
+        @return color.mix($color, black, 100% - $percentatge);
+    }
+
+    @else {
+
+        @return color.mix($color, white, 100% - math.abs($percentatge));
+    }
+}
+
+//8 Crea una funcio que retorni un map que contingui una escala de colors. Paràmetres: color, interval i límit de percentatge. Utilitza la funció del punt anterior
+
+@function color-map($color, $offset: 10, $limit: 90) {
+    $result-map: (
+    );
+
+
+$current: $limit * -1;
+
+@while $current < 0 {
+    $scaled-color: color-scale($color, $current, $limit);
+    $result-map: map.set($result-map, $current, $scaled-color);
+    $current: $current + $offset;
+}
+
+
+$result-map: map.set($result-map, 0, $color);
+
+
+$current: $offset;
+
+@while $current <=$limit {
+    $scaled-color: color-scale($color, $current, $limit);
+    $result-map: map.set($result-map, $current, $scaled-color);
+    $current: $current + $offset;
+}
+
+@return $result-map;
+}
+
+// 9. Mixin per generar classes a partir del map de colors
+@mixin generate-color-classes($color-name, $color, $property: background-color, $offset: 15, $limit: 90) {
+    $colors-map: color-map($color, $offset, $limit);
+
+    @each $percentage, $scaled-color in $colors-map {
+        @if $percentage ==0 {
+
+            .#{$color-name} {
+                #{$property}: $scaled-color;
+            }
+        }
+
+        @else if $percentage < 0 {
+
+            .#{$color-name}-#{math.abs($percentage)} {
+                #{$property}: $scaled-color;
+            }
+        }
+
+        @else {
+            .#{$color-name}#{$percentage} {
+                #{$property}: $scaled-color;
+            }
+        }
+    }
+}
+
+@include generate-color-classes("orange", orange, background-color, 15, 60);

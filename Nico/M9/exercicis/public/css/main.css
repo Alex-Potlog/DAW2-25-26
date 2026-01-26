@@ -1,0 +1,47 @@
+@charset "UTF-8";
+.op-0 {
+  opacity: 0;
+}
+
+.op-25 {
+  opacity: 0.25;
+}
+
+.op-50 {
+  opacity: 0.5;
+}
+
+.op-75 {
+  opacity: 0.75;
+}
+
+.op-100 {
+  opacity: 1;
+}
+
+.fs-xs {
+  font-size: 0.4rem;
+}
+
+.fs-md {
+  font-size: 0.625rem;
+}
+
+.fs-lg {
+  font-size: 1.2rem;
+}
+
+.fs-xl {
+  font-size: 1.8rem;
+}
+
+.fs-xxl {
+  font-size: 2.5rem;
+}
+
+/*7. Crea una funció que se li passi com a paràmetres un color, el percentatge (per aclarir un número
+negatiu, per enfosquir positiu) i el límit de percentatge a aplicar, per defecte 90 que és el valor
+màxim.
+El percentatge va des de -limit a +limit
+Si es passa un percentatge fora del rang anterior s'agafa el límit, ex. -100 -> -90; 120 -> 90
+La funció retorna un color que es pot aplicar a propietats css*//*# sourceMappingURL=main.css.map */

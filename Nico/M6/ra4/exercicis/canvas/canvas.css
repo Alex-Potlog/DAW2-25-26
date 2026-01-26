@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
+}
+
+.thumbnails {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.thumb-item {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 2px solid #ccc;
+}
+
+.thumb-item:hover {
+    border-color: #333;
+}
+
+.thumb-item img {
+    display: block;
+    width: 100px;
+    height: 80px;
+}

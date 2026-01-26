@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitxa de Personatge</title>
+    <link rel="stylesheet" href="{% static 'magia/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <h1>Fitxa de personatge</h1>
+        <p><strong>Nom:</strong> {{ nom }}</p>
+        <p><strong>Classe:</strong> {{ classe }}</p>
+        <p><strong>Nivell:</strong> {{ nivell }}</p>
+        {% if nivell >= 5 and nivell < 20 %} <p>Aquest personatge és fort.</p>
+            {% elif nivell >= 20 %}
+            <p>Aquest personatge és molt poderós!</p>
+            {% endif %}
+            <h2>Característiques</h2>
+            <div>
+                <p><strong>Força:</strong> {{ stats.for }}</p>
+                <p><strong>Destresa:</strong> {{ stats.des }}</p>
+                <p><strong>Constitució:</strong> {{ stats.con }}</p>
+                <p><strong>Intel·ligència:</strong> {{ stats.int }}</p>
+                <p><strong>Sagacitat:</strong> {{ stats.sab }}</p>
+                <p><strong>Carisma:</strong> {{ stats.car }}</p>
+            </div>
+            <h2>Equipament</h2>
+            <ul>
+                {% if equipament.count == 0 %}
+                <p>No té equipament.</p>
+                {% endif %}
+                {% for item in equipament %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            <h2>Habilitats</h2>
+            <ul>
+                {% if habilitats.count == 0 %}
+                <p>No té habilitats.</p>
+                {% endif %}
+                {% for habilitat in habilitats %}
+                <li>{{ habilitat }}</li>
+                {% endfor %}
+            </ul>
+    </div>
+</body>
+
+</html>
