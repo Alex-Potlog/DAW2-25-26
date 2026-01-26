@@ -65,7 +65,12 @@ class persones extends DBAbstractModel {
   }
   
   public function update ($userData = array()) {
-
+      $this->query="UPDATE persones SET
+        nom= '".$userData['nom']."',
+        edat= '".$userData['edat']."',
+        alcada='".$userData['alcada']."'
+        WHERE nom='".$userData['nom']."'";
+      $this->execute_single_query();
   }
 
   public function delete ($nom="") {

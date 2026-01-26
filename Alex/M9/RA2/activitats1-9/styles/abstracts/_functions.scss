@@ -1,0 +1,24 @@
+@function calculaColor($color, $percetatge, $limit:90){
+    @if ($limit>=0) {
+        @if ($percetatge > $limit){
+            $percetatge: $limit;
+        }
+        $color: darken($color, $percetatge);
+        @return $color;
+    } @else {
+        $limitAbs: abs($limit);
+        @if ($percetatge > $limitAbs){
+            $percetatge: $limitAbs;
+        }
+        $color: lighten($color, $percetatge);
+        @return $color;
+    }
+}
+
+@function calculaEscala($color, $interval, $limit:90){
+    $colors: ();
+    @for $i from -$interval through $interval {
+        $colors: map-merge($colors, ($i: calculaColor($color, abs($i * (90 / $interval)), $limit)));
+    }
+    @return $colors;
+}
