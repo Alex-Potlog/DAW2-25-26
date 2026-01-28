@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestió de Concerts</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gestió de Concerts</h1>
+
+        <nav>
+            <a href="./index.php">Inici</a>
+        </nav>
+
+        {{message}}
+
+        <!-- Secció: Llista de Concerts -->
+        <div class="section">
+            <h2>{{title}}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Grup</th>
+                        <th>Ciutat</th>
+                        <th>Sala</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{concerts_list}}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Secció: Cercar per Grup -->
+        <div class="section">
+            <h2>Cercar per Grup Musical</h2>
+            <form action="./index.php" method="GET">
+                <input type="hidden" name="action" value="cercargrup">
+                <label for="grup">Grup:</label>
+                <input type="text" id="grup" name="grup" placeholder="Nom del grup" required>
+                <button type="submit">Cercar</button>
+            </form>
+        </div>
+
+        <!-- Secció: Cercar per Dates -->
+        <div class="section">
+            <h2>Cercar entre Dates</h2>
+            <form action="./index.php" method="GET">
+                <input type="hidden" name="action" value="cercardates">
+                <label for="dataInici">Data inici:</label>
+                <input type="date" id="dataInici" name="dataInici" required>
+                <label for="dataFi">Data fi:</label>
+                <input type="date" id="dataFi" name="dataFi" required>
+                <button type="submit">Cercar</button>
+            </form>
+        </div>
+
+        <!-- Secció Admin: Afegir Concert -->
+        <div class="section admin-section">
+            <h2>Afegir Nou Concert (Admin)</h2>
+            <form action="./index.php?controller=admin&action=afegir" method="POST">
+                <label for="newGrup">Grup:</label>
+                <input type="text" id="newGrup" name="grup" required>
+                <label for="newCiutat">Ciutat:</label>
+                <input type="text" id="newCiutat" name="ciutat" required>
+                <label for="newSala">Sala:</label>
+                <input type="text" id="newSala" name="sala" required>
+                <label for="newData">Data:</label>
+                <input type="date" id="newData" name="data" required>
+                <label for="newHora">Hora:</label>
+                <input type="time" id="newHora" name="hora" required>
+                <button type="submit">Afegir Concert</button>
+            </form>
+        </div>
+
+        <!-- Secció Admin: Modificar Sala -->
+        <div class="section admin-section">
+            <h2>Modificar Sala del Concert (Admin)</h2>
+            <form action="./index.php?controller=admin&action=modificar" method="POST">
+                <label for="modId">ID Concert:</label>
+                <input type="text" id="modId" name="id" required>
+                <label for="modSala">Nova Sala:</label>
+                <input type="text" id="modSala" name="sala" required>
+                <button type="submit">Modificar Sala</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
